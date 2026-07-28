@@ -1,0 +1,25 @@
+name: Question
+description: Ask a question about Axyome XM
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check the [FAQ](https://github.com/BI-Expertise/axyome-xm/blob/main/docs/faq.md) first — your question may already be answered.
+        
+        For longer discussions, consider using [GitHub Discussions](https://github.com/BI-Expertise/axyome-xm/discussions) instead.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: Be as specific as possible
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What were you trying to accomplish when this question came up?

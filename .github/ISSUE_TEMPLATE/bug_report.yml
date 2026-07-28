@@ -1,0 +1,85 @@
+name: Bug Report
+description: Something isn't working as expected
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing, try: `Ctrl+Shift+P` → **Axyome XM: Show Statistics** to confirm the extension is running.
+        
+        Search [existing issues](https://github.com/BI-Expertise/axyome-xm/issues) before opening a new one.
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Your operating system
+      options:
+        - Windows (win32-x64)
+        - Linux (linux-x64)
+        - macOS (darwin-x64)
+    validations:
+      required: true
+
+  - type: input
+    id: vscode-version
+    attributes:
+      label: VS Code Version
+      description: "Help → About → version number"
+      placeholder: "1.100.x"
+    validations:
+      required: true
+
+  - type: input
+    id: extension-version
+    attributes:
+      label: Extension Version
+      description: "Extensions panel → Axyome XM → version number"
+      placeholder: "0.2.xxx"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of the extension is affected?
+      options:
+        - MCP Tools (axm_* not working in Copilot)
+        - Dashboard UI
+        - Event Capture (files/errors/git not captured)
+        - Search / Recall
+        - XM Wiki
+        - Time Machine
+        - Installation / Startup
+        - Performance / Freezing
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Include exact error messages and steps to reproduce
+      placeholder: |
+        1. Opened VS Code
+        2. Asked Copilot: "What did I work on today?"
+        3. Got error: "tool not found: axm_recall_activity"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs (optional)
+      description: "Output panel → Axyome XM, or the error from Copilot Chat"
+      render: text

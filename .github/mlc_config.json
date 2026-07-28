@@ -1,0 +1,11 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://marketplace.visualstudio.com"
+    },
+    {
+      "pattern": "^https://axyome.ai"
+    }
+  ],
+  "aliveStatusCodes": [200, 206]
+}
