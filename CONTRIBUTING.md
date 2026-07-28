@@ -8,27 +8,27 @@ Axyome XM is developed in the private [bx-iag](https://github.com/BI-Expertise/b
 
 ## How to Contribute
 
-### 🐛 Report a Bug
+###  Report a Bug
 
-→ [Open a bug report](https://github.com/BI-Expertise/axyome-xm/issues/new?template=bug_report.yml)
+ [Open a bug report](https://github.com/BI-Expertise/axyome-xm/issues/new?template=bug_report.yml)
 
 **Before filing:**
 - Search [existing issues](https://github.com/BI-Expertise/axyome-xm/issues) for duplicates
-- Try `Ctrl+Shift+P` → **Axyome XM: Show Statistics** to confirm the extension is running
+- Try `Ctrl+Shift+P`  **Axyome XM: Show Statistics** to confirm the extension is running
 - Include your platform (Windows/Linux/macOS), VS Code version, and extension version
 
-### 💡 Request a Feature
+###  Request a Feature
 
-→ [Open a feature request](https://github.com/BI-Expertise/axyome-xm/issues/new?template=feature_request.yml)
+ [Open a feature request](https://github.com/BI-Expertise/axyome-xm/issues/new?template=feature_request.yml)
 
 Describe the use case and pain point clearly. The more concrete the scenario, the more actionable the request.
 
-### ❓ Ask a Question
+###  Ask a Question
 
-→ [Open a question](https://github.com/BI-Expertise/axyome-xm/issues/new?template=question.yml)  
-→ [GitHub Discussions](https://github.com/BI-Expertise/axyome-xm/discussions)
+ [Open a question](https://github.com/BI-Expertise/axyome-xm/issues/new?template=question.yml)  
+ [GitHub Discussions](https://github.com/BI-Expertise/axyome-xm/discussions)
 
-### 📝 Improve Documentation
+###  Improve Documentation
 
 Documentation PRs are welcome! All docs live in the `docs/` folder.
 

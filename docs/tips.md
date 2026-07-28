@@ -4,7 +4,7 @@ Get the most out of Axyome XM with these workflows used daily by the team that b
 
 ---
 
-## Tip 1 — Monday Morning Briefing
+## Tip 1 - Monday Morning Briefing
 
 Start every week with a full context reset:
 
@@ -16,7 +16,7 @@ Copilot uses `axm_get_session_summary` and `axm_get_error_forensics` to give you
 
 ---
 
-## Tip 2 — Search Before You Debug
+## Tip 2 - Search Before You Debug
 
 Before spending 20+ minutes on a bug, always ask:
 
@@ -31,7 +31,7 @@ Before spending 20+ minutes on a bug, always ask:
 
 ---
 
-## Tip 3 — Log Decisions As You Make Them
+## Tip 3 - Log Decisions As You Make Them
 
 When you choose a technology, pattern, or approach:
 
@@ -48,19 +48,19 @@ Three months later:
 
 ---
 
-## Tip 4 — Use the Time Machine After Interruptions
+## Tip 4 - Use the Time Machine After Interruptions
 
 Got pulled into a meeting or context-switched for a day? Open **Time Machine** tab:
 
 1. Select today's date
-2. See your session broken into chapters: `🏗️ CODING`, `🐛 DEBUGGING`, `🚀 BUILD_DEPLOY`, `🔬 TEST_CYCLE`
+2. See your session broken into chapters: ` CODING`, ` DEBUGGING`, ` BUILD_DEPLOY`, ` TEST_CYCLE`
 3. Click any chapter to see every file, error, and command
 
 Chapters are auto-detected from activity gaps (15+ minute pauses = new chapter).
 
 ---
 
-## Tip 5 — Build Your Wiki Automatically
+## Tip 5 - Build Your Wiki Automatically
 
 After a significant coding session:
 
@@ -68,7 +68,7 @@ After a significant coding session:
 @copilot Ingest this session into the wiki.
 ```
 
-`axm_wiki_ingest` synthesizes entities from your session — services, errors, patterns, decisions — into searchable wiki pages. Over weeks, your wiki becomes a living documentation of your codebase.
+`axm_wiki_ingest` synthesizes entities from your session - services, errors, patterns, decisions - into searchable wiki pages. Over weeks, your wiki becomes a living documentation of your codebase.
 
 Then query it:
 ```
@@ -78,7 +78,7 @@ Then query it:
 
 ---
 
-## Tip 6 — Track Your Growth Weekly
+## Tip 6 - Track Your Growth Weekly
 
 Every Monday:
 
@@ -86,11 +86,11 @@ Every Monday:
 @copilot How was my developer intelligence score last week compared to the week before?
 ```
 
-`axm_get_developer_intelligence` returns your DIP score across **Velocity**, **Quality**, **Efficiency**, and **Learning** — with specific, actionable recommendations.
+`axm_get_developer_intelligence` returns your DIP score across **Velocity**, **Quality**, **Efficiency**, and **Learning**  with specific, actionable recommendations.
 
 ---
 
-## Tip 7 — Export Wiki for Fresh Conversations
+## Tip 7 - Export Wiki for Fresh Conversations
 
 At the start of a new Copilot conversation about a complex topic:
 
@@ -102,7 +102,7 @@ At the start of a new Copilot conversation about a complex topic:
 
 ---
 
-## Tip 8 — Check Anti-Patterns Before Merging
+## Tip 8 - Check Anti-Patterns Before Merging
 
 Before submitting a PR:
 
@@ -114,7 +114,7 @@ Before submitting a PR:
 
 ---
 
-## Tip 9 — Keyboard Shortcut for Dashboard
+## Tip 9 - Keyboard Shortcut for Dashboard
 
 Add a keybinding for instant dashboard access (`keybindings.json`):
 
@@ -127,7 +127,7 @@ Add a keybinding for instant dashboard access (`keybindings.json`):
 
 ---
 
-## Tip 10 — Preflight Before Long Sessions
+## Tip 10 - Preflight Before Long Sessions
 
 Before a long coding session (especially after a break):
 
@@ -139,7 +139,7 @@ This calls `axm_preflight` (verifies DB health) and `axm_get_session_summary` si
 
 ---
 
-## Tip 11 — Use the Achievement System as Focus Goals
+## Tip 11 - Use the Achievement System as Focus Goals
 
 Check your next achievement:
 
@@ -151,7 +151,7 @@ Use it as a micro-goal system. If you're close to **Flow State** (3-hour uninter
 
 ---
 
-## Tip 12 — File Hotspot Awareness
+## Tip 12 - File Hotspot Awareness
 
 Before planning a sprint:
 
@@ -159,7 +159,7 @@ Before planning a sprint:
 @copilot Which files in my project have the most errors and highest churn this month?
 ```
 
-`axm_get_file_hotspots` surfaces files that deserve refactoring investment — backed by your real activity data, not code complexity estimates alone.
+`axm_get_file_hotspots` surfaces files that deserve refactoring investment - backed by your real activity data, not code complexity estimates alone.
 
 ---
 

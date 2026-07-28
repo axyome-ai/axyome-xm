@@ -11,17 +11,17 @@
 
 ---
 
-## Option 1 — VS Code Marketplace (Recommended)
+## Option 1 - VS Code Marketplace (Recommended)
 
 1. Open VS Code
 2. Press `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (macOS)
 3. Search for **Axyome XM**
 4. Click **Install**
-5. VS Code will prompt to reload — click **Reload**
+5. VS Code will prompt to reload - click **Reload**
 
 ---
 
-## Option 2 — Command Line
+## Option 2 - Command Line
 
 ```bash
 code --install-extension axyome.axyome-xm
@@ -29,7 +29,7 @@ code --install-extension axyome.axyome-xm
 
 ---
 
-## Option 3 — VSIX File (Offline / Beta Versions)
+## Option 3 - VSIX File (Offline / Beta Versions)
 
 Download the platform-specific VSIX from [Releases](https://github.com/BI-Expertise/axyome-xm/releases):
 
@@ -44,7 +44,7 @@ Install:
 code --install-extension axyome-xm-<version>-<platform>.vsix --force
 ```
 
-> ⚠️ **Important:** Install the VSIX that matches your OS. Installing the wrong platform VSIX will cause the native SQLite addon to fail.
+>  **Important:** Install the VSIX that matches your OS. Installing the wrong platform VSIX will cause the native SQLite addon to fail.
 
 ---
 
@@ -52,20 +52,20 @@ code --install-extension axyome-xm-<version>-<platform>.vsix --force
 
 After installing, verify the extension and MCP server are running:
 
-**Method 1 — Command Palette:**
+**Method 1 - Command Palette:**
 1. Press `Ctrl+Shift+P`
 2. Run: **Axyome XM: Show Statistics**
 3. A panel should appear showing event counts
 
-**Method 2 — Copilot Chat:**
+**Method 2 - Copilot Chat:**
 ```
 @copilot Is the Axyome XM memory server healthy?
 ```
 Copilot will call `axm_health` and report the status.
 
-**Method 3 — Activity Bar:**
+**Method 3 - Activity Bar:**
 - Look for the Axyome XM icon in the left sidebar (brain icon)
-- Click it — the Dashboard should open
+- Click it - the Dashboard should open
 
 ---
 
@@ -79,7 +79,7 @@ All extension data is stored locally. Nothing is sent anywhere.
 | Linux | `~/.config/Code/User/globalStorage/axyome.axyome-xm/` |
 | macOS | `~/Library/Application Support/Code/User/globalStorage/axyome.axyome-xm/` |
 
-The primary database is `memory-agent-events.db` — a SQLite file you can back up, inspect, or delete at any time.
+The primary database is `memory-agent-events.db`  a SQLite file you can back up, inspect, or delete at any time.
 
 ---
 
@@ -91,12 +91,12 @@ The primary database is `memory-agent-events.db` — a SQLite file you can back 
 | `axm_*` tools missing in Copilot | Extension not fully loaded | Full restart VS Code (not just reload window) |
 | `SQLITE_CANTOPEN` error | AppData folder permissions | Check folder exists and is writable |
 | `native addon` load error | Wrong platform VSIX installed | Uninstall and reinstall correct platform VSIX |
-| `SQLITE_BUSY` error | VS Code locking DB | This is normal — the extension manages this automatically |
+| `SQLITE_BUSY` error | VS Code locking DB | This is normal - the extension manages this automatically |
 | MCP server shows "Not connected" | Slow startup | Wait 10s after VS Code loads; restart if persistent |
 
 ### Full Restart vs Reload
 
-If Copilot tools don't appear after install, use a **full restart** — not just `Ctrl+Shift+P → Reload Window`:
+If Copilot tools don't appear after install, use a **full restart**  not just `Ctrl+Shift+P - Reload Window`:
 
 - Windows/Linux: Close VS Code, reopen
 - macOS: `Cmd+Q`, reopen

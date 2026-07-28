@@ -82,7 +82,7 @@ What testing patterns do I repeat?
 ## Error Intelligence
 
 ### `axm_find_similar_errors`
-Find similar past errors using semantic matching — the most powerful debugging tool.
+Find similar past errors using semantic matching - the most powerful debugging tool.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -101,7 +101,7 @@ Have I fixed this pattern before?
 ---
 
 ### `axm_get_error_forensics`
-Analyze recent errors with full context — what was happening before each error.
+Analyze recent errors with full context - what was happening before each error.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -177,7 +177,7 @@ What are my preferences for error handling?
 ---
 
 ### `axm_wiki_query`
-Search your personal XM Wiki — auto-generated from session data.
+Search your personal XM Wiki - auto-generated from session data.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -260,7 +260,7 @@ What should I practice more?
 ---
 
 ### `axm_get_antipattern_stats`
-Anti-patterns you're using — with trend data.
+Anti-patterns you're using - with trend data.
 
 **Example prompts:**
 ```
@@ -430,7 +430,7 @@ Verify the memory system is ready.
 ---
 
 ### `axm_get_stats`
-Memory database statistics — event counts, table sizes, storage used.
+Memory database statistics - event counts, table sizes, storage used.
 
 **Example prompts:**
 ```
@@ -449,7 +449,7 @@ Chunk large documents for better embedding precision.
 Generate semantic embeddings for items that don't have them yet.
 
 ### `axm_get_learned_patterns`
-Patterns learned from past sessions (error→fix sequences, refactoring habits).
+Patterns learned from past sessions (errorfix sequences, refactoring habits).
 
 ### `axm_get_pattern_suggestions`
 Get fix suggestions based on learned error-resolution patterns.
@@ -458,7 +458,7 @@ Get fix suggestions based on learned error-resolution patterns.
 Risk scores for files based on churn, error history, and complexity.
 
 ### `axm_get_context_snapshot`
-Compact context snapshot for the current file — errors, decisions, style patterns.
+Compact context snapshot for the current file - errors, decisions, style patterns.
 
 ---
 

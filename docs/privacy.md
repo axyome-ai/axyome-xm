@@ -10,15 +10,15 @@ Axyome XM is **100% local**. Your data never leaves your machine. There are no s
 
 | Data Type | Stored locally | Transmitted | Opt-in required |
 |-----------|:--------------:|:-----------:|:---------------:|
-| File paths (not contents) | ✅ | ❌ Never | No (automatic) |
-| Error messages | ✅ | ❌ Never | No (automatic) |
-| Git commit messages | ✅ | ❌ Never | No (automatic) |
-| Terminal commands | ✅ | ❌ Never | **Yes (opt-in)** |
-| Copilot tool invocations | ✅ | ❌ Never | No (automatic) |
-| File **contents** | ❌ Never stored | ❌ Never | — |
-| Clipboard contents | ❌ Never stored | ❌ Never | — |
-| Keystrokes | ❌ Never stored | ❌ Never | — |
-| Passwords / secrets | ❌ Redacted | ❌ Never | — |
+| File paths (not contents) |  | Never | No (automatic) |
+| Error messages |  | Never | No (automatic) |
+| Git commit messages |  | Never | No (automatic) |
+| Terminal commands |  | Never | **Yes (opt-in)** |
+| Copilot tool invocations |  | Never | No (automatic) |
+| File **contents** | Never stored | Never |  |
+| Clipboard contents | Never stored | Never |  |
+| Keystrokes | Never stored | Never |  |
+| Passwords / secrets | Redacted | Never |  |
 
 ---
 
@@ -36,7 +36,7 @@ Axyome XM automatically redacts values matching:
 Redacted values are replaced with `[REDACTED]` **before** storage. The original value is never written to disk.
 
 To enable terminal capture:
-1. `Ctrl+,` → Search `axyome terminal`
+1. `Ctrl+,`  Search `axyome terminal`
 2. Enable **Axyome XM: Terminal Capture**
 
 ---
@@ -55,8 +55,8 @@ All data is stored in VS Code's extension globalStorage:
 
 | File | Contents |
 |------|----------|
-| `memory-agent-events.db` | Main SQLite database — all captured events |
-| `memory-agent-events.db-wal` | SQLite WAL journal (normal — handled automatically) |
+| `memory-agent-events.db` | Main SQLite database - all captured events |
+| `memory-agent-events.db-wal` | SQLite WAL journal (normal - handled automatically) |
 | `backups/` | Up to 5 rolling automatic backups |
 
 ---
@@ -67,7 +67,7 @@ The Axyome XM extension and its embedded MCP server make **zero outbound network
 
 The only network activity is:
 - VS Code Marketplace: checking for extension updates (standard VS Code behavior, not initiated by Axyome XM)
-- Semantic embeddings: computed locally using bundled WASM (`@huggingface/transformers` + bge-small-en-v1.5) — no API calls
+- Semantic embeddings: computed locally using bundled WASM (`@huggingface/transformers` + bge-small-en-v1.5)  no API calls
 
 You can verify this with a network monitor: the process `mcp-server-win-x64.exe` (or equivalent) makes no connections.
 
@@ -79,7 +79,7 @@ You are in full control of your data:
 
 **Clear all events:**
 ```
-Ctrl+Shift+P → Axyome XM: Clear Captured Events
+Ctrl+Shift+P - Axyome XM: Clear Captured Events
 ```
 
 **Manual full deletion:**
@@ -87,12 +87,12 @@ Delete the `memory-agent-events.db` file. A fresh database is created on next VS
 
 **Backup:**
 ```
-Ctrl+Shift+P → Axyome XM: Backup Database
+Ctrl+Shift+P - Axyome XM: Backup Database
 ```
 
 **Restore from backup:**
 ```
-Ctrl+Shift+P → Axyome XM: Restore Database Backup
+Ctrl+Shift+P - Axyome XM: Restore Database Backup
 ```
 
 ---
@@ -103,17 +103,17 @@ The extension bundles the following libraries. None make network requests:
 
 | Library | Purpose | Network |
 |---------|---------|---------|
-| `better-sqlite3` | Local SQLite engine | ❌ None |
-| `@huggingface/transformers` | Local WASM ML inference | ❌ None |
-| `sql.js-fts5` | FTS5-enabled SQLite WASM | ❌ None |
-| `@modelcontextprotocol/sdk` | MCP stdio communication | ❌ None (local stdio only) |
+| `better-sqlite3` | Local SQLite engine | None |
+| `@huggingface/transformers` | Local WASM ML inference | None |
+| `sql.js-fts5` | FTS5-enabled SQLite WASM | None |
+| `@modelcontextprotocol/sdk` | MCP stdio communication | None (local stdio only) |
 
 ---
 
 ## MCP Server Security
 
 The MCP server binary:
-- Runs as a **local stdio process** — no open network ports
+- Runs as a **local stdio process**  no open network ports
 - Communicates only through VS Code's stdio pipe
 - Reads/writes only within the extension's globalStorage directory
 - Is embedded in the VSIX and **hash-validated** during build to prevent tampering

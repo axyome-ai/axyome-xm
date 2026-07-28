@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Before filing, try: `Ctrl+Shift+P` → **Axyome XM: Show Statistics** to confirm the extension is running.
+        Before filing, try: `Ctrl+Shift+P`  **Axyome XM: Show Statistics** to confirm the extension is running.
         
         Search [existing issues](https://github.com/BI-Expertise/axyome-xm/issues) before opening a new one.
 
@@ -26,7 +26,7 @@ body:
     id: vscode-version
     attributes:
       label: VS Code Version
-      description: "Help → About → version number"
+      description: "Help - About - version number"
       placeholder: "1.100.x"
     validations:
       required: true
@@ -35,7 +35,7 @@ body:
     id: extension-version
     attributes:
       label: Extension Version
-      description: "Extensions panel → Axyome XM → version number"
+      description: "Extensions panel - Axyome XM - version number"
       placeholder: "0.2.xxx"
     validations:
       required: true
@@ -81,5 +81,5 @@ body:
     id: logs
     attributes:
       label: Relevant logs (optional)
-      description: "Output panel → Axyome XM, or the error from Copilot Chat"
+      description: "Output panel - Axyome XM, or the error from Copilot Chat"
       render: text
