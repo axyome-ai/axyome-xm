@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey" alt="Platform" />
   <img src="https://img.shields.io/badge/MCP%20Tools-45-brightgreen" alt="MCP Tools" />
   <img src="https://img.shields.io/badge/privacy-100%25%20local-success" alt="Privacy" />
-  <img src="https://img.shields.io/badge/license-MIT-blue" alt="License" />
+  <img src="https://img.shields.io/badge/license-Proprietary-red" alt="License" />
 </div>
 
 ---
@@ -156,4 +156,5 @@ axm_get_developer_intelligence — Full DIP score and recommendations
 
 ## License
 
-MIT © [Axyome](https://axyome.ai)
+Proprietary © [Axyome](https://axyome.ai) — All rights reserved.  
+See [LICENSE](LICENSE) for details.
