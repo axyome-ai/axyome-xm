@@ -4,7 +4,7 @@ Real workflows showing what Axyome XM makes possible.
 
 ---
 
-## Demo 1  "I Fixed This Bug Before"
+## Demo 1 - "I Fixed This Bug Before"
 
 **The scenario:** You're staring at a `TypeError: Cannot read properties of undefined (reading 'map')`. It feels familiar, but you can't remember the fix. Stack Overflow gives you 10 generic answers.
 
@@ -39,10 +39,10 @@ at UserList.tsx:45
 ```
 
 **Response:**
-> "Friday session (6h 23min, 09:1517:38):  
-> - **Chapter 1 (09:1511:00)**: Built auth middleware in `packages/api/src/middleware/auth.ts`. Modified 8 files.  
-> - **Chapter 2 (11:0012:30)**: Debugging JWT validation. 3 errors in `auth.ts:92`  still unresolved.  
-> - **Chapter 3 (14:0017:38)**: Added tests for the refresh token flow.  
+> "Friday session (6h 23min, 09:15-17:38):  
+> - **Chapter 1 (09:15-11:00)**: Built auth middleware in `packages/api/src/middleware/auth.ts`. Modified 8 files.  
+> - **Chapter 2 (11:00-12:30)**: Debugging JWT validation. 3 errors in `auth.ts:92` - still unresolved.  
+> - **Chapter 3 (14:00-17:38)**: Added tests for the refresh token flow.  
 >  
 > **Unresolved:** JWT expiry validation fails for tokens within 30s of expiry.  
 > Relevant file: `packages/api/src/middleware/auth.ts:92`"
@@ -51,7 +51,7 @@ at UserList.tsx:45
 
 ---
 
-## Demo 3  "Why Did We Choose This?"
+## Demo 3 - "Why Did We Choose This?"
 
 **The scenario:** A new team member (or you, 3 months later) asks why PostgreSQL instead of MongoDB.
 
@@ -86,13 +86,13 @@ at UserList.tsx:45
 
 **Result:**
 > Created 7 wiki pages:
-> - `AuthMiddleware.md`  entity with linked sessions and error history
-> - `jwt-validation-error.md`  error page with proposed resolution
-> - `PostgreSQL.md`  entity with your architecture decision
-> - `RefreshToken.md`  concept page with implementation pattern
-> - `use-zod-for-validation.md`  pattern page
-> - `packages-api.md`  entity with file hotspot data
-> - `test-refresh-token-flow.md`  pattern from test activity
+> - `AuthMiddleware.md` - entity with linked sessions and error history
+> - `jwt-validation-error.md` - error page with proposed resolution
+> - `PostgreSQL.md` - entity with your architecture decision
+> - `RefreshToken.md` - concept page with implementation pattern
+> - `use-zod-for-validation.md` - pattern page
+> - `packages-api.md` - entity with file hotspot data
+> - `test-refresh-token-flow.md` - pattern from test activity
 
 Now when someone asks:
 ```
@@ -114,12 +114,12 @@ The answer draws from a week's worth of documented knowledge - not just this con
 ```
 
 **Response:**
-> "**Week of Jul 2127** DIP Score: **72/100**  from 68  
+> "**Week of Jul 21-27** DIP Score: **72/100** up from 68  
 >  
-> **Velocity**: 85 ( 8)  23 commits, 1,240 LOC/day average  
-> **Quality**: 71 ( 3)  Error rate down 15%, avg time-to-fix 12min  
-> **Efficiency**: 68 ( 5)  ATI ratio 3.2 tools/prompt  
-> **Learning**: 65 ( 2)  3 new patterns this week vs 5 last week  
+> **Velocity**: 85 (up 8) - 23 commits, 1,240 LOC/day average  
+> **Quality**: 71 (up 3) - Error rate down 15%, avg time-to-fix 12min  
+> **Efficiency**: 68 (up 5) - ATI ratio 3.2 tools/prompt  
+> **Learning**: 65 (down 2) - 3 new patterns this week vs 5 last week  
 >  
 > **Recommendation:** Your error rate improved but Learning dipped. Schedule time for one new topic (e.g., TypeScript advanced types - your confidence is at 38% there)."
 
@@ -141,7 +141,7 @@ Copilot calls `axm_wiki_query`, `axm_find_similar_errors`, and `axm_recall_activ
 > "**Auth service context:**
 > - Last modified: July 12 - added refresh token rotation
 > - 3 historical errors, all resolved: JWT expiry edge case (fixed Jan 15), CORS headers missing (fixed Feb 3), token blacklist race condition (fixed Mar 28)
-> - Wiki page: `AuthMiddleware.md`  shows the 30s expiry window is a known edge case
+> - Wiki page: `AuthMiddleware.md` - shows the 30s expiry window is a known edge case
 > - Relevant decision: 'Chose stateless JWT over sessions for horizontal scaling' (logged Dec 14)
 >
 > **Likely culprit:** The 30s JWT expiry window issue - see the January 15 fix."
@@ -156,11 +156,11 @@ For the animated `demo.gif` in the README:
 
 | Frame | Duration | Content |
 |-------|----------|---------|
-| 1 | 05s | Copilot Chat open. User types: "Have I seen this error before? TypeError: Cannot read X of undefined" |
-| 2 | 58s | Loading indicator + tool call shown: `axm_find_similar_errors` |
-| 3 | 816s | Results appear: past error with timestamp (Jan 15), file path, and fix summary |
+| 1 | 0-5s | Copilot Chat open. User types: "Have I seen this error before? TypeError: Cannot read X of undefined" |
+| 2 | 5-8s | Loading indicator + tool call shown: `axm_find_similar_errors` |
+| 3 | 8-16s | Results appear: past error with timestamp (Jan 15), file path, and fix summary |
 | 4 | 1622s | User clicks Axyome XM icon - Time Machine tab - colored chapter bar appears |
 | 5 | 2228s | User clicks a DEBUGGING chapter - event list expands: files, errors, commands |
-| 6 | 2832s | Final screen: DIP score panel showing 72/100 with 4 pillar bars |
+| 6 | 28-32s | Final screen: DIP score panel showing 72/100 with 4 pillar bars |
 
 **Caption text:** `"45 MCP tools. Zero cloud. Your entire dev history at your fingertips."`

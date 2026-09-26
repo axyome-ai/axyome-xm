@@ -53,7 +53,7 @@ Three months later:
 Got pulled into a meeting or context-switched for a day? Open **Time Machine** tab:
 
 1. Select today's date
-2. See your session broken into chapters: ` CODING`, ` DEBUGGING`, ` BUILD_DEPLOY`, ` TEST_CYCLE`
+2. See your session broken into chapters: `CODING`, `DEBUGGING`, `BUILD_DEPLOY`, `TEST_CYCLE`
 3. Click any chapter to see every file, error, and command
 
 Chapters are auto-detected from activity gaps (15+ minute pauses = new chapter).
@@ -86,7 +86,7 @@ Every Monday:
 @copilot How was my developer intelligence score last week compared to the week before?
 ```
 
-`axm_get_developer_intelligence` returns your DIP score across **Velocity**, **Quality**, **Efficiency**, and **Learning**  with specific, actionable recommendations.
+`axm_get_developer_intelligence` returns your DIP score across **Velocity**, **Quality**, **Efficiency**, and **Learning** - with specific, actionable recommendations.
 
 ---
 

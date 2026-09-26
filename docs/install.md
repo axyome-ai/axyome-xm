@@ -44,7 +44,7 @@ Install:
 code --install-extension axyome-xm-<version>-<platform>.vsix --force
 ```
 
->  **Important:** Install the VSIX that matches your OS. Installing the wrong platform VSIX will cause the native SQLite addon to fail.
+> **Important:** Install the VSIX that matches your OS. Installing the wrong platform VSIX will cause the native SQLite addon to fail.
 
 ---
 
@@ -79,7 +79,7 @@ All extension data is stored locally. Nothing is sent anywhere.
 | Linux | `~/.config/Code/User/globalStorage/axyome.axyome-xm/` |
 | macOS | `~/Library/Application Support/Code/User/globalStorage/axyome.axyome-xm/` |
 
-The primary database is `memory-agent-events.db`  a SQLite file you can back up, inspect, or delete at any time.
+The primary database is `memory-agent-events.db` - a SQLite file you can back up, inspect, or delete at any time.
 
 ---
 

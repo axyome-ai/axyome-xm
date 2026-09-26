@@ -449,7 +449,7 @@ Chunk large documents for better embedding precision.
 Generate semantic embeddings for items that don't have them yet.
 
 ### `axm_get_learned_patterns`
-Patterns learned from past sessions (errorfix sequences, refactoring habits).
+Patterns learned from past sessions (error->fix sequences, refactoring habits).
 
 ### `axm_get_pattern_suggestions`
 Get fix suggestions based on learned error-resolution patterns.

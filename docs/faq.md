@@ -14,10 +14,10 @@ Axyome XM captures development events from VS Code:
 
 | Data | Captured | Notes |
 |------|----------|-------|
-| File paths (not contents) |  | Language, LOC delta |
-| Error messages |  | File, line, severity |
-| Git commits |  | Message, branch, files changed |
-| Copilot tool invocations |  | Tool name, for analytics |
+| File paths (not contents) | Yes | Language, LOC delta |
+| Error messages | Yes | File, line, severity |
+| Git commits | Yes | Message, branch, files changed |
+| Copilot tool invocations | Yes | Tool name, for analytics |
 | Terminal commands | opt-in | With automatic secret redaction |
 
 It does **not** capture: file contents, clipboard, keystrokes, passwords, or any data outside VS Code's event system.
@@ -44,7 +44,7 @@ Event capture adds less than 2ms latency to file save operations.
 
 ### How do I delete all my data?
 
-**Via Command Palette:** `Ctrl+Shift+P`  **Axyome XM: Clear Captured Events**
+**Via Command Palette:** `Ctrl+Shift+P` -> **Axyome XM: Clear Captured Events**
 
 **Manually:** Delete the `memory-agent-events.db` file at the path above. The extension creates a fresh database on next start.
 
@@ -52,7 +52,7 @@ Event capture adds less than 2ms latency to file save operations.
 
 ### Can I back up my data?
 
-Yes. `Ctrl+Shift+P`  **Axyome XM: Backup Database**
+Yes. `Ctrl+Shift+P` -> **Axyome XM: Backup Database**
 
 The extension also maintains 5 rolling automatic backups triggered on version changes.
 
@@ -69,7 +69,7 @@ No. In VS Code 1.100+, Axyome XM automatically registers its MCP server. The 45 
 ### Which AI assistants support `axm_*` tools?
 
 Any MCP-compatible assistant:
-- **GitHub Copilot** (VS Code 1.100+)  no config needed
+- **GitHub Copilot** (VS Code 1.100+) - no config needed
 - **Claude** (via MCP client configuration)
 - Any other tool supporting the [Model Context Protocol](https://modelcontextprotocol.io)
 
@@ -80,7 +80,7 @@ Any MCP-compatible assistant:
 1. Ensure VS Code is **1.100 or newer** (`Help - About`)
 2. Do a **full restart** of VS Code (close and reopen - not just `Reload Window`)
 3. Check the extension is enabled: Extensions panel - search "Axyome XM"  ensure it's not disabled
-4. Run `Ctrl+Shift+P`  **Axyome XM: Show Statistics** to verify the server is running
+4. Run `Ctrl+Shift+P` -> **Axyome XM: Show Statistics** to verify the server is running
 5. If the server shows an error, check the Output panel: `View - Output - Axyome XM`
 
 ---
@@ -121,11 +121,11 @@ Yes, entirely. All features - capture, search, recall, MCP tools, semantic embed
 
 The XM Wiki is a personal, searchable knowledge base auto-generated from your coding sessions. It stores:
 
-- **Entities**  Services, files, tools, packages you interact with
-- **Errors**  Documented bugs with proposed resolutions
-- **Patterns**  Recurring code patterns and architectural decisions
-- **Decisions**  Architecture decision records (ADRs)
-- **Concepts**  Cross-session synthesized knowledge
+- **Entities** - Services, files, tools, packages you interact with
+- **Errors** - Documented bugs with proposed resolutions
+- **Patterns** - Recurring code patterns and architectural decisions
+- **Decisions** - Architecture decision records (ADRs)
+- **Concepts** - Cross-session synthesized knowledge
 
 Build it by running: `@copilot Ingest this session into the wiki.`
 
@@ -169,7 +169,7 @@ Ask: `@copilot How am I doing this week?`
 
 ### What is the ATI Score?
 
-**AI Tool Index**  measures how effectively you use AI assistance. It's the ratio of tools-per-prompt: higher means you're getting more value from each AI interaction.
+**AI Tool Index** - measures how effectively you use AI assistance. It's the ratio of tools-per-prompt: higher means you're getting more value from each AI interaction.
 
 Ask: `@copilot Show my session analytics and ATI score.`
 

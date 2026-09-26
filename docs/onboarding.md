@@ -68,7 +68,7 @@ Terminal capture is opt-in for privacy. To enable:
 2. Search for `axyome terminal`
 3. Enable **Axyome XM: Terminal Capture**
 
-Terminal commands are stored locally with **automatic secret redaction**  values matching patterns like `*_TOKEN`, `*_KEY`, `*_PASSWORD`, AWS credentials, and Bearer tokens are replaced with `[REDACTED]` before storage.
+Terminal commands are stored locally with **automatic secret redaction** - values matching patterns like `*_TOKEN`, `*_KEY`, `*_PASSWORD`, AWS credentials, and Bearer tokens are replaced with `[REDACTED]` before storage.
 
 ---
 
@@ -109,15 +109,15 @@ Axyome XM runs silently in the background:
 
 By the end of your first week, Axyome XM will have:
 
--  Captured thousands of development events
--  Built semantic embeddings for fast recall
--  Started your personal XM Wiki
--  Calculated your first Developer Intelligence score
--  Identified your most-used file patterns
+- Captured thousands of development events
+- Built semantic embeddings for fast recall
+- Started your personal XM Wiki
+- Calculated your first Developer Intelligence score
+- Identified your most-used file patterns
 
 Ask Copilot every Monday:
 ```
 Summarize my development week and give me my DIP score.
 ```
 
- [Power-user tips for getting the most out of Axyome XM](tips.md)
+-> [Power-user tips for getting the most out of Axyome XM](tips.md)
