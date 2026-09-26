@@ -50,13 +50,15 @@ Three months later:
 
 ## Tip 4 - Use the Time Machine After Interruptions
 
-Got pulled into a meeting or context-switched for a day? Open **Time Machine** tab:
+Got pulled into a meeting or context-switched for a day? Open **Replay > Time Machine** in the dashboard:
 
-1. Select today's date
-2. See your session broken into chapters: `CODING`, `DEBUGGING`, `BUILD_DEPLOY`, `TEST_CYCLE`
+1. Select a date and click **Load**
+2. See your day broken into chapters: `CODING`, `DEBUGGING`, `BUILD_DEPLOY`, `TEST_CYCLE`, and more
 3. Click any chapter to see every file, error, and command
 
 Chapters are auto-detected from activity gaps (15+ minute pauses = new chapter).
+
+![Replay - Time Machine chapters](images/dashboard-replay-chapters.png)
 
 ---
 
@@ -116,7 +118,8 @@ Before submitting a PR:
 
 ## Tip 9 - Keyboard Shortcut for Dashboard
 
-Add a keybinding for instant dashboard access (`keybindings.json`):
+The dashboard already has a shortcut: `Ctrl+Shift+Alt+M` (`Cmd+Shift+Alt+M` on
+macOS). To use a different key, add a binding in `keybindings.json`:
 
 ```json
 {
@@ -147,7 +150,9 @@ Check your next achievement:
 @copilot What achievements am I closest to unlocking?
 ```
 
-Use it as a micro-goal system. If you're close to **Flow State** (3-hour uninterrupted session), block your calendar. If you're close to **Bug Slayer** (10 errors resolved), tackle the backlog.
+Use it as a micro-goal system. If you're close to **Flow State** (2+ hours of continuous coding), block your calendar. If you're close to **Decision Logger** (5 decisions logged in a week), write down the choices you've been making.
+
+All 12 badges are listed under **System > Badges** in the dashboard and in the [FAQ](faq.md#what-are-the-achievement-badges).
 
 ---
 

@@ -2,7 +2,7 @@
 
 Thank you for your interest in Axyome XM!
 
-Axyome XM is developed in the private [bx-iag](https://github.com/BI-Expertise/bx-iag) repository. This public repo is the companion documentation hub and community issue tracker.
+Axyome XM is developed in a private repository. This public repo is the companion documentation hub and community issue tracker.
 
 ---
 
@@ -25,8 +25,7 @@ Describe the use case and pain point clearly. The more concrete the scenario, th
 
 ### Ask a Question
 
--> [Open a question](https://github.com/BI-Expertise/axyome-xm/issues/new?template=question.yml)  
--> [GitHub Discussions](https://github.com/BI-Expertise/axyome-xm/discussions)
+-> [Open a question](https://github.com/BI-Expertise/axyome-xm/issues/new?template=question.yml)
 
 ### Improve Documentation
 
@@ -69,4 +68,4 @@ Be respectful. Constructive criticism is welcome; personal attacks are not.
 
 ---
 
-*Questions about contributing? Open a [Discussion](https://github.com/BI-Expertise/axyome-xm/discussions).*
+*Questions about contributing? Open a [question](https://github.com/BI-Expertise/axyome-xm/issues/new?template=question.yml).*

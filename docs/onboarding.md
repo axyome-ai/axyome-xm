@@ -6,33 +6,40 @@ Axyome XM captures development context automatically from the moment it's instal
 
 ## Step 1 - Open the Dashboard (30 seconds)
 
-Click the **Axyome XM icon** in the Activity Bar (left sidebar - it looks like a brain).
+Click the **Axyome XM icon** in the Activity Bar (left sidebar - a house inside a
+circle), or press `Ctrl+Shift+Alt+M`.
 
-You'll see the Dashboard with tabs:
+You'll see the Dashboard with 8 tabs:
 
 | Tab | What's inside |
 |-----|--------------|
-| **Activity** | Files saved, git commits, errors, terminal commands |
-| **Intel** | Developer Intelligence Platform score and recommendations |
-| **Time Machine** | Replay past sessions chapter by chapter |
-| **Wiki** | Your auto-generated knowledge base |
-| **Analytics** | ATI score, productivity heatmap, tool usage |
-| **Achievements** | 12 unlockable developer badges |
+| **Home** | Authorship estimate, velocity, quality, builds, commits, lines of code |
+| **Activity** | Coding time, history, heatmap, live feed, unified timeline |
+| **AI** | Copilot vs Claude Code: sessions, models, time, value, ATI |
+| **Quality** | Quality score, errors, hotspots, patterns, DORA metrics |
+| **Intel** | Developer Intelligence score, progress, actions, knowledge |
+| **Wellness** | Wellness score, flow, trends, recommendations |
+| **Replay** | Time Machine, Memory Map, XM Wiki, usage |
+| **System** | Pipeline status, tables, sources, badges, account, settings |
+
+-> [Dashboard tour with screenshots](dashboard.md)
 
 ---
 
-## Step 2 - Complete the Onboarding Missions (3 minutes)
+## Step 2 - Take the Onboarding Tour (3 minutes)
 
-Click the **Onboarding** tab. You'll see 4 guided missions:
+Onboarding runs from the Command Palette (`Ctrl+Shift+P`), not from a dashboard tab.
 
-| Mission | What you learn |
-|---------|---------------|
-| **First Memory** | Let Axyome XM capture your first event (just save any file) |
-| **First Recall** | Ask Copilot "What did I work on today?" |
-| **Log a Decision** | Tell Copilot to remember an architectural choice |
-| **First Achievement** | Unlock your first badge automatically |
+**Axyome: Start Onboarding** opens a 3-step quick tour:
 
-Complete all 4 to finish onboarding.
+| Step | What you learn |
+|------|---------------|
+| **Your First Memory Query** | Ask Copilot about your recent work |
+| **Get a Session Summary** | Summarize what you worked on |
+| **Remember a Decision** | Tell Copilot to remember an architectural choice |
+
+**Axyome: Show Onboarding Dashboard** opens the full tour: 17 steps in 4
+tracks (Essentials, Discovery, Intelligence, Power User).
 
 ---
 
@@ -99,7 +106,7 @@ Axyome XM runs silently in the background:
 | Git commit | Message, branch, files changed |
 | Error detected | File, line, error text, severity |
 | Copilot tool use | Tool name, parameters (for analytics) |
-| Session start | Auto-summary of last 24h work |
+| Session start | A session-start note, plus the last 8 hours of context loaded into memory |
 | Session end | Session duration, files touched, errors |
 | Terminal command (opt-in) | Command text with secret redaction |
 
@@ -110,8 +117,7 @@ Axyome XM runs silently in the background:
 By the end of your first week, Axyome XM will have:
 
 - Captured thousands of development events
-- Built semantic embeddings for fast recall
-- Started your personal XM Wiki
+- Started your personal XM Wiki (once you ingest a session)
 - Calculated your first Developer Intelligence score
 - Identified your most-used file patterns
 

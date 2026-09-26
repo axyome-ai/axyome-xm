@@ -43,4 +43,4 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-*For the full development changelog, see the [bx-iag repository](https://github.com/BI-Expertise/bx-iag).*
+*The full development changelog is kept in Axyome's private development repository.*

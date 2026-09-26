@@ -4,44 +4,34 @@
 
 | Requirement | Minimum | Notes |
 |-------------|---------|-------|
-| VS Code | 1.100.0+ | Required for MCP auto-configuration |
+| VS Code | 1.100.0+ | Minimum declared by the extension (`engines.vscode`) |
 | OS Architecture | 64-bit | Windows, Linux, or macOS |
-| Disk space | ~40 MB | For VSIX + SQLite database |
+| Disk space | ~31-45 MB + database | VSIX size depends on platform; the database grows with use |
 | GitHub Copilot | Any version | Required to use `axm_*` MCP tools |
 
 ---
 
-## Option 1 - VS Code Marketplace (Recommended)
+## Availability
 
-1. Open VS Code
-2. Press `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (macOS)
-3. Search for **Axyome XM**
-4. Click **Install**
-5. VS Code will prompt to reload - click **Reload**
+Axyome XM is **not listed on the VS Code Marketplace** or Open VSX at the time
+of writing (checked 2026-09-26), and this repository has no GitHub Releases yet.
+Install from a VSIX file provided by Axyome.
 
 ---
 
-## Option 2 - Command Line
+## Install from a VSIX File
 
-```bash
-code --install-extension axyome.axyome-xm
-```
-
----
-
-## Option 3 - VSIX File (Offline / Beta Versions)
-
-Download the platform-specific VSIX from [Releases](https://github.com/BI-Expertise/axyome-xm/releases):
+Use the VSIX built for your platform:
 
 | Platform | File |
 |----------|------|
-| Windows | `axyome-xm-<version>-win32-x64.vsix` |
-| Linux | `axyome-xm-<version>-linux-x64.vsix` |
-| macOS | `axyome-xm-<version>-darwin-x64.vsix` |
+| Windows | `axyome-xm-win32-x64-<version>.vsix` |
+| Linux | `axyome-xm-linux-x64-<version>.vsix` |
+| macOS | `axyome-xm-darwin-x64-<version>.vsix` |
 
 Install:
 ```bash
-code --install-extension axyome-xm-<version>-<platform>.vsix --force
+code --install-extension axyome-xm-<platform>-<version>.vsix --force
 ```
 
 > **Important:** Install the VSIX that matches your OS. Installing the wrong platform VSIX will cause the native SQLite addon to fail.
@@ -64,8 +54,11 @@ After installing, verify the extension and MCP server are running:
 Copilot will call `axm_health` and report the status.
 
 **Method 3 - Activity Bar:**
-- Look for the Axyome XM icon in the left sidebar (brain icon)
+- Look for the Axyome XM icon in the left sidebar (a house inside a circle)
 - Click it - the Dashboard should open
+
+**Method 4 - Keyboard:** `Ctrl+Shift+Alt+M` (`Cmd+Shift+Alt+M` on macOS) opens
+the dashboard.
 
 ---
 
@@ -79,7 +72,9 @@ All extension data is stored locally. Nothing is sent anywhere.
 | Linux | `~/.config/Code/User/globalStorage/axyome.axyome-xm/` |
 | macOS | `~/Library/Application Support/Code/User/globalStorage/axyome.axyome-xm/` |
 
-The primary database is `memory-agent-events.db` - a SQLite file you can back up, inspect, or delete at any time.
+The primary database is `axyome-xm.db` - a SQLite file you can back up, inspect,
+or delete at any time. Installs that still have the older `memory-agent-events.db`
+are renamed to `axyome-xm.db` automatically on startup.
 
 ---
 
@@ -96,7 +91,7 @@ The primary database is `memory-agent-events.db` - a SQLite file you can back up
 
 ### Full Restart vs Reload
 
-If Copilot tools don't appear after install, use a **full restart**  not just `Ctrl+Shift+P - Reload Window`:
+If Copilot tools don't appear after install, use a **full restart** - not just `Ctrl+Shift+P - Reload Window`:
 
 - Windows/Linux: Close VS Code, reopen
 - macOS: `Cmd+Q`, reopen
@@ -107,10 +102,11 @@ This ensures the MCP server process starts fresh.
 
 ## Updating
 
-Axyome XM updates automatically via the VS Code marketplace. To update manually:
+Because Axyome XM is not on the Marketplace yet, VS Code does not update it
+automatically. Install the newer VSIX over the current one:
 
 ```bash
-code --install-extension axyome.axyome-xm --force
+code --install-extension axyome-xm-<platform>-<version>.vsix --force
 ```
 
 After updating, do a full restart of VS Code.
