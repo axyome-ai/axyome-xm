@@ -18,8 +18,10 @@ every tab. Most tabs cover both GitHub Copilot and Claude Code.
 | **Replay** | Time Machine, Map, Wiki, Use |
 | **System** | Overview, Queues, Tables, Sources, Badges, Account, Settings |
 
-Screenshots below were captured from Axyome XM 0.2.824 on 2026-09-26 with real
-activity data. Panels that list file paths or personal notes were cropped out.
+Screenshots below were captured from Axyome XM 0.2.826 on 2026-09-27 with real
+activity data, at a normal sidebar width. The title bar shows the running version
+(VS Code capitalises view titles, so it reads "V0.2.826"). Panels that list file
+paths or personal notes were cropped out.
 
 ---
 
@@ -43,8 +45,10 @@ history, a heatmap, a live feed and a unified timeline.
 
 ## AI
 
-Side-by-side comparison of GitHub Copilot and Claude Code: sessions, tool
-calls, tokens, top tools, authorship and the AI Tool Index (ATI).
+Authorship, AI agent tool success, AI-correlated code quality and the AI Tool
+Index (ATI). When both GitHub Copilot and Claude Code have activity in the
+selected range, a side-by-side comparison of the two assistants is shown too.
+The other sub-tabs cover sessions, models, time and value.
 
 ![AI tab - Overview](images/dashboard-ai.png)
 
@@ -61,8 +65,8 @@ code quality indicators.
 
 ## Intel
 
-The Developer Intelligence score and its four pillars: Velocity, Reliability,
-Efficiency and Learning. Each pillar says which inputs were captured.
+The Developer Intelligence score, your level, and the four pillars: Velocity,
+Reliability, Efficiency and Learning, each with its trend.
 
 ![Intel tab - Score](images/dashboard-intel.png)
 
