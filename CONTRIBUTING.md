@@ -2,33 +2,32 @@
 
 Thank you for your interest in Axyome XM!
 
-Axyome XM is developed in the private [bx-iag](https://github.com/BI-Expertise/bx-iag) repository. This public repo is the companion documentation hub and community issue tracker.
+Axyome XM is developed in a private repository. This public repo is the companion documentation hub and community issue tracker.
 
 ---
 
 ## How to Contribute
 
-###  Report a Bug
+### Report a Bug
 
- [Open a bug report](https://github.com/BI-Expertise/axyome-xm/issues/new?template=bug_report.yml)
+-> [Open a bug report](https://github.com/BI-Expertise/axyome-xm/issues/new?template=bug_report.yml)
 
 **Before filing:**
 - Search [existing issues](https://github.com/BI-Expertise/axyome-xm/issues) for duplicates
-- Try `Ctrl+Shift+P`  **Axyome XM: Show Statistics** to confirm the extension is running
+- Try `Ctrl+Shift+P` -> **Axyome XM: Show Statistics** to confirm the extension is running
 - Include your platform (Windows/Linux/macOS), VS Code version, and extension version
 
-###  Request a Feature
+### Request a Feature
 
- [Open a feature request](https://github.com/BI-Expertise/axyome-xm/issues/new?template=feature_request.yml)
+-> [Open a feature request](https://github.com/BI-Expertise/axyome-xm/issues/new?template=feature_request.yml)
 
 Describe the use case and pain point clearly. The more concrete the scenario, the more actionable the request.
 
-###  Ask a Question
+### Ask a Question
 
- [Open a question](https://github.com/BI-Expertise/axyome-xm/issues/new?template=question.yml)  
- [GitHub Discussions](https://github.com/BI-Expertise/axyome-xm/discussions)
+-> [Open a question](https://github.com/BI-Expertise/axyome-xm/issues/new?template=question.yml)
 
-###  Improve Documentation
+### Improve Documentation
 
 Documentation PRs are welcome! All docs live in the `docs/` folder.
 
@@ -69,4 +68,4 @@ Be respectful. Constructive criticism is welcome; personal attacks are not.
 
 ---
 
-*Questions about contributing? Open a [Discussion](https://github.com/BI-Expertise/axyome-xm/discussions).*
+*Questions about contributing? Open a [question](https://github.com/BI-Expertise/axyome-xm/issues/new?template=question.yml).*

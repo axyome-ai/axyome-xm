@@ -36,7 +36,7 @@ Axyome XM automatically redacts values matching:
 Redacted values are replaced with `[REDACTED]` **before** storage. The original value is never written to disk.
 
 To enable terminal capture:
-1. `Ctrl+,`  Search `axyome terminal`
+1. `Ctrl+,` -> Search `axyome terminal`
 2. Enable **Axyome XM: Terminal Capture**
 
 ---
@@ -67,7 +67,7 @@ The Axyome XM extension and its embedded MCP server make **zero outbound network
 
 The only network activity is:
 - VS Code Marketplace: checking for extension updates (standard VS Code behavior, not initiated by Axyome XM)
-- Semantic embeddings: computed locally using bundled WASM (`@huggingface/transformers` + bge-small-en-v1.5)  no API calls
+- Semantic embeddings: computed locally using bundled WASM (`@huggingface/transformers` + bge-small-en-v1.5) - no API calls
 
 You can verify this with a network monitor: the process `mcp-server-win-x64.exe` (or equivalent) makes no connections.
 
@@ -113,7 +113,7 @@ The extension bundles the following libraries. None make network requests:
 ## MCP Server Security
 
 The MCP server binary:
-- Runs as a **local stdio process**  no open network ports
+- Runs as a **local stdio process** - no open network ports
 - Communicates only through VS Code's stdio pipe
 - Reads/writes only within the extension's globalStorage directory
 - Is embedded in the VSIX and **hash-validated** during build to prevent tampering

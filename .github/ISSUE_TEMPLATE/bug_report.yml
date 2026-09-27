@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Before filing, try: `Ctrl+Shift+P`  **Axyome XM: Show Statistics** to confirm the extension is running.
+        Before filing, try: `Ctrl+Shift+P` -> **Axyome XM: Show Statistics** to confirm the extension is running.
         
         Search [existing issues](https://github.com/BI-Expertise/axyome-xm/issues) before opening a new one.
 

@@ -1,6 +1,11 @@
 # MCP Tool Reference
 
-Axyome XM provides **45 MCP tools** (`axm_*`) automatically available in GitHub Copilot (VS Code 1.100+). No configuration required.
+Axyome XM provides **54 MCP tools** (`axm_*`). They become available in GitHub
+Copilot (VS Code 1.100+) through the `.vscode/mcp.json` entry the extension writes
+into your workspace (see the [FAQ](faq.md#do-i-need-to-configure-anything-for-copilot)).
+
+Ask Copilot to run `axm_list_available_tools` for the live list with
+descriptions and stability tiers.
 
 > **How to use**: Just ask Copilot naturally. Examples are shown for each tool.
 
@@ -9,20 +14,23 @@ Axyome XM provides **45 MCP tools** (`axm_*`) automatically available in GitHub 
 ## Memory & Recall
 
 ### `axm_recall_activity`
-Search past work: files edited, errors encountered, terminal commands, git commits.
+Search past work: files edited, errors encountered, terminal commands, chat and context events.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `query` | string | What to search for |
 | `hoursAgo` | number | Look back window (default: 24) |
-| `eventType` | string | Filter: `file`, `terminal`, `diagnostic`, `git` |
-| `limit` | number | Max results (default: 20) |
+| `eventType` | string | Filter: `all` (default), `context`, `chat`, `file`, `terminal`, `diagnostic` |
+| `limit` | number | Max results (default: 10, max 100) |
+| `filePattern` | string | Only events for matching files |
+| `hasErrors` | boolean | Only events with errors |
+| `includeCode` / `includeTerminal` | boolean | Include code / terminal detail (default: false) |
 
 **Example prompts:**
 ```
 What files did I edit yesterday?
 What errors did I have in the last 2 hours?
-What git commits did I make this week?
+What terminal commands did I run this week?
 ```
 
 ---
@@ -54,9 +62,9 @@ Search past Copilot conversations using hybrid semantic + keyword search.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `query` | string | What to search for |
-| `hoursAgo` | number | Time window (default: 30 days) |
-| `limit` | number | Max results |
-| `mode` | string | `hybrid`, `semantic`, or `keyword` |
+| `hoursAgo` | number | Time window (default: 720 = 30 days) |
+| `limit` | number | Max results (default: 10) |
+| `mode` | string | `keyword` (default), `hybrid`, or `semantic` |
 
 **Example prompts:**
 ```
@@ -449,7 +457,7 @@ Chunk large documents for better embedding precision.
 Generate semantic embeddings for items that don't have them yet.
 
 ### `axm_get_learned_patterns`
-Patterns learned from past sessions (errorfix sequences, refactoring habits).
+Patterns learned from past sessions (error->fix sequences, refactoring habits).
 
 ### `axm_get_pattern_suggestions`
 Get fix suggestions based on learned error-resolution patterns.
@@ -462,19 +470,78 @@ Compact context snapshot for the current file - errors, decisions, style pattern
 
 ---
 
+## Coding Time & Projects
+
+### `axm_get_coding_time`
+Measured active coding time (not wall-clock estimates), broken down by language and file.
+
+### `axm_get_coding_goals`
+Coding goal progress and streak, with wellness-aware adjustment.
+
+### `axm_get_coding_report`
+Weekly or monthly report combining coding time, wellness, flow sessions and goal completion.
+
+### `axm_get_project_stats`
+Time distribution across workspace folders, language mix per project, activity recency and daily trends.
+
+### `axm_get_ai_time`
+Measured time AI agents spent working: which agents were used and what they did.
+
+---
+
+## More Wiki Tools
+
+### `axm_wiki_lint`
+Structural checks over all wiki pages: missing frontmatter, orphan pages, broken or missing wikilinks, stale or low-confidence pages.
+
+### `axm_wiki_graph`
+The wiki knowledge graph as nodes and edges from `[[wikilinks]]` (JSON, or DOT for Graphviz).
+
+### `axm_wiki_dashboard`
+Wiki health summary: pages by type and lifecycle, confidence, recent updates, lint summary and last ingest date.
+
+---
+
+## More Analytics, Feedback & System Tools
+
+### `axm_get_ati`
+AI Tool Index metrics: tools-per-prompt ratio and how efficiently AI assistance is used.
+
+### `axm_rate_answer`
+Rate the quality of an answer.
+
+### `axm_search_observations`
+Search observations and events you recorded with `axm_observe` (milestones, accomplishments).
+
+### `axm_get_tasks`
+Task management data: tasks and to-dos.
+
+### `axm_get_training_history`
+History of self-training sessions and learning progress.
+
+### `axm_embedding_stats`
+Statistics about stored semantic embeddings.
+
+### `axm_list_available_tools`
+List every available `axm_*` tool with its description, category and stability tier.
+
+---
+
 ## Tool Count by Category
 
 | Category | Count |
 |----------|-------|
 | Memory & Recall | 4 |
 | Error Intelligence | 4 |
-| Decisions & Wiki | 7 |
+| Decisions & Wiki | 10 |
 | Developer Intelligence | 5 |
 | Search | 3 |
-| Feedback & Observations | 2 |
-| Analytics | 4 |
+| Feedback & Observations | 3 |
+| Analytics | 5 |
 | Achievements | 1 |
-| System | 3 |
-| Advanced | 7 |
-| Sessions & Training | 5 |
-| **Total** | **45** |
+| System | 5 |
+| Advanced | 6 |
+| Coding Time & Projects | 5 |
+| Tasks & Training | 2 |
+| Session Rating | 1 |
+| **Total** | **54** |
