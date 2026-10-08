@@ -22,6 +22,12 @@ Your AI assistant forgets everything between conversations. **Axyome XM remember
 
 ## Demo
 
+<a href="https://www.youtube.com/watch?v=q1nN0BN5Jbo">
+  <img src="docs/images/demo-video.png" alt="Watch the 2-minute Axyome XM product demo on YouTube" width="720" />
+</a>
+
+▶ **[Watch the 2-minute product demo](https://www.youtube.com/watch?v=q1nN0BN5Jbo)**: live product, real data, recorded in VS Code.
+
 > *"What was that async error I fixed last week?"*
 
 Within seconds, your AI assistant retrieves the exact file, error message, and the fix you applied - without you searching through logs or git blame.
