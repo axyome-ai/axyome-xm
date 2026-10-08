@@ -98,11 +98,11 @@ After installing, Axyome XM activates automatically:
 
 ## Platform Support
 
-| Platform | VSIX Size | Notes |
-|----------|-----------|-------|
-| Windows (win32-x64) | ~31 MB | Native better-sqlite3 |
-| Linux (linux-x64) | ~45 MB | Native better-sqlite3 |
-| macOS (darwin-x64) | ~36 MB | Native better-sqlite3 |
+| Platform | VSIX Size |
+|----------|-----------|
+| Windows (win32-x64) | ~31 MB |
+| Linux (linux-x64) | ~45 MB |
+| macOS (darwin-x64) | ~36 MB |
 
 Sizes measured on the 0.2.824 build.
 
@@ -138,7 +138,7 @@ axm_get_developer_intelligence - Full DIP score and recommendations
 
 - Local-first: data is stored at `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\`
 - No third-party analytics. Cloud sync only on Team & Enterprise plans.
-- Terminal capture is **opt-in** with automatic secret redaction
+- Terminal, chat and Claude Code capture are **on by default**, with automatic secret redaction for terminal commands. Turn any source off in settings.
 - Clear all data anytime: **Axyome XM: Clear Captured Events**
 
 -> [Full privacy policy](docs/privacy.md)

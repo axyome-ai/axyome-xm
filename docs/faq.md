@@ -4,7 +4,7 @@
 
 ### Does Axyome XM send any data to the cloud?
 
-**No.** Axyome XM is 100% local-first. No data ever leaves your machine. There are no network requests, no telemetry, and no external servers involved - the extension and its embedded MCP server are entirely offline.
+Only in specific cases. Axyome XM is local-first: captured activity is persisted locally on your machine. The extension contacts the network only to download the semantic-search model once (from Hugging Face), to talk to `api.axyome.ai` while you are signed in (sign-in, licence check, device registration), and, on Team & Enterprise plans, to sync captured events and coding goals. The embedded MCP server makes no network calls, and there are no third-party analytics. See [Privacy](privacy.md#network-activity).
 
 ---
 
@@ -14,21 +14,21 @@ Axyome XM captures development events from VS Code:
 
 | Data | Captured | Notes |
 |------|----------|-------|
-| File paths (not contents) | Yes | Language, LOC delta |
+| File paths and file events | Yes | Language, LOC delta |
 | Error messages | Yes | File, line, severity |
 | Git commits | Yes | Message, branch, files changed |
-| Copilot tool invocations | Yes | Tool name, for analytics |
-| Terminal commands | opt-in | With automatic secret redaction |
+| AI chat sessions (Copilot) | Yes | Prompts and replies |
+| Claude Code prompts and tool calls | Yes | Tool arguments (up to 8 KB) and a result preview (up to 512 bytes) |
+| Terminal commands | Yes (on by default) | With automatic secret redaction |
 
-It does **not** capture: file contents, clipboard, keystrokes, passwords, or any data outside VS Code's event system.
+Capture does not read file contents from disk, the clipboard or keystrokes (keystrokes are only counted). File excerpts are stored when an AI assistant's tool call or chat reply contains them. Every source can be turned off in settings; see [Privacy](privacy.md).
 
 ---
 
 ### Will it slow down VS Code?
 
-Axyome XM writes captured events through a file-based queue, and the SQLite
-database runs in WAL (Write-Ahead Logging) mode, so capture does not hold the
-editor while the database is busy.
+Axyome XM writes captured events through a file-based queue and persists them
+locally in the background, so capture does not hold the editor.
 
 ---
 
@@ -127,7 +127,7 @@ start.
 
 ### Does it work without an internet connection?
 
-Yes, entirely. All features - capture, search, recall, MCP tools, semantic embeddings, FTS5 search - work fully offline. There are no cloud dependencies.
+Mostly. Capture, search, recall, MCP tools and the dashboard run locally and keep working offline once the semantic-search model has been downloaded. You need a connection to link an account (required after the 30-day preview), to refresh a paid licence, and for Team & Enterprise cloud sync.
 
 ---
 

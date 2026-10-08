@@ -144,7 +144,7 @@ Auto-generated fix suggestions based on learned error-resolution patterns.
 **Example prompts:**
 ```
 How did I fix this error before?
-Show me the fix playbook for SQLITE_BUSY errors.
+Show me the fix playbook for "database is locked" errors.
 What fixes worked for undefined property errors?
 ```
 
@@ -317,7 +317,7 @@ Search for database optimization decisions.
 ---
 
 ### `axm_hybrid_search`
-Best-of-both: combines semantic vector search with FTS5 keyword matching.
+Best-of-both: combines semantic vector search with keyword matching.
 Ideal for finding specific identifiers like bug IDs.
 
 **Example prompts:**

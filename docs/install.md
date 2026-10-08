@@ -34,7 +34,7 @@ Install:
 code --install-extension axyome-xm-<platform>-<version>.vsix --force
 ```
 
-> **Important:** Install the VSIX that matches your OS. Installing the wrong platform VSIX will cause the native SQLite addon to fail.
+> **Important:** Install the VSIX that matches your OS. Installing the wrong platform VSIX will cause the native storage addon to fail.
 
 ---
 
@@ -72,7 +72,7 @@ All extension data is stored locally. Nothing is sent anywhere.
 | Linux | `~/.config/Code/User/globalStorage/axyome.axyome-xm/` |
 | macOS | `~/Library/Application Support/Code/User/globalStorage/axyome.axyome-xm/` |
 
-The primary database is `axyome-xm.db` - a SQLite file you can back up, inspect,
+Your activity is persisted locally in `axyome-xm.db` - a file you can back up, inspect,
 or delete at any time. Installs that still have the older `memory-agent-events.db`
 are renamed to `axyome-xm.db` automatically on startup.
 
@@ -84,9 +84,9 @@ are renamed to `axyome-xm.db` automatically on startup.
 |---------|-------------|-----|
 | Extension not activating | VS Code < 1.100 | Update VS Code to 1.100+ |
 | `axm_*` tools missing in Copilot | Extension not fully loaded | Full restart VS Code (not just reload window) |
-| `SQLITE_CANTOPEN` error | AppData folder permissions | Check folder exists and is writable |
+| "cannot open database" error | AppData folder permissions | Check folder exists and is writable |
 | `native addon` load error | Wrong platform VSIX installed | Uninstall and reinstall correct platform VSIX |
-| `SQLITE_BUSY` error | VS Code locking DB | This is normal - the extension manages this automatically |
+| "database is locked" error | VS Code locking DB | This is normal - the extension manages this automatically |
 | MCP server shows "Not connected" | Slow startup | Wait 10s after VS Code loads; restart if persistent |
 
 ### Full Restart vs Reload
