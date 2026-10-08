@@ -1,10 +1,10 @@
 <div align="center">
   <h1>Axyome XM</h1>
-  <p><strong>Your AI development memory. Local. Private. Permanent.</strong></p>
+  <p><strong>The black box flight recorder for AI-assisted coding.</strong></p>
 
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey" alt="Platform" />
   <img src="https://img.shields.io/badge/MCP%20Tools-54-brightgreen" alt="MCP Tools" />
-  <img src="https://img.shields.io/badge/privacy-100%25%20local-success" alt="Privacy" />
+  <img src="https://img.shields.io/badge/privacy-local--first-success" alt="Privacy" />
   <img src="https://img.shields.io/badge/license-Proprietary-red" alt="License" />
 </div>
 
@@ -12,11 +12,9 @@
 
 ## What is Axyome XM?
 
-Axyome XM is a VS Code extension that gives your AI assistant (GitHub Copilot, Claude, or any MCP-compatible tool) **persistent memory of everything you do as a developer** - files you edited, errors you fixed, decisions you made, and patterns you repeat.
+Axyome XM is a **black box flight recorder for AI-assisted coding**. Every session is captured as a full forensic trail of the files touched, prompts given, errors hit, commands run and commits made. That gives you traceability from your code back to where it came from: you can see which session changed a file, which assistant (Copilot or Claude Code) made the change, and the prompts behind it. Time Machine replays any past coding day chapter by chapter. Hybrid semantic and keyword search pulls back any moment on demand, and the auto-generated XM Wiki turns your history into a searchable knowledge base.
 
-Your AI assistant forgets everything between conversations. **Axyome XM remembers.**
-
-> **Nothing leaves your machine.** All data lives in a local SQLite database.
+Axyome XM also **looks after the developer**. Session analytics and the productivity heatmap show your working rhythm: when you reach flow state, how long your sessions run, and when late nights or marathon stretches start adding up. Achievement badges mark your milestones and streaks. There are 54 MCP tools, and Axyome XM is **local-first**: your activity is recorded and stored on your own machine.
 
 ---
 
@@ -40,15 +38,15 @@ Within seconds, your AI assistant retrieves the exact file, error message, and t
 
 | Feature | What it does |
 |---------|-------------|
-| **Persistent Memory** | Captures files, errors, commands, and commits across every session |
-| **Hybrid Search** | Combines semantic vector search + FTS5 keyword search for best recall |
-| **XM Wiki** | Auto-generates a searchable knowledge base from your sessions |
-| **Session Analytics** | ATI score, productivity heatmap, tool usage breakdown |
-| **Achievement System** | 12 badges: Prompt Master, Flow State, Week Streak, and more |
-| **54 MCP Tools** | Full `axm_*` tool suite - ask AI to search, recall, and log for you |
+| **Forensic Trail** | Every session captured: the files touched, prompts given, errors hit, commands run and commits made |
+| **Traceability** | See which session changed a file, which assistant (Copilot or Claude Code) made the change, and the prompts behind it |
 | **Time Machine** | Replay any past coding day chapter by chapter |
-| **Copilot + Claude Code** | Dashboard compares both assistants side by side |
-| **100% Local** | No cloud, no telemetry, no external servers. Ever. |
+| **Hybrid Search** | Semantic + keyword search pulls back any moment on demand |
+| **XM Wiki** | Auto-generated from your sessions: your history as a searchable knowledge base |
+| **Developer Wellness** | Session analytics and a productivity heatmap show your rhythm: flow state, session length, late nights and marathon stretches |
+| **Achievement Badges** | 12 badges mark your milestones and streaks: Flow State, Week Streak, Prompt Master and more |
+| **54 MCP Tools** | Full `axm_*` tool suite - your AI assistant can search, recall and log for you |
+| **Local-first** | Your activity is recorded and stored on your own machine |
 
 ---
 
@@ -138,8 +136,8 @@ axm_get_developer_intelligence - Full DIP score and recommendations
 
 ## Privacy
 
-- All data stored locally at `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\`
-- No network requests. No telemetry. No analytics sent anywhere.
+- Local-first: data is stored at `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\`
+- No third-party analytics. Cloud sync only on Team & Enterprise plans.
 - Terminal capture is **opt-in** with automatic secret redaction
 - Clear all data anytime: **Axyome XM: Clear Captured Events**
 
