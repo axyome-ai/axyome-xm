@@ -1,6 +1,6 @@
 # Getting Started: Your First 10 Minutes
 
-Axyome XM captures development context automatically from the moment it's installed. Here's how to go from zero to productive.
+Axyome XM is a black box flight recorder for AI-assisted coding: it captures development context automatically from the moment it's installed. Here's how to go from zero to productive.
 
 ---
 
@@ -67,15 +67,15 @@ Copilot uses your local memory to answer with **real context** from your session
 
 ---
 
-## Step 4 - Enable Terminal Capture (Optional, 1 minute)
+## Step 4 - Review Terminal Capture (Optional, 1 minute)
 
-Terminal capture is opt-in for privacy. To enable:
+Terminal capture is on by default. To turn it off:
 
 1. Open VS Code Settings (`Ctrl+,`)
 2. Search for `axyome terminal`
-3. Enable **Axyome XM: Terminal Capture**
+3. Uncheck **Axyome XM: Capture Terminal**
 
-Terminal commands are stored locally with **automatic secret redaction** - values matching patterns like `*_TOKEN`, `*_KEY`, `*_PASSWORD`, AWS credentials, and Bearer tokens are replaced with `[REDACTED]` before storage.
+Terminal commands are persisted locally with **automatic secret redaction** - assignments to names containing `token`, `secret`, `password`, `api_key` or `credential`, Bearer tokens, and `aws_`/`azure_`/`gcp_`/`github_`/`npm_` variables are replaced with `[REDACTED]` before storage. See [Privacy](privacy.md#terminal-capture--secret-redaction).
 
 ---
 
@@ -108,7 +108,7 @@ Axyome XM runs silently in the background:
 | Copilot tool use | Tool name, parameters (for analytics) |
 | Session start | A session-start note, plus the last 8 hours of context loaded into memory |
 | Session end | Session duration, files touched, errors |
-| Terminal command (opt-in) | Command text with secret redaction |
+| Terminal command (on by default) | Command text with secret redaction |
 
 ---
 

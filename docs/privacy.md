@@ -1,43 +1,54 @@
 # Privacy & Data Policy
 
-## TL;DR
+## Summary
 
-Axyome XM is **100% local**. Your data never leaves your machine. There are no servers, no telemetry, and no analytics transmitted anywhere.
+- **Local-first.** Axyome XM persists your development activity locally on your machine.
+- **Network.** The extension contacts the network only to:
+  1. download the semantic-search model once, from Hugging Face, the first time it is needed;
+  2. talk to `api.axyome.ai` while you are **signed in** (sign-in, licence check, device registration);
+  3. on **Team & Enterprise** plans only, sync captured events and coding goals to the cloud.
+
+  While you are signed out, it makes no calls to Axyome servers. There are no third-party
+  analytics. The embedded MCP server makes no network calls at all.
+- **Defaults.** File, git, terminal, editor, diagnostics, debug, output, AI chat and Claude Code
+  capture are **on by default**. Each source has a setting to turn it off. Terminal commands
+  pass through automatic secret redaction before they are stored.
+
+This page describes version 0.2.842 of the extension.
 
 ---
 
-## What We Collect (Locally, On Your Machine)
+## What Is Recorded (On Your Machine)
 
-| Data Type | Stored locally | Transmitted | Opt-in required |
-|-----------|:--------------:|:-----------:|:---------------:|
-| File paths (not contents) |  | Never | No (automatic) |
-| Error messages |  | Never | No (automatic) |
-| Git commit messages |  | Never | No (automatic) |
-| Terminal commands |  | Never | **Yes (opt-in)** |
-| Copilot tool invocations |  | Never | No (automatic) |
-| File **contents** | Never stored | Never |  |
-| Clipboard contents | Never stored | Never |  |
-| Keystrokes | Never stored | Never |  |
-| Passwords / secrets | Redacted | Never |  |
+| Data type | Stored locally | Sent to the cloud | On by default |
+|-----------|:--------------:|:-----------------:|:-------------:|
+| File paths and file events | Yes | Team & Enterprise sync only | Yes (`axyomeXM.captureFiles`) |
+| Error and warning messages | Yes | Team & Enterprise sync only | Yes (`axyomeXM.captureDiagnostics`) |
+| Git commits and messages | Yes | Team & Enterprise sync only | Yes (`axyomeXM.captureGit`) |
+| Terminal commands (redacted) | Yes | Team & Enterprise sync only | Yes (`axyomeXM.captureTerminal`) |
+| AI chat sessions (Copilot) | Yes | Team & Enterprise sync only | Yes (`axyomeXM.captureChatSessions`) |
+| Claude Code prompts and tool calls | Yes | Team & Enterprise sync only | Yes (`axyomeXM.capture.claudeCode.enabled`) |
+| File **contents** | Not read from disk by capture. Excerpts are stored when an AI assistant's tool call or chat reply contains them (tool arguments up to 8 KB, tool results up to 512 bytes, chat code blocks) | Team & Enterprise sync only | With the AI capture sources above |
+| Clipboard contents | Never read | Never | — |
+| Keystrokes | Only counted, never stored | Never | — |
+| Passwords / secrets in terminal commands | Redacted before storage | Never | — |
 
 ---
 
 ## Terminal Capture & Secret Redaction
 
-Terminal capture is **opt-in** (disabled by default). When enabled:
+Terminal capture is **on by default**. Before a command is stored, Axyome XM replaces values
+matching its redaction patterns with `[REDACTED]`. The default patterns cover:
+- Assignments to names containing `api_key`, `apikey`, `secret`, `password`, `token`,
+  `credential` or `auth` (for example `API_KEY=...`, `password: ...`)
+- Bearer tokens (`bearer <token>`)
+- Cloud and registry variables starting `aws_`, `azure_`, `gcp_`, `github_` or `npm_`
 
-Axyome XM automatically redacts values matching:
-- Environment variables: `*_TOKEN`, `*_KEY`, `*_SECRET`, `*_PASSWORD`, `*_PASS`
-- AWS credentials: `AKIA*`, `AWS_*`
-- Connection strings: `postgresql://*:*@`, `mysql://*:*@`
-- Bearer tokens: `Authorization: Bearer *`
-- SSH private key patterns
+You can add your own patterns with the `axyomeXM.terminalRedactPatterns` setting.
 
-Redacted values are replaced with `[REDACTED]` **before** storage. The original value is never written to disk.
-
-To enable terminal capture:
-1. `Ctrl+,` -> Search `axyome terminal`
-2. Enable **Axyome XM: Terminal Capture**
+To turn terminal capture off:
+1. `Ctrl+,` -> search `axyome terminal`
+2. Uncheck **Axyome XM: Capture Terminal**
 
 ---
 
@@ -55,21 +66,24 @@ All data is stored in VS Code's extension globalStorage:
 
 | File | Contents |
 |------|----------|
-| `memory-agent-events.db` | Main SQLite database - all captured events |
-| `memory-agent-events.db-wal` | SQLite WAL journal (normal - handled automatically) |
+| `axyome-xm.db` | Your activity, persisted locally |
+| `axyome-xm.db-wal`, `axyome-xm.db-shm` | Journal files (normal - handled automatically) |
 | `backups/` | Up to 5 rolling automatic backups |
 
 ---
 
 ## Network Activity
 
-The Axyome XM extension and its embedded MCP server make **zero outbound network requests** during normal operation.
+| When | Destination | What |
+|------|-------------|------|
+| First semantic search | Hugging Face | One-time download of the `bge-small-en-v1.5` embedding model (about 33 MB), then cached locally |
+| Signed in, any plan | `api.axyome.ai` | Sign-in and token refresh, profile and licence check, device registration |
+| Team & Enterprise plans | `api.axyome.ai` | Cloud sync of captured events (every 15 minutes) and of coding goals |
+| You click a link | `app.axyome.ai` (in your browser) | Sign-in, pricing, billing and contact-sales pages |
 
-The only network activity is:
-- VS Code Marketplace: checking for extension updates (standard VS Code behavior, not initiated by Axyome XM)
-- Semantic embeddings: computed locally using bundled WASM (`@huggingface/transformers` + bge-small-en-v1.5) - no API calls
-
-You can verify this with a network monitor: the process `mcp-server-win-x64.exe` (or equivalent) makes no connections.
+Signed out, the extension makes no calls to Axyome servers. There are no third-party analytics.
+Embeddings are computed locally once the model is downloaded. VS Code itself may check the
+Marketplace for updates; that is standard VS Code behaviour, not Axyome XM.
 
 ---
 
@@ -83,7 +97,7 @@ Ctrl+Shift+P - Axyome XM: Clear Captured Events
 ```
 
 **Manual full deletion:**
-Delete the `memory-agent-events.db` file. A fresh database is created on next VS Code start.
+Delete the `axyome-xm.db` file. A fresh database is created on next VS Code start.
 
 **Backup:**
 ```
@@ -99,14 +113,11 @@ Ctrl+Shift+P - Axyome XM: Restore Database Backup
 
 ## Third-Party Bundled Libraries
 
-The extension bundles the following libraries. None make network requests:
-
 | Library | Purpose | Network |
 |---------|---------|---------|
-| `better-sqlite3` | Local SQLite engine | None |
-| `@huggingface/transformers` | Local WASM ML inference | None |
-| `sql.js-fts5` | FTS5-enabled SQLite WASM | None |
+| `@huggingface/transformers` | Local ML inference for semantic search | One-time model download from Hugging Face |
 | `@modelcontextprotocol/sdk` | MCP stdio communication | None (local stdio only) |
+| Local storage engine | Persists your activity locally | None |
 
 ---
 
@@ -114,6 +125,7 @@ The extension bundles the following libraries. None make network requests:
 
 The MCP server binary:
 - Runs as a **local stdio process** - no open network ports
+- Makes no network calls
 - Communicates only through VS Code's stdio pipe
 - Reads/writes only within the extension's globalStorage directory
 - Is embedded in the VSIX and **hash-validated** during build to prevent tampering

@@ -16,7 +16,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **AI Memory Engine** - Persistent local memory for GitHub Copilot and MCP-compatible AI assistants. Recalls files edited, commands run, git commits, and development patterns across sessions
 - **45 MCP Tools** - Full suite of `axm_*` tools: recall, search, decisions, feedback, observations, session summaries, skill tracking, wiki, achievements, and more
 - **XM Wiki** - Persistent knowledge base that synthesises patterns, decisions, and errors from session data into searchable wiki pages (`axm_wiki_*` tools)
-- **FTS5 Full-Text Search** - Fast keyword search across all memory tables using custom sql.js-fts5 WASM build
+- **Full-Text Search** - Fast keyword search across all memory tables
 - **Semantic Search** - Vector embeddings via `@huggingface/transformers` (bge-small-en-v1.5, 384 dimensions) for meaning-based memory search
 - **Hybrid Search** - Combined semantic + keyword search weighted scoring (vector 60%, text 25%, recency 15%)
 - **Session Analytics** - ATI (AI Tool Index) metrics, productivity heatmap, tool usage breakdown
@@ -34,7 +34,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 #### Privacy
 - 100% local - no cloud, no telemetry, no external servers
 - Terminal capture opt-in with automatic redaction of secrets
-- All data stored in SQLite at `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\`
+- All data persisted locally at `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\`
 
 #### MCP Integration
 - Auto-configured for VS Code 1.100+ (no manual `mcp.json` required)

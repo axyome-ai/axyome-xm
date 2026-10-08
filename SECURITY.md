@@ -25,8 +25,8 @@ You will receive an acknowledgment within 48 hours and a resolution timeline wit
 
 Axyome XM is designed with security in mind:
 
-- **No network egress** - The extension and MCP server make zero outbound network calls
-- **Local-only storage** - All data stays in `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\`
+- **Limited network egress** - The MCP server makes no network calls. The extension downloads the semantic-search model once and, while you are signed in, talks to `api.axyome.ai` (sign-in, licence, devices; cloud sync on Team & Enterprise plans)
+- **Local-first storage** - Captured data is persisted locally in `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\`
 - **Secret redaction** - Terminal capture automatically redacts tokens, keys, and passwords before storage
 - **No code execution** - The extension never executes user code or eval() arbitrary input
 - **Sandboxed MCP server** - The MCP binary runs as a stdio process with no open ports
@@ -36,7 +36,7 @@ Axyome XM is designed with security in mind:
 
 In-scope for responsible disclosure:
 - Extension code execution vulnerabilities
-- SQLite injection via MCP tool parameters
+- Injection via MCP tool parameters
 - Unauthorized file system access outside globalStorage
 - Secret leakage via terminal capture
 - MCP server privilege escalation
