@@ -165,9 +165,9 @@ axm_get_developer_intelligence - Full DIP score and recommendations
 
 ## Support
 
-- [Bug Reports](https://github.com/BI-Expertise/axyome-xm/issues/new?template=bug_report.yml)
-- [Feature Requests](https://github.com/BI-Expertise/axyome-xm/issues/new?template=feature_request.yml)
-- [Questions](https://github.com/BI-Expertise/axyome-xm/issues/new?template=question.yml)
+- [Bug Reports](https://github.com/axyome-ai/axyome-xm/issues/new?template=bug_report.yml)
+- [Feature Requests](https://github.com/axyome-ai/axyome-xm/issues/new?template=feature_request.yml)
+- [Questions](https://github.com/axyome-ai/axyome-xm/issues/new?template=question.yml)
 - [Website](https://axyome.ai)
 
 ---
