@@ -20,11 +20,11 @@ Axyome XM also **looks after the developer**. Session analytics and the producti
 
 ## Demo
 
-<a href="https://www.youtube.com/watch?v=q1nN0BN5Jbo">
-  <img src="docs/images/demo-video.png" alt="Watch the 2-minute Axyome XM product demo on YouTube" width="720" />
+<a href="https://www.youtube.com/watch?v=XEoMJM7y6J8">
+  <img src="docs/images/demo-video.png" alt="Watch the 2.5-minute Axyome XM product demo on YouTube" width="720" />
 </a>
 
-▶ **[Watch the 2-minute product demo](https://www.youtube.com/watch?v=q1nN0BN5Jbo)**: live product, real data, recorded in VS Code.
+▶ **[Watch the 2.5-minute product demo](https://www.youtube.com/watch?v=XEoMJM7y6J8)**: live product, real data, recorded in VS Code.
 
 > *"What was that async error I fixed last week?"*
 
