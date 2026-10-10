@@ -104,7 +104,7 @@ After installing, Axyome XM activates automatically:
 | Linux (linux-x64) | ~29 MB |
 | macOS (darwin-x64) | ~26 MB |
 
-Sizes measured on the 0.2.846 build.
+Sizes measured on the 0.2.847 build.
 
 ---
 
