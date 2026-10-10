@@ -100,11 +100,11 @@ After installing, Axyome XM activates automatically:
 
 | Platform | VSIX Size |
 |----------|-----------|
-| Windows (win32-x64) | ~31 MB |
-| Linux (linux-x64) | ~45 MB |
-| macOS (darwin-x64) | ~36 MB |
+| Windows (win32-x64) | ~24 MB |
+| Linux (linux-x64) | ~29 MB |
+| macOS (darwin-x64) | ~26 MB |
 
-Sizes measured on the 0.2.824 build.
+Sizes measured on the 0.2.846 build.
 
 ---
 
