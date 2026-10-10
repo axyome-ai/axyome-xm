@@ -4,9 +4,8 @@
 
 - **Local-first.** Axyome XM persists your development activity locally on your machine.
 - **Network.** The extension contacts the network only to:
-  1. download the semantic-search model once, from Hugging Face, the first time it is needed;
-  2. talk to `api.axyome.ai` while you are **signed in** (sign-in, licence check, device registration);
-  3. on **Team & Enterprise** plans only, sync captured events and coding goals to the cloud.
+  1. talk to `api.axyome.ai` while you are **signed in** (sign-in, licence check, device registration);
+  2. on **Team & Enterprise** plans only, sync captured events and coding goals to the cloud.
 
   While you are signed out, it makes no calls to Axyome servers. There are no third-party
   analytics. The embedded MCP server makes no network calls at all.
@@ -76,13 +75,12 @@ All data is stored in VS Code's extension globalStorage:
 
 | When | Destination | What |
 |------|-------------|------|
-| First semantic search | Hugging Face | One-time download of the `bge-small-en-v1.5` embedding model (about 33 MB), then cached locally |
 | Signed in, any plan | `api.axyome.ai` | Sign-in and token refresh, profile and licence check, device registration |
 | Team & Enterprise plans | `api.axyome.ai` | Cloud sync of captured events (every 15 minutes) and of coding goals |
 | You click a link | `app.axyome.ai` (in your browser) | Sign-in, pricing, billing and contact-sales pages |
 
 Signed out, the extension makes no calls to Axyome servers. There are no third-party analytics.
-Embeddings are computed locally once the model is downloaded. VS Code itself may check the
+Search runs locally on keyword indexes. VS Code itself may check the
 Marketplace for updates; that is standard VS Code behaviour, not Axyome XM.
 
 ---
@@ -115,7 +113,6 @@ Ctrl+Shift+P - Axyome XM: Restore Database Backup
 
 | Library | Purpose | Network |
 |---------|---------|---------|
-| `@huggingface/transformers` | Local ML inference for semantic search | One-time model download from Hugging Face |
 | `@modelcontextprotocol/sdk` | MCP stdio communication | None (local stdio only) |
 | Local storage engine | Persists your activity locally | None |
 

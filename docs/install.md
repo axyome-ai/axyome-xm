@@ -6,7 +6,7 @@
 |-------------|---------|-------|
 | VS Code | 1.100.0+ | Minimum declared by the extension (`engines.vscode`) |
 | OS Architecture | 64-bit | Windows, Linux, or macOS |
-| Disk space | ~31-45 MB + database | VSIX size depends on platform; the database grows with use |
+| Disk space | ~24-29 MB + database | VSIX size depends on platform; the database grows with use |
 | GitHub Copilot | Any version | Required to use `axm_*` MCP tools |
 
 ---

@@ -12,7 +12,7 @@
 
 ## What is Axyome XM?
 
-Axyome XM is a **black box flight recorder for AI-assisted coding**. Every session is captured as a full forensic trail of the files touched, prompts given, errors hit, commands run and commits made. That gives you traceability from your code back to where it came from: you can see which session changed a file, which assistant (Copilot or Claude Code) made the change, and the prompts behind it. Time Machine replays any past coding day chapter by chapter. Hybrid semantic and keyword search pulls back any moment on demand, and the auto-generated XM Wiki turns your history into a searchable knowledge base.
+Axyome XM is a **black box flight recorder for AI-assisted coding**. Every session is captured as a full forensic trail of the files touched, prompts given, errors hit, commands run and commits made. That gives you traceability from your code back to where it came from: you can see which session changed a file, which assistant (Copilot or Claude Code) made the change, and the prompts behind it. Time Machine replays any past coding day chapter by chapter. Keyword search over your activity and chat history pulls back any moment on demand, and the auto-generated XM Wiki turns your history into a searchable knowledge base.
 
 Axyome XM also **looks after the developer**. Session analytics and the productivity heatmap show your working rhythm: when you reach flow state, how long your sessions run, and when late nights or marathon stretches start adding up. Achievement badges mark your milestones and streaks. There are 54 MCP tools, and Axyome XM is **local-first**: your activity is recorded and stored on your own machine.
 
@@ -41,7 +41,7 @@ Within seconds, your AI assistant retrieves the exact file, error message, and t
 | **Forensic Trail** | Every session captured: the files touched, prompts given, errors hit, commands run and commits made |
 | **Traceability** | See which session changed a file, which assistant (Copilot or Claude Code) made the change, and the prompts behind it |
 | **Time Machine** | Replay any past coding day chapter by chapter |
-| **Hybrid Search** | Semantic + keyword search pulls back any moment on demand |
+| **Keyword Search** | Search your activity, decisions and chat history by keyword, ranked by match and recency |
 | **XM Wiki** | Auto-generated from your sessions: your history as a searchable knowledge base |
 | **Developer Wellness** | Session analytics and a productivity heatmap show your rhythm: flow state, session length, late nights and marathon stretches |
 | **Achievement Badges** | 12 badges mark your milestones and streaks: Flow State, Week Streak, Prompt Master and more |
@@ -100,11 +100,11 @@ After installing, Axyome XM activates automatically:
 
 | Platform | VSIX Size |
 |----------|-----------|
-| Windows (win32-x64) | ~31 MB |
-| Linux (linux-x64) | ~45 MB |
-| macOS (darwin-x64) | ~36 MB |
+| Windows (win32-x64) | ~24 MB |
+| Linux (linux-x64) | ~29 MB |
+| macOS (darwin-x64) | ~26 MB |
 
-Sizes measured on the 0.2.824 build.
+Sizes measured on the 0.2.847 build.
 
 ---
 
@@ -121,7 +121,7 @@ Again). Dismissing that prompt still creates `.vscode/mcp.json`.
 
 ```
 axm_recall_activity        - Search past work by query, file, or date
-axm_search_sessions        - Semantic search through chat history
+axm_search_sessions        - Keyword search through chat history
 axm_get_session_summary    - Summarize what you worked on
 axm_log_decision           - Remember a decision or preference
 axm_find_similar_errors    - Check if you've seen this bug before

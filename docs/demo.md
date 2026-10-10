@@ -22,7 +22,7 @@ TypeError: Cannot read properties of undefined (reading 'map')
 at UserList.tsx:45
 ```
 
-`axm_find_similar_errors` searches your local error history semantically. 
+`axm_find_similar_errors` searches your local error history by keyword. 
 
 **Response:**
 > "Yes - you fixed this exact pattern on January 15th in `components/TeamList.tsx`.  
