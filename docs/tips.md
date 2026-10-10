@@ -25,9 +25,9 @@ Before spending 20+ minutes on a bug, always ask:
 [paste your error message]
 ```
 
-`axm_find_similar_errors` uses semantic matching across your full error history. If you've fixed this pattern before, you'll get the solution in seconds.
+`axm_find_similar_errors` uses keyword matching across your full error history. If you've fixed this pattern before, you'll get the solution in seconds.
 
-**Why it works:** Even if the exact error message differs, semantic matching finds structurally similar errors. "Cannot read property X of null" matches "Cannot read properties of undefined (reading 'X')".
+**Why it works:** Errors that share their key words match even when the exact message differs. "Cannot read property X of null" matches "Cannot read properties of undefined (reading 'X')".
 
 ---
 

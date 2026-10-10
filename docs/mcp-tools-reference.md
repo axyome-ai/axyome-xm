@@ -57,14 +57,14 @@ What was I doing between 2pm and 5pm yesterday?
 ---
 
 ### `axm_search_sessions`
-Search past Copilot conversations using hybrid semantic + keyword search.
+Search past Copilot conversations by keyword. Conversations are indexed automatically shortly after VS Code starts.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `query` | string | What to search for |
 | `hoursAgo` | number | Time window (default: 720 = 30 days) |
 | `limit` | number | Max results (default: 10) |
-| `mode` | string | `keyword` (default), `hybrid`, or `semantic` |
+| `mode` | string | Accepted for compatibility; every mode runs keyword search |
 
 **Example prompts:**
 ```
@@ -90,7 +90,7 @@ What testing patterns do I repeat?
 ## Error Intelligence
 
 ### `axm_find_similar_errors`
-Find similar past errors using semantic matching - the most powerful debugging tool.
+Find similar past errors by keyword matching - the most powerful debugging tool.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -306,7 +306,7 @@ How can I improve my AI interactions?
 ## Search
 
 ### `axm_semantic_search`
-Search memory by meaning, not just keywords.
+Keyword search over your recorded activity, decisions and patterns. The name is kept for compatibility.
 
 **Example prompts:**
 ```
@@ -317,7 +317,7 @@ Search for database optimization decisions.
 ---
 
 ### `axm_hybrid_search`
-Best-of-both: combines semantic vector search with keyword matching.
+Keyword search ranked by match strength and recency, with a score breakdown on request.
 Ideal for finding specific identifiers like bug IDs.
 
 **Example prompts:**
@@ -329,12 +329,12 @@ Search for JIRA-456 across all my sessions.
 ---
 
 ### `axm_find_similar`
-Find items semantically similar to given text.
+Find items that share words with a given text.
 
 **Example prompts:**
 ```
-What's similar to this error message?
-Find code similar to this pattern.
+What's related to this error message?
+Find decisions related to this text.
 ```
 
 ---
@@ -451,10 +451,10 @@ What's stored in the database?
 ## Advanced
 
 ### `axm_chunk_document`
-Chunk large documents for better embedding precision.
+Chunk large documents into sections that respect code boundaries.
 
 ### `axm_generate_embeddings_batch`
-Generate semantic embeddings for items that don't have them yet.
+Semantic search is not included; this tool reports that and changes nothing. Kept for compatibility.
 
 ### `axm_get_learned_patterns`
 Patterns learned from past sessions (error->fix sequences, refactoring habits).
@@ -520,7 +520,7 @@ Task management data: tasks and to-dos.
 History of self-training sessions and learning progress.
 
 ### `axm_embedding_stats`
-Statistics about stored semantic embeddings.
+Search index statistics, including whether semantic search is included (it is not).
 
 ### `axm_list_available_tools`
 List every available `axm_*` tool with its description, category and stability tier.
