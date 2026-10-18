@@ -1,6 +1,19 @@
 # Getting Started: Your First 10 Minutes
 
-Axyome XM is a black box flight recorder for AI-assisted coding: it captures development context automatically from the moment it's installed. Here's how to go from zero to productive.
+Axyome XM is a black box flight recorder for AI-assisted coding: once you choose what it records, it captures development context automatically. Here's how to go from zero to productive.
+
+---
+
+## Step 0 - Choose What Is Recorded (1 minute)
+
+On first run a panel lists every capture source with one line saying what it stores.
+**Recommended** turns them all on, and every source has its own switch. Nothing is recorded
+until you press **Start recording**. Change it any time with **Axyome XM: Review Capture Settings**.
+
+VS Code also opens the **Get started with Axyome XM** walkthrough (or run **Welcome: Open
+Walkthrough...**). Its four steps: choose what is recorded, check that Copilot can reach the
+Axyome XM MCP server, import your own commits of the last 90 days (so memory has something to
+recall on day one), and ask Copilot "What did I work on this week?".
 
 ---
 
@@ -30,7 +43,7 @@ You'll see the Dashboard with 8 tabs:
 
 Onboarding runs from the Command Palette (`Ctrl+Shift+P`), not from a dashboard tab.
 
-**Axyome: Start Onboarding** opens a 3-step quick tour:
+**Axyome: Start Onboarding** offers the quick tour (3 steps) or the full tour. The quick tour:
 
 | Step | What you learn |
 |------|---------------|
@@ -45,7 +58,7 @@ tracks (Essentials, Discovery, Intelligence, Power User).
 
 ## Step 3 - Ask Copilot About Your Work (2 minutes)
 
-Open Copilot Chat (`Ctrl+Shift+I`) and try these prompts:
+Open Copilot Chat (`Ctrl+Shift+I`) in **Agent** mode and try these prompts:
 
 ```
 What did I work on today?
@@ -69,13 +82,14 @@ Copilot uses your local memory to answer with **real context** from your session
 
 ## Step 4 - Review Terminal Capture (Optional, 1 minute)
 
-Terminal capture is on by default. To turn it off:
+Terminal capture is part of **Recommended**. To turn it off, run **Axyome XM: Review Capture
+Settings** and switch **Terminal** off, or:
 
 1. Open VS Code Settings (`Ctrl+,`)
 2. Search for `axyome terminal`
 3. Uncheck **Axyome XM: Capture Terminal**
 
-Terminal commands are persisted locally with **automatic secret redaction** - assignments to names containing `token`, `secret`, `password`, `api_key` or `credential`, Bearer tokens, and `aws_`/`azure_`/`gcp_`/`github_`/`npm_` variables are replaced with `[REDACTED]` before storage. See [Privacy](privacy.md#terminal-capture--secret-redaction).
+Terminal commands and editor selections are persisted locally with **automatic secret redaction** - assignments to names containing `token`, `secret`, `password`, `api_key` or `credential`, Bearer tokens, and `aws_`/`azure_`/`gcp_`/`github_`/`npm_` variables are replaced with `[REDACTED]` before storage. See [Privacy](privacy.md#terminal-capture--secret-redaction).
 
 ---
 
@@ -98,7 +112,7 @@ This scans your repository and detects:
 
 ## What Happens Automatically From Now On
 
-Axyome XM runs silently in the background:
+After your choice, Axyome XM runs silently in the background for the sources you turned on:
 
 | Trigger | What gets captured |
 |---------|-------------------|
@@ -108,7 +122,7 @@ Axyome XM runs silently in the background:
 | Copilot tool use | Tool name, parameters (for analytics) |
 | Session start | A session-start note, plus the last 8 hours of context loaded into memory |
 | Session end | Session duration, files touched, errors |
-| Terminal command (on by default) | Command text with secret redaction |
+| Terminal command | Command text with secret redaction |
 
 ---
 

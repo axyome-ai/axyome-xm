@@ -4,7 +4,7 @@
 
 | Requirement | Minimum | Notes |
 |-------------|---------|-------|
-| VS Code | 1.100.0+ | Minimum declared by the extension (`engines.vscode`) |
+| VS Code | 1.139.0+ | Minimum declared by the extension (`engines.vscode`) |
 | OS Architecture | 64-bit | Windows, Linux, or macOS |
 | Disk space | ~24-29 MB + database | VSIX size depends on platform; the database grows with use |
 | GitHub Copilot | Any version | Required to use `axm_*` MCP tools |
@@ -82,7 +82,7 @@ are renamed to `axyome-xm.db` automatically on startup.
 
 | Symptom | Likely Cause | Fix |
 |---------|-------------|-----|
-| Extension not activating | VS Code < 1.100 | Update VS Code to 1.100+ |
+| Extension not activating | VS Code < 1.139 | Update VS Code to 1.139+ |
 | `axm_*` tools missing in Copilot | Extension not fully loaded | Full restart VS Code (not just reload window) |
 | "cannot open database" error | AppData folder permissions | Check folder exists and is writable |
 | `native addon` load error | Wrong platform VSIX installed | Uninstall and reinstall correct platform VSIX |

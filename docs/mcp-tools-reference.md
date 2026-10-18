@@ -1,8 +1,9 @@
 # MCP Tool Reference
 
 Axyome XM provides **54 MCP tools** (`axm_*`). They become available in GitHub
-Copilot (VS Code 1.100+) through the `.vscode/mcp.json` entry the extension writes
-into your workspace (see the [FAQ](faq.md#do-i-need-to-configure-anything-for-copilot)).
+Copilot (VS Code 1.139+) through the MCP server the extension registers with VS Code
+(see the [FAQ](faq.md#do-i-need-to-configure-anything-for-copilot)). By default the
+server lists 11 core tools; set `axyomeXM.mcp.toolset` to `all` to list all 54.
 
 Ask Copilot to run `axm_list_available_tools` for the live list with
 descriptions and stability tiers.
