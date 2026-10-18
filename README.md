@@ -1,6 +1,7 @@
 <div align="center">
   <h1>Axyome XM</h1>
-  <p><strong>The black box flight recorder for AI-assisted coding.</strong></p>
+  <p><strong>Your AI forgets. Axyome XM remembers.</strong></p>
+  <p>The black box flight recorder for AI-assisted coding.</p>
 
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey" alt="Platform" />
   <img src="https://img.shields.io/badge/MCP%20Tools-54-brightgreen" alt="MCP Tools" />
@@ -12,9 +13,9 @@
 
 ## What is Axyome XM?
 
-Axyome XM is a **black box flight recorder for AI-assisted coding**. Every session is captured as a full forensic trail of the files touched, prompts given, errors hit, commands run and commits made. That gives you traceability from your code back to where it came from: you can see which session changed a file, which assistant (Copilot or Claude Code) made the change, and the prompts behind it. Time Machine replays any past coding day chapter by chapter. Keyword search over your activity and chat history pulls back any moment on demand, and the auto-generated XM Wiki turns your history into a searchable knowledge base.
-
-Axyome XM also **looks after the developer**. Session analytics and the productivity heatmap show your working rhythm: when you reach flow state, how long your sessions run, and when late nights or marathon stretches start adding up. Achievement badges mark your milestones and streaks. There are 54 MCP tools, and Axyome XM is **local-first**: your activity is recorded and stored on your own machine.
+- **Remembers.** The files you edited, the errors you hit, the terminal commands you ran, your commits, and your Copilot and Claude Code sessions. Search it by keyword, or replay any past coding day in Time Machine.
+- **Local.** Your activity is recorded and stored on your own machine. No third-party analytics. See [Privacy](#privacy).
+- **Works with Copilot and Claude Code.** Copilot recalls your history through the Axyome XM MCP server, which the extension registers in VS Code. Claude Code and other MCP clients can connect to the same server.
 
 ---
 
@@ -38,22 +39,22 @@ Within seconds, your AI assistant retrieves the exact file, error message, and t
 
 | Feature | What it does |
 |---------|-------------|
-| **Forensic Trail** | Every session captured: the files touched, prompts given, errors hit, commands run and commits made |
-| **Traceability** | See which session changed a file, which assistant (Copilot or Claude Code) made the change, and the prompts behind it |
+| **Persistent Memory** | Captures files, errors, commands, and commits across every session |
+| **Keyword Search** | FTS5 keyword search over activity, decisions and chat history, ranked by match and recency |
+| **XM Wiki** | Auto-generates a searchable knowledge base from your sessions |
+| **Session Analytics** | ATI score, productivity heatmap, tool usage breakdown |
+| **Achievement System** | 12 badges: Prompt Master, Flow State, Week Streak, and more |
+| **54 MCP Tools** | Full `axm_*` tool suite - ask AI to search, recall, and log for you |
 | **Time Machine** | Replay any past coding day chapter by chapter |
-| **Keyword Search** | Search your activity, decisions and chat history by keyword, ranked by match and recency |
-| **XM Wiki** | Auto-generated from your sessions: your history as a searchable knowledge base |
-| **Developer Wellness** | Session analytics and a productivity heatmap show your rhythm: flow state, session length, late nights and marathon stretches |
-| **Achievement Badges** | 12 badges mark your milestones and streaks: Flow State, Week Streak, Prompt Master and more |
-| **54 MCP Tools** | Full `axm_*` tool suite - your AI assistant can search, recall and log for you |
-| **Local-first** | Your activity is recorded and stored on your own machine |
+| **Copilot + Claude Code** | Dashboard compares both assistants side by side |
+| **Local-first** | Your data stays on your machine. Nothing is sent anywhere unless you sign in — see [Privacy](#privacy). |
 
 ---
 
 ## Install
 
-Axyome XM is **not listed on the VS Code Marketplace** at the time of writing
-(checked 2026-09-26). Install the VSIX for your platform:
+Axyome XM is **not listed on the VS Code Marketplace** or Open VSX yet at the time of writing
+(checked 2026-10-18). Install the VSIX for your platform:
 
 ```bash
 code --install-extension axyome-xm-win32-x64-<version>.vsix --force
@@ -67,10 +68,15 @@ code --install-extension axyome-xm-win32-x64-<version>.vsix --force
 
 After installing, Axyome XM activates automatically:
 
-1. Look for the **Axyome XM** icon in the Activity Bar (left sidebar)
-2. Click it to open the Dashboard (or press `Ctrl+Shift+Alt+M`)
-3. Run **Axyome: Start Onboarding** from the Command Palette for a 3-step quick tour
-4. Ask Copilot: **"What did I work on today?"** - it now knows!
+1. **Choose what is recorded.** A panel lists every source with what it stores; nothing is
+   recorded until you press **Start recording** ("Recommended" turns them all on).
+2. **Follow "Get started with Axyome XM"** (VS Code's Welcome page, or **Welcome: Open
+   Walkthrough...**): it checks that Copilot can reach the Axyome XM MCP server and imports your
+   own commits of the last 90 days, so memory has something to recall on day one.
+3. **Ask Copilot** in Agent mode: **"What did I work on this week?"** The walkthrough's last step
+   opens the chat with the question filled in.
+4. Open the Dashboard from the **Axyome XM** icon in the Activity Bar (or `Ctrl+Shift+Alt+M`).
+   **Axyome: Start Onboarding** offers a quick or full tour of the features.
 
 -> [Complete onboarding guide](docs/onboarding.md)
 
@@ -90,7 +96,7 @@ After installing, Axyome XM activates automatically:
 
 | Requirement | Minimum |
 |-------------|---------|
-| VS Code | 1.100.0+ |
+| VS Code | 1.139.0+ |
 | GitHub Copilot | Any (for MCP tool use) |
 | Node.js | Not required - binary is embedded |
 
@@ -98,13 +104,14 @@ After installing, Axyome XM activates automatically:
 
 ## Platform Support
 
-| Platform | VSIX Size |
-|----------|-----------|
-| Windows (win32-x64) | ~24 MB |
-| Linux (linux-x64) | ~29 MB |
-| macOS (darwin-x64) | ~26 MB |
+| Platform | VSIX Size | Notes |
+|----------|-----------|-------|
+| Windows (win32-x64) | ~24 MB | Native better-sqlite3 |
+| Linux (linux-x64) | ~29 MB | Native better-sqlite3 |
+| macOS Intel (darwin-x64) | ~26 MB | Native better-sqlite3 |
+| macOS Apple Silicon (darwin-arm64) | ~25 MB | Native better-sqlite3; ad-hoc signed MCP server |
 
-Sizes measured on the 0.2.847 build.
+Sizes measured on the 0.2.867 build.
 
 ---
 
@@ -113,11 +120,17 @@ Sizes measured on the 0.2.847 build.
 Axyome XM ships with **54 MCP tools** (`axm_*`) served by an embedded MCP
 server, so GitHub Copilot can use them without manual setup.
 
-**What it writes into your workspace.** On first install it configures the open
-workspace without asking: `.vscode/mcp.json` (the MCP server entry),
-`AGENTS.md`, `.github/agents/memory.md` and recommended VS Code settings. In
-other workspaces it asks first (Configure All / Choose... / Skip / Don't Ask
-Again). Dismissing that prompt still creates `.vscode/mcp.json`.
+**Tool diet.** To keep every request small, the server lists 11 core tools by
+default (recall, session summary, context snapshot, error forensics, similar
+errors, decisions, observations, hybrid search, health and tool discovery). Set
+`axyomeXM.mcp.toolset` to `all` to list all 54. Tools that are not listed still
+run when called by name, and `axm_list_available_tools` names what is hidden.
+
+**What it writes into your workspace.** Nothing without asking. The extension registers its MCP
+server with VS Code, so Copilot lists **Axyome XM** without a `.vscode/mcp.json` in your
+repository. It then offers to add `AGENTS.md`, `.github/agents/memory.md` and recommended VS Code
+settings (Configure All / Choose... / Skip / Don't Ask Again); skipping or dismissing the prompt
+writes nothing. **Axyome XM: Configure Workspace for AI Memory** runs the same setup later.
 
 ```
 axm_recall_activity        - Search past work by query, file, or date
@@ -134,12 +147,37 @@ axm_get_developer_intelligence - Full DIP score and recommendations
 
 ---
 
+## Plans
+
+| Plan | Price | History you can see |
+|---|---|---|
+| Free | $0 | The last 30 days |
+| Pro | $9/month | All of it |
+| Team & Enterprise | [Contact sales](https://app.axyome.ai/pricing#contact-sales) | All of it, plus cloud sync across devices |
+
+Every feature works on every plan, and a plan never deletes your data — it only changes how much
+history you can see. Axyome XM runs as a 30-day preview first; after that, a free account is
+needed to keep using it. Details: [app.axyome.ai/pricing](https://app.axyome.ai/pricing).
+
+---
+
 ## Privacy
 
-- Local-first: data is stored at `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\`
-- No third-party analytics. Cloud sync only on Team & Enterprise plans.
-- Terminal, chat and Claude Code capture are **on by default**, with automatic secret redaction for terminal commands. Turn any source off in settings.
-- Clear all data anytime: **Axyome XM: Clear Captured Events**
+- All data stored locally at `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\`
+- Without an account, Axyome XM makes no network requests.
+- After you sign in, it contacts `api.axyome.ai` to confirm your plan (about every 4 hours) and to
+  register this device (its name and platform). No third-party analytics. Cloud sync only on Team & Enterprise plans.
+- **Nothing is recorded until you choose.** On first run a panel lists every source (Claude Code,
+  Copilot chat and agent edits, files, git, terminal, editor, selections, problems, debug, tasks,
+  coding time) with what it stores; "Recommended" turns them all on, and each has its own toggle.
+  Change it any time with **Axyome XM: Review Capture Settings**.
+- With Git on, a new install also reads your own commits of the last 90 days once (hash, message,
+  time, branch, per-file line counts), so recall works on day one. Set `axyomeXM.history.gitDays`
+  to `0` to skip it; **Axyome XM: Import Git History** runs it on demand.
+- Terminal commands and editor selections are stored with secrets redacted
+- Take your data with you: **Axyome XM: Export All My Data** writes every table to JSON and Markdown in a folder you choose
+- Remove it all, anytime: **Axyome XM: Delete All My Data** (type `DELETE` to confirm) deletes the database contents, backups and
+  queued events on this computer. Uninstalling the extension alone does not remove them; the [uninstall and data removal guide](docs/uninstall.md) lists what is stored and where
 
 -> [Full privacy policy](docs/privacy.md)
 
@@ -156,6 +194,7 @@ axm_get_developer_intelligence - Full DIP score and recommendations
 | [Tips & Tricks](docs/tips.md) | Power-user workflows |
 | [FAQ](docs/faq.md) | Common questions answered |
 | [Privacy](docs/privacy.md) | What is (and isn't) collected |
+| [Uninstall and data removal](docs/uninstall.md) | Export, delete everything, uninstall |
 | [Demo Scenarios](docs/demo.md) | Concrete use cases |
 | [Changelog](CHANGELOG.md) | Release history |
 
@@ -173,4 +212,5 @@ axm_get_developer_intelligence - Full DIP score and recommendations
 ## License
 
 Proprietary (c) [Axyome](https://axyome.ai) - All rights reserved.  
-See [LICENSE](LICENSE) for details.
+See [LICENSE](LICENSE) for details. Third-party components and their licences are listed in
+`THIRD-PARTY-NOTICES.txt`, shipped with the extension.

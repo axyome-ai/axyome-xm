@@ -19,9 +19,11 @@ Axyome XM captures development events from VS Code:
 | Git commits | Yes | Message, branch, files changed |
 | AI chat sessions (Copilot) | Yes | Prompts and replies |
 | Claude Code prompts and tool calls | Yes | Tool arguments (up to 8 KB) and a result preview (up to 512 bytes) |
-| Terminal commands | Yes (on by default) | With automatic secret redaction |
+| Terminal commands | Yes, in "Recommended" | With automatic secret redaction |
+| Editor selections | Yes, in "Recommended" | With automatic secret redaction |
+| Your own commits of the last 90 days | Once, on a new install with Git on | Hash, message, time, branch, per-file line counts; see [Privacy](privacy.md#git-history-import) |
 
-Capture does not read file contents from disk, the clipboard or keystrokes (keystrokes are only counted). File excerpts are stored when an AI assistant's tool call or chat reply contains them. Every source can be turned off in settings; see [Privacy](privacy.md).
+Capture does not read file contents from disk, the clipboard or keystrokes (keystrokes are only counted). File excerpts are stored when an AI assistant's tool call or chat reply contains them. Nothing is recorded until you choose in the first-run panel, and every source has its own switch (**Axyome XM: Review Capture Settings**); see [Privacy](privacy.md).
 
 ---
 
@@ -65,18 +67,18 @@ database schema version changes, and keeps up to 10 of those.
 
 ### Do I need to configure anything for Copilot?
 
-Usually not. Axyome XM writes a `.vscode/mcp.json` entry for its MCP server into
-your workspace: silently on first install, and after asking in other workspaces
-(dismissing the prompt still writes it). The 54 `axm_*` tools then appear in
-GitHub Copilot. If you chose **Skip** or **Don't Ask Again**, run
-**Axyome XM: Configure Workspace for AI Memory** to create it.
+No. Axyome XM registers its MCP server with VS Code, so Copilot lists **Axyome XM**
+in every folder without a `.vscode/mcp.json` in your repository. Nothing is written
+into your workspace without asking. By default the server lists 11 core tools of the
+54 `axm_*` tools; set `axyomeXM.mcp.toolset` to `all` to list all of them (tools that
+are not listed still run when called by name).
 
 ---
 
 ### Which AI assistants support `axm_*` tools?
 
 Any MCP-compatible assistant:
-- **GitHub Copilot** (VS Code 1.100+) - configured through `.vscode/mcp.json` (see above)
+- **GitHub Copilot** (VS Code 1.139+) - the extension registers the server with VS Code (see above)
 - **Claude Code** and other Claude clients - add the server to their MCP configuration yourself; Axyome XM does not write Claude's MCP config
 - Any other tool supporting the [Model Context Protocol](https://modelcontextprotocol.io)
 
@@ -84,7 +86,7 @@ Any MCP-compatible assistant:
 
 ### Why does Copilot say it can't find the `axm_*` tools?
 
-1. Ensure VS Code is **1.100 or newer** (`Help - About`)
+1. Ensure VS Code is **1.139 or newer** (`Help - About`)
 2. Do a **full restart** of VS Code (close and reopen - not just `Reload Window`)
 3. Check the extension is enabled: Extensions panel - search "Axyome XM" - ensure it's not disabled
 4. Run `Ctrl+Shift+P` -> **Axyome XM: Show Statistics** to verify the server is running
@@ -96,8 +98,8 @@ Any MCP-compatible assistant:
 
 The MCP server is an embedded binary shipped inside the VSIX
 (`axyome-xm-mcp-win-<version>.exe` / `axyome-xm-mcp-linux-<version>` /
-`axyome-xm-mcp-macos-<version>`). VS Code starts it from the `.vscode/mcp.json`
-entry as a local stdio process. It opens no network ports - communication is
+`axyome-xm-mcp-macos-<version>`). VS Code starts it as a local stdio process from
+the server definition the extension registers. It opens no network ports - communication is
 entirely through standard input/output.
 
 ---
