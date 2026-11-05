@@ -92,9 +92,9 @@ Copilot works on the files in one folder, so give each project its own folder.
 1. Create an empty folder, for example `Documents/sales-dashboard`.
 2. In VS Code choose **File > Open Folder...** and select it. If VS Code asks whether you trust the
    authors of the files, choose **Yes**: it is your own folder.
-3. Open the **Chat view** with the chat icon at the top of the window (hover it to see its shortcut).
-   The Chat view opens on the side.
-4. Under the message box, set the mode to **Agent**. In Agent mode, Copilot can create and change
+3. Press `Ctrl+Shift+I` (`Cmd+Shift+I` on a Mac, `Ctrl+Shift+Alt+I` on Linux). The **Chat view** opens on
+   the side, in **Agent** mode. You can also click the chat icon at the top of the window.
+4. Check that the mode under the message box says **Agent**; change it there if not. In Agent mode, Copilot can create and change
    files and run commands. It asks before it runs a command.
 
 Copilot shows every change it makes. Changed files are marked in the editor, and the chat offers
@@ -142,7 +142,8 @@ The chart is empty when I open index.html. Fix it.
 ```
 
 You do not need to understand the error. Describe what you expected and what happened, and Copilot
-investigates. Axyome XM records the error and the fix, so you can find them again later (Step 4).
+investigates. Axyome XM records which files changed and when, so you can find this moment again
+later (Step 4).
 
 ---
 
@@ -156,11 +157,11 @@ What did I work on today?
 ```
 
 ```text
-Which files changed in the last hour, and which prompt changed each one?
+Which files changed in the last hour?
 ```
 
 ```text
-The chart was empty earlier today. What was wrong and how was it fixed?
+When did I last change index.html?
 ```
 
 In the chat you will see Copilot run a tool whose name starts with `axm_`, such as
@@ -168,15 +169,6 @@ In the chat you will see Copilot run a tool whose name starts with `axm_`, such 
 ask permission to run it: choose **Allow**.
 
 If Copilot answers from general knowledge instead, add "Use Axyome XM" to your question.
-
-**Or ask Axyome XM directly.** Type `@xm` at the start of a chat message to talk to the XM Agent:
-
-| Type | What you get |
-| --- | --- |
-| `@xm /session` | A summary of your current work session |
-| `@xm /memory sales chart` | Past activity that matches your words |
-| `@xm /debug chart is empty` | Similar errors you hit before, and how they were fixed |
-| `@xm /wiki brand colours` | Matching pages in your XM Wiki (Step 6) |
 
 ---
 
@@ -215,7 +207,7 @@ vibe coding:
 | --- | --- | --- |
 | **Home** | Today at a glance: recent sessions, files and AI activity | Pick up where you stopped |
 | **Activity** | Your work over time: coding time, history, a heatmap of busy hours | See when and how long you worked on a project |
-| **AI** | Your Copilot chats: sessions and the models used | Find the chat that produced a change |
+| **AI** | Your AI assistants: chat sessions, when they ran and the models used | See which chats you had and when |
 | **Replay > Time Machine** | Any past day, replayed chapter by chapter: summary, chapters, errors, sessions | Answer "what happened on Tuesday?" |
 | **Replay > Wiki** | The XM Wiki: pages written automatically from your sessions | Browse and search what you learned |
 
@@ -284,12 +276,12 @@ last 30 days of history, Pro shows all of it. Every feature works on every plan.
 
 | I want to | Do this |
 | --- | --- |
-| Open the Chat view | Chat icon at the top of the window (hover it for the shortcut); set the mode to **Agent** |
+| Open the Chat view in Agent mode | `Ctrl+Shift+I` (`Cmd+Shift+I` on a Mac, `Ctrl+Shift+Alt+I` on Linux), or the chat icon at the top of the window |
 | Start a fresh chat | **+** at the top of the Chat view |
 | Open the Command Palette | `Ctrl+Shift+P` (`Cmd+Shift+P` on a Mac) |
 | Open the Axyome XM dashboard | **Axyome XM** icon in the Activity Bar, or `Ctrl+Shift+Alt+M` (`Cmd+Shift+Alt+M` on a Mac) |
 | Recall my work | "What did I work on today / this week / on this project?" |
-| Find a past problem | "Have I seen this error before: *paste the message*" or `@xm /debug` |
+| Find a past error | "Have I seen this error before: *paste the message from the Problems panel*" |
 | Save a rule | "Remember: *the rule*" |
 | Find a rule | "What did we decide about *topic*?" |
 | Replay a past day | Dashboard > **Replay > Time Machine** |
