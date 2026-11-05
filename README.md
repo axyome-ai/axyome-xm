@@ -89,6 +89,10 @@ Step-by-step guides that end with something working.
 | Tutorial | For | Time |
 |----------|-----|------|
 | [Vibe coding with Copilot and Axyome XM](docs/tutorials/vibe-coding-with-copilot.md) | Business users, no coding experience | 30 min |
+| [A small tool built over a week](docs/tutorials/tool-over-a-week.md) | Business users who did the first tutorial | 3 × 30 min |
+| [Hand your prototype to developers](docs/tutorials/handover-to-developers.md) | Business users with a working prototype | 45 min |
+| [Debug with memory](docs/tutorials/debug-with-memory.md) | Junior developers | 30 min |
+| [A feature across three days](docs/tutorials/feature-across-three-days.md) | Intermediate developers | 3 × 30 min |
 
 -> [All tutorials](docs/tutorials/README.md)
 
