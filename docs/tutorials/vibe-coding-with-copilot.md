@@ -1,6 +1,9 @@
 # Vibe coding with Copilot and Axyome XM
 
-**For:** business users who have never written code. **Time:** about 30 minutes.
+**Track:** Business · **Level:** Beginner · **Time:** 30 min · **Before this:** nothing
+
+**You will end with** a one-page sales dashboard that opens in your browser, and an Axyome XM history
+of how you built it.
 
 In this tutorial you build a small working app by chatting with GitHub Copilot in VS Code, without
 writing code yourself. Axyome XM records what you and Copilot did, so the next chat can pick up
@@ -61,7 +64,8 @@ You need three things, and no coding experience:
 
 Axyome XM installs from the file you received. It records nothing until you press **Start recording**.
 
-1. In VS Code, open the **Extensions** view: the four-squares icon in the left bar, or
+1. In VS Code, open the **Extensions** view: the four-squares icon in the **Activity Bar** (the icon
+   bar on the far left), or
    `Ctrl+Shift+X` (`Cmd+Shift+X` on a Mac).
 2. Click the **...** menu at the top of that view and choose **Install from VSIX...**.
 3. Select your `.vsix` file. Wait for the message that the install finished.
@@ -77,7 +81,7 @@ Axyome XM installs from the file you received. It records nothing until you pres
 
 You can change your recording choices at any time. Press `Ctrl+Shift+P` (`Cmd+Shift+P` on a Mac)
 to open the **Command Palette**, type **Axyome XM: Review Capture Settings** and press Enter.
-A new **Axyome XM** icon now sits in the left bar; it opens the dashboard you will use in Step 6.
+A new **Axyome XM** icon now sits in the Activity Bar; it opens the dashboard you will use in Step 6.
 
 ---
 
@@ -88,8 +92,8 @@ Copilot works on the files in one folder, so give each project its own folder.
 1. Create an empty folder, for example `Documents/sales-dashboard`.
 2. In VS Code choose **File > Open Folder...** and select it. If VS Code asks whether you trust the
    authors of the files, choose **Yes**: it is your own folder.
-3. Open **Chat** with the chat icon at the top of the window, or `Ctrl+Alt+I` (`Ctrl+Cmd+I` on a Mac).
-   The chat panel opens on the side.
+3. Open the **Chat view** with the chat icon at the top of the window (hover it to see its shortcut).
+   The Chat view opens on the side.
 4. Under the message box, set the mode to **Agent**. In Agent mode, Copilot can create and change
    files and run commands. It asks before it runs a command.
 
@@ -145,7 +149,7 @@ investigates. Axyome XM records the error and the fix, so you can find them agai
 ## Step 4: Ask Copilot what you did
 
 Copilot on its own forgets everything when you start a new chat. With Axyome XM, it can look up
-your real history. Start a new chat with the **+** button at the top of the chat panel, then try:
+your real history. Start a new chat with the **+** button at the top of the Chat view, then try:
 
 ```text
 What did I work on today?
@@ -204,7 +208,7 @@ Copilot finds the rule with `axm_search_decisions` and applies it. Good things t
 ## Step 6: Look back in the dashboard
 
 The dashboard shows your recorded work without asking Copilot. Open it with the **Axyome XM** icon in
-the left bar, or `Ctrl+Shift+Alt+M` (`Cmd+Shift+Alt+M` on a Mac). The five places most useful for
+the Activity Bar, or `Ctrl+Shift+Alt+M` (`Cmd+Shift+Alt+M` on a Mac). The five places most useful for
 vibe coding:
 
 | Where | What you see | Use it to |
@@ -280,10 +284,10 @@ last 30 days of history, Pro shows all of it. Every feature works on every plan.
 
 | I want to | Do this |
 | --- | --- |
-| Open the chat | Chat icon at the top, or `Ctrl+Alt+I` (`Ctrl+Cmd+I` on a Mac); set the mode to **Agent** |
-| Start a fresh chat | **+** at the top of the chat panel |
+| Open the Chat view | Chat icon at the top of the window (hover it for the shortcut); set the mode to **Agent** |
+| Start a fresh chat | **+** at the top of the Chat view |
 | Open the Command Palette | `Ctrl+Shift+P` (`Cmd+Shift+P` on a Mac) |
-| Open the Axyome XM dashboard | **Axyome XM** icon in the left bar, or `Ctrl+Shift+Alt+M` (`Cmd+Shift+Alt+M` on a Mac) |
+| Open the Axyome XM dashboard | **Axyome XM** icon in the Activity Bar, or `Ctrl+Shift+Alt+M` (`Cmd+Shift+Alt+M` on a Mac) |
 | Recall my work | "What did I work on today / this week / on this project?" |
 | Find a past problem | "Have I seen this error before: *paste the message*" or `@xm /debug` |
 | Save a rule | "Remember: *the rule*" |
@@ -291,3 +295,10 @@ last 30 days of history, Pro shows all of it. Every feature works on every plan.
 | Replay a past day | Dashboard > **Replay > Time Machine** |
 | Change what is recorded | Command Palette > **Axyome XM: Review Capture Settings** |
 | Export or delete my history | **Axyome XM: Export All My Data** / **Axyome XM: Delete All My Data** |
+
+---
+
+## Next
+
+See the [Tutorials index](README.md) for the next step in your track, and the
+[onboarding guide](../onboarding.md) for the rest of the features.
