@@ -82,6 +82,18 @@ After installing, Axyome XM activates automatically:
 
 ---
 
+## Tutorials
+
+Step-by-step guides that end with something working.
+
+| Tutorial | For | Time |
+|----------|-----|------|
+| [Vibe coding with Copilot and Axyome XM](docs/tutorials/vibe-coding-with-copilot.md) | Business users, no coding experience | 30 min |
+
+-> [All tutorials](docs/tutorials/README.md)
+
+---
+
 ## Dashboard
 
 ![Axyome XM dashboard - Home tab](docs/images/dashboard-home.png)
@@ -189,6 +201,7 @@ needed to keep using it. Details: [app.axyome.ai/pricing](https://app.axyome.ai/
 |-----|-------------|
 | [Install](docs/install.md) | Installation, platform notes, troubleshooting |
 | [Onboarding](docs/onboarding.md) | Your first 10 minutes |
+| [Tutorials](docs/tutorials/README.md) | Step-by-step guides, starting with vibe coding for business users |
 | [Dashboard Tour](docs/dashboard.md) | Every tab, with screenshots |
 | [MCP Tools Reference](docs/mcp-tools-reference.md) | All 54 `axm_*` tools |
 | [Tips & Tricks](docs/tips.md) | Power-user workflows |
