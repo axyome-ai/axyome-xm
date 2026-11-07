@@ -2,7 +2,7 @@
 
 ## Summary
 
-- **100% local storage.** Your activity is stored only on your computer.
+- **100% local storage.** On Free and Pro, your activity is stored only on your computer.
 - **Nothing is recorded until you choose.** On first run a panel lists every capture source with one
   line saying what it stores. **Recommended** turns them all on, every source has its own switch, and
   nothing is recorded until you press **Start recording**. Change it any time with
