@@ -175,6 +175,7 @@ needed to keep using it. Details: [app.axyome.ai/pricing](https://app.axyome.ai/
 
 ## Privacy
 
+- **100% local storage.** Your activity is stored only on your computer.
 - All data stored locally at `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\`
 - Without an account, Axyome XM makes no network requests.
 - After you sign in, it contacts `api.axyome.ai` to confirm your plan (about every 4 hours) and to
