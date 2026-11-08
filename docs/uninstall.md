@@ -45,8 +45,7 @@ What it does not touch:
 - Your code, your workspaces and your VS Code settings.
 - Anything outside the Axyome XM storage folder (section 4). Every delete is checked against that folder
   first; a path that resolves anywhere else is refused.
-- Your account and any data synced to the cloud on Team & Enterprise plans. Those are managed at
-  [app.axyome.ai](https://app.axyome.ai).
+- Your account. It is managed at [app.axyome.ai](https://app.axyome.ai).
 - Files that Axyome XM wrote into a workspace when you chose to configure it (see section 3).
 
 After it finishes, VS Code offers **Reload Window**. Reload to start from a clean slate: the database file
