@@ -170,7 +170,6 @@ axm_get_developer_intelligence - Full DIP score and recommendations
 |---|---|---|
 | Free | $0 | The last 30 days |
 | Pro | $9/month | All of it |
-| Team & Enterprise | [Contact sales](https://app.axyome.ai/pricing#contact-sales) | All of it, plus cloud sync across devices |
 
 Every feature works on every plan, and a plan never deletes your data — it only changes how much
 history you can see. Axyome XM runs as a 30-day preview first; after that, a free account is
