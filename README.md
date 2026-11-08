@@ -202,7 +202,7 @@ needed to keep using it. Details: [app.axyome.ai/pricing](https://app.axyome.ai/
 | Editor selections (redacted) | Yes | Yes (`axyomeXM.captureSelectedText`) |
 | Copilot chat sessions | Yes | Yes (`axyomeXM.captureChatSessions`) |
 | Claude Code prompts and tool calls | Yes | Yes (`axyomeXM.capture.claudeCode.enabled`) |
-| File **contents** | Not read from disk. Excerpts are kept when an AI assistant's tool call or chat reply contains them (tool arguments up to 8 KB, tool results up to 512 bytes, chat code blocks) | With the AI sources above |
+| File **contents** | Not read from disk, with one exception: once, on a new install, a copy of four project files is saved so your assistant has context from day one (`README.md`, `AGENTS.md`, `.github/copilot-instructions.md`, `package.json`). Excerpts are kept when an AI assistant's tool call or chat reply contains them (tool arguments up to 8 KB, tool results up to 512 bytes, chat code blocks) | The four files: once you press **Start recording**. Excerpts: with the AI sources above |
 | Clipboard | Never read | — |
 | Keystrokes | Only counted, never stored | — |
 
