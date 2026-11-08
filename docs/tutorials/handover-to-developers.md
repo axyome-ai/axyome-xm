@@ -37,7 +37,8 @@ down is one the developers will guess.
 Using Axyome XM, summarise what was built on the request tracker on each day I worked on it: the files changed and the features added.
 ```
 
-Copilot reads each day with `axm_get_session_summary`. Compare its answer with **Replay > Time Machine**
+Copilot reads each day with `axm_get_session_summary` (how much you changed and how long you worked)
+and looks up the files and commits with `axm_recall_activity`. Compare its answer with **Replay > Time Machine**
 in the Axyome XM dashboard (`Ctrl+Shift+Alt+M`, `Cmd+Shift+Alt+M` on a Mac): pick each day and read
 its **Chapters**. Correct anything Copilot got wrong in the next step.
 
@@ -92,7 +93,7 @@ commands, chat text, file names. The handover pack from Step 4 is what you share
 ## Your data and privacy
 
 What is recorded and where is described in the [first tutorial](vibe-coding-with-copilot.md#your-data-and-privacy)
-and the [privacy policy](../privacy.md). New here: the export in Step 5 contains everything, so treat
+and the [privacy section of the README](../../README.md#privacy). New here: the export in Step 5 contains everything, so treat
 it like a private diary. `HANDOVER.md` contains only what you read and approved.
 
 ---
@@ -101,7 +102,7 @@ it like a private diary. `HANDOVER.md` contains only what you read and approved.
 
 | What you see | What to do |
 | --- | --- |
-| The day-by-day summary mixes in other projects | Name the folder: "only the request tracker in Documents/request-tracker". |
+| The day-by-day summary mixes in other projects | Name the folder and ask for its files and commits only: "only the files and commits in Documents/request-tracker, day by day". |
 | A decision is missing from the list | Save it now ("Remember: …"), then run Step 1 again. |
 | `HANDOVER.md` is too long or too technical | "Make HANDOVER.md shorter and plainer. One page, no code." |
 

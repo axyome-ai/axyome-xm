@@ -89,7 +89,7 @@ Settings** and switch **Terminal** off, or:
 2. Search for `axyome terminal`
 3. Uncheck **Axyome XM: Capture Terminal**
 
-Terminal commands and editor selections are persisted locally with **automatic secret redaction** - assignments to names containing `token`, `secret`, `password`, `api_key` or `credential`, Bearer tokens, and `aws_`/`azure_`/`gcp_`/`github_`/`npm_` variables are replaced with `[REDACTED]` before storage. See [Privacy](privacy.md#terminal-capture--secret-redaction).
+Terminal commands and editor selections are persisted locally with **automatic secret redaction** - assignments to names containing `token`, `secret`, `password`, `api_key` or `credential`, Bearer tokens, and `aws_`/`azure_`/`gcp_`/`github_`/`npm_` variables are replaced with `[REDACTED]` before storage. See [Secret redaction](../README.md#secret-redaction).
 
 ---
 

@@ -206,13 +206,13 @@ vibe coding:
 | Where | What you see | Use it to |
 | --- | --- | --- |
 | **Home** | Today at a glance: recent sessions, files and AI activity | Pick up where you stopped |
-| **Activity** | Your work over time: coding time, history, a heatmap of busy hours | See when and how long you worked on a project |
+| **Activity** | Your work over time: coding time, your history and a live feed | See when and how long you worked on a project |
 | **AI** | Your AI assistants: chat sessions, when they ran and the models used | See which chats you had and when |
 | **Replay > Time Machine** | Any past day, replayed chapter by chapter: summary, chapters, errors, sessions | Answer "what happened on Tuesday?" |
-| **Replay > Wiki** | The XM Wiki: pages written automatically from your sessions | Browse and search what you learned |
+| **Replay > Wiki** | The XM Wiki: pages written automatically from your sessions (off on a new install; see below) | Browse and search what you learned |
 
-A new install shows the most useful tabs first; the others can be turned on later. Everything on
-the dashboard comes from your own computer.
+A new install shows the most useful tabs first; the others can be turned on in **System > Settings**.
+Everything you recorded, as shown on the dashboard, comes from your own computer.
 
 Try this: open **Replay > Time Machine**, pick today, and read the chapters of your sales dashboard
 session. The [dashboard tour](../dashboard.md) shows every tab.
@@ -228,8 +228,8 @@ requests.
 - **Secrets are hidden.** Terminal commands and selected text are stored with passwords, keys and
   tokens removed.
 - **If you sign in,** Axyome XM contacts `api.axyome.ai` about every 4 hours to confirm your plan,
-  and registers this device (its name and platform). There are no third-party analytics. Cloud sync
-  exists only on the Team and Enterprise plans.
+  and registers this device (its name, platform and version numbers). There are no third-party
+  analytics. On Free and Pro, your activity is stored only on your computer.
 - **Take it with you:** **Axyome XM: Export All My Data** writes everything to JSON and Markdown
   files in a folder you choose.
 - **Remove it:** **Axyome XM: Delete All My Data** (type `DELETE` to confirm) erases the recorded
@@ -242,7 +242,7 @@ that chat, just like text you paste in. Follow your company's rules on what data
 
 **Plans.** Axyome XM starts as a 30-day preview; after that a free account is needed. Free shows the
 last 30 days of history, Pro shows all of it. Every feature works on every plan. Current prices:
-[app.axyome.ai/pricing](https://app.axyome.ai/pricing). Full details: [privacy policy](../privacy.md).
+[app.axyome.ai/pricing](https://app.axyome.ai/pricing). Full details: [privacy section of the README](../../README.md#privacy).
 
 ---
 

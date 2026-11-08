@@ -93,6 +93,7 @@ Step-by-step guides that end with something working.
 | [Hand your prototype to developers](docs/tutorials/handover-to-developers.md) | Business users with a working prototype | 45 min |
 | [Debug with memory](docs/tutorials/debug-with-memory.md) | Junior developers | 30 min |
 | [A feature across three days](docs/tutorials/feature-across-three-days.md) | Intermediate developers | 3 × 30 min |
+| [One memory for Copilot and Claude Code](docs/tutorials/one-memory-for-copilot-and-claude-code.md) | Senior developers using Claude Code | 45 min |
 
 -> [All tutorials](docs/tutorials/README.md)
 
@@ -180,23 +181,85 @@ needed to keep using it. Details: [app.axyome.ai/pricing](https://app.axyome.ai/
 ## Privacy
 
 - **100% local storage.** On Free and Pro, your activity is stored only on your computer.
-- All data stored locally at `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\`
-- Without an account, Axyome XM makes no network requests.
-- After you sign in, it contacts `api.axyome.ai` to confirm your plan (about every 4 hours) and to
-  register this device (its name and platform). No third-party analytics. Cloud sync only on Team & Enterprise plans.
-- **Nothing is recorded until you choose.** On first run a panel lists every source (Claude Code,
-  Copilot chat and agent edits, files, git, terminal, editor, selections, problems, debug, tasks,
-  coding time) with what it stores; "Recommended" turns them all on, and each has its own toggle.
-  Change it any time with **Axyome XM: Review Capture Settings**.
-- With Git on, a new install also reads your own commits of the last 90 days once (hash, message,
-  time, branch, per-file line counts), so recall works on day one. Set `axyomeXM.history.gitDays`
-  to `0` to skip it; **Axyome XM: Import Git History** runs it on demand.
-- Terminal commands and editor selections are stored with secrets redacted
-- Take your data with you: **Axyome XM: Export All My Data** writes every table to JSON and Markdown in a folder you choose
-- Remove it all, anytime: **Axyome XM: Delete All My Data** (type `DELETE` to confirm) deletes the database contents, backups and
-  queued events on this computer. Uninstalling the extension alone does not remove them; the [uninstall and data removal guide](docs/uninstall.md) lists what is stored and where
+- **Nothing is recorded until you choose.** On first run a panel lists every capture source (Claude Code,
+  Copilot chat and agent edits, files, git, terminal, editor, selections, problems, debug, tasks, coding
+  time) with one line saying what it stores. **Recommended** turns them all on, every source has its own
+  switch, and nothing is recorded until you press **Start recording**. Change it any time with
+  **Axyome XM: Review Capture Settings**.
+- **No account, no network.** Without an account, Axyome XM makes no calls to Axyome servers. There are
+  no third-party analytics, and the built-in MCP server makes no network calls at all.
+- **Secrets are redacted.** Terminal commands and editor selections pass through automatic secret
+  redaction before they are stored.
 
--> [Full privacy policy](docs/privacy.md)
+### What is recorded, on your computer only
+
+| Data | Stored | In "Recommended" |
+|------|:------:|:----------------:|
+| File paths and file events | Yes | Yes (`axyomeXM.captureFiles`) |
+| Error and warning messages from the Problems panel | Yes | Yes (`axyomeXM.captureDiagnostics`) |
+| Git commits and messages | Yes | Yes (`axyomeXM.captureGit`) |
+| Your own commits of the last 90 days, read once ([below](#git-history-import)) | Yes | With Git, on a new install |
+| Terminal commands (redacted) | Yes | Yes (`axyomeXM.captureTerminal`) |
+| Editor selections (redacted) | Yes | Yes (`axyomeXM.captureSelectedText`) |
+| Copilot chat sessions | Yes | Yes (`axyomeXM.captureChatSessions`) |
+| Claude Code prompts and tool calls | Yes | Yes (`axyomeXM.capture.claudeCode.enabled`) |
+| File **contents** | Not read from disk. Excerpts are kept when an AI assistant's tool call or chat reply contains them (tool arguments up to 8 KB, tool results up to 512 bytes, chat code blocks) | With the AI sources above |
+| Clipboard | Never read | — |
+| Keystrokes | Only counted, never stored | — |
+
+Before you choose, nothing in this table is recorded.
+
+### Secret redaction
+
+Before a terminal command or an editor selection is stored, values matching the redaction patterns
+are replaced with `[REDACTED]`. The default patterns cover assignments to names containing `api_key`,
+`apikey`, `secret`, `password`, `token`, `credential` or `auth` (for example `API_KEY=...`,
+`password: ...`), bearer tokens, and variables starting `aws_`, `azure_`, `gcp_`, `github_` or `npm_`.
+Add your own with the `axyomeXM.terminalRedactPatterns` setting. To stop terminal capture, switch
+**Terminal** off in **Axyome XM: Review Capture Settings**.
+
+### Git history import
+
+So that memory has something to recall on day one, a new install with **Git** on reads your own
+commits of the last 90 days once, after you choose what is recorded: hash, message, time, branch and
+per-file line counts. Commits by other authors are left out, and imported commits are not counted as
+work done with AI. Set `axyomeXM.history.gitDays` to `0` to skip it, or change the number of days;
+**Axyome XM: Import Git History** runs it on demand.
+
+### Where your data lives
+
+| OS | Folder |
+|----|--------|
+| Windows | `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\` |
+| Linux | `~/.config/Code/User/globalStorage/axyome.axyome-xm/` |
+| macOS | `~/Library/Application Support/Code/User/globalStorage/axyome.axyome-xm/` |
+
+It holds the database `axyome-xm.db` (with its journal files) and up to 5 rolling automatic backups.
+
+### Network
+
+| When | Destination | What |
+|------|-------------|------|
+| You are signed in | `api.axyome.ai` | Sign-in, plan check (about every 4 hours), device registration (its name, platform and version numbers) |
+| You click a link | `app.axyome.ai`, in your browser | Sign-in, pricing and billing pages |
+
+Signed out, Axyome XM makes no calls to Axyome servers. VS Code itself may check the Marketplace for
+updates; that is VS Code, not Axyome XM.
+
+### Your data, your control
+
+- **Take a copy:** **Axyome XM: Export All My Data** writes every table to JSON and Markdown in a folder
+  you choose.
+- **Delete everything:** **Axyome XM: Delete All My Data** (type `DELETE` to confirm) deletes the
+  database contents, backups and queued events on this computer. Uninstalling the extension alone does
+  not remove them; the [uninstall and data removal guide](docs/uninstall.md) lists what is stored and
+  where.
+- **Clear captured events only:** **Axyome XM: Clear Captured Events**.
+
+### Reporting a security issue
+
+Please do not open a public issue for a security problem. Email **security@axyome.ai** with a
+description, the steps to reproduce and the impact.
 
 ---
 
@@ -211,7 +274,7 @@ needed to keep using it. Details: [app.axyome.ai/pricing](https://app.axyome.ai/
 | [MCP Tools Reference](docs/mcp-tools-reference.md) | All 54 `axm_*` tools |
 | [Tips & Tricks](docs/tips.md) | Power-user workflows |
 | [FAQ](docs/faq.md) | Common questions answered |
-| [Privacy](docs/privacy.md) | What is (and isn't) collected |
+| [Privacy](#privacy) | What is (and isn't) collected |
 | [Uninstall and data removal](docs/uninstall.md) | Export, delete everything, uninstall |
 | [Demo Scenarios](docs/demo.md) | Concrete use cases |
 | [Changelog](CHANGELOG.md) | Release history |

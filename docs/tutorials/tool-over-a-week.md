@@ -119,6 +119,9 @@ Describing what worked *before* a change is the fastest way to get it back.
 Axyome XM writes **XM Wiki** pages from your sessions automatically when VS Code is idle. To write them now, open the **Command Palette** (`Ctrl+Shift+P`, `Cmd+Shift+P` on a Mac)
 and run **XM Wiki: Ingest Latest Session**.
 
+Replay > Wiki is off on a new install. To show it, open the dashboard, go to **System > Settings**,
+tick **Wiki** under **Replay** in **Subtab Visibility**, and click **Apply & Save**.
+
 Then search them: Command Palette > **XM Wiki: Search…**, type `request tracker`. You can also browse
 the pages in the dashboard under **Replay > Wiki**.
 
@@ -141,7 +144,7 @@ Your next project starts with these rules already known.
 ## Your data and privacy
 
 Nothing new is recorded in this tutorial. Everything stays on your computer, as described in the
-[first tutorial](vibe-coding-with-copilot.md#your-data-and-privacy) and the [privacy policy](../privacy.md).
+[first tutorial](vibe-coding-with-copilot.md#your-data-and-privacy) and the [privacy section of the README](../../README.md#privacy).
 
 ---
 
@@ -150,9 +153,9 @@ Nothing new is recorded in this tutorial. Everything stays on your computer, as 
 | What you see | What to do |
 | --- | --- |
 | Copilot does not know the rule from the other project | Ask "Use Axyome XM: what did we decide about chart colours?" Check that the rule was saved: Copilot showed `axm_log_decision` when you sent it. |
-| "Where did I stop?" describes the wrong project | Name the project and folder: "on the request tracker in Documents/request-tracker". |
+| "Where did I stop?" describes the wrong project | Name the project and folder: "which files did I change in Documents/request-tracker, and when?" |
 | The requests disappear after a reload | Say exactly that: "The requests disappear when I reload the page." |
-| **XM Wiki: Search…** finds nothing | Run **XM Wiki: Ingest Latest Session** first, then search again. |
+| **XM Wiki: Search…** finds nothing | Run **XM Wiki: Ingest Latest Session** first, then search again. Check that **Replay > Wiki** is shown (**System > Settings** > **Subtab Visibility**). |
 
 ---
 

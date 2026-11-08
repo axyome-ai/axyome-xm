@@ -3,7 +3,7 @@
 **Track:** Coder · **Level:** Intermediate · **Time:** 3 sessions of 30 min · **Before this:** [Debug with memory](debug-with-memory.md)
 
 **You will end with** a tested CSV export in the request tracker, built over three sessions, with
-project rules Copilot follows in every chat and a summary you can paste into a pull request.
+project rules saved in Axyome XM that Copilot looks up when you ask, and a summary you can paste into a pull request.
 
 A feature that spans days fails in the gaps: the rule you set on Monday, the test that broke on
 Tuesday. In this tutorial Axyome XM fills the gaps, and you check what it says against git.
@@ -16,6 +16,7 @@ Tuesday. In this tutorial Axyome XM fills the gaps, and you check what it says a
 
 - [ ] The `request-tracker` project under git, from [Debug with memory](debug-with-memory.md).
 - [ ] [Node.js](https://nodejs.org) 18 or newer, for its built-in test runner (`node --test`).
+- [ ] **Terminal** is on in **Axyome XM: Review Capture Settings** (**Recommended** turns it on), so test runs are recorded.
 - [ ] The **Chat view** in **Agent** mode: `Ctrl+Shift+I` (`Cmd+Shift+I` on a Mac, `Ctrl+Shift+Alt+I` on Linux).
 
 ---
@@ -23,8 +24,9 @@ Tuesday. In this tutorial Axyome XM fills the gaps, and you check what it says a
 ## Session 1, Step 1: Give the project its rules
 
 Open the **Command Palette** (`Ctrl+Shift+P`, `Cmd+Shift+P` on a Mac) and run
-**Axyome XM: Configure Workspace for AI Memory**. Choose **AGENTS.md**. It is a project instruction
-file that Copilot reads in every chat; open it and read what it asks Copilot to do. Commit it.
+**Axyome XM: Configure Workspace for AI Memory**. In the list, leave only **Create AGENTS.md** ticked
+and press Enter. `AGENTS.md` is a project instruction file for AI assistants; open it and read what it
+asks Copilot to do. Commit it.
 
 Then save the project's own rules as decisions:
 
@@ -57,7 +59,8 @@ Start a **new** chat:
 Where did I stop on the request tracker, and what is left to do for the CSV export?
 ```
 
-Copilot reads your last session (`axm_get_session_summary`) and your commits. Compare its answer with
+Copilot reads a summary of your recent work (`axm_get_session_summary`) and searches your commits
+(`axm_recall_activity`). Compare its answer with
 `git log` in the terminal: it should name `Add toCsv with tests`.
 
 ---
@@ -67,11 +70,11 @@ Copilot reads your last session (`axm_get_session_summary`) and your commits. Co
 `app.js` now has history: two bugs from the last tutorial and a new function. Before changing it:
 
 ```text
-Before you change app.js, get its context from Axyome XM: past errors in it and the decisions that apply.
+Before you change app.js, get its context from Axyome XM: its recent errors and the decisions that apply.
 ```
 
-Copilot runs `axm_get_context_snapshot` on the file. It brings back the file's past errors and your
-saved rules, in a short answer sized to fit the chat. Now add the button:
+Copilot runs `axm_get_context_snapshot` on the file. It brings back how many errors the file had this
+past week and your recent saved decisions, in a short answer sized to fit the chat. Now add the button:
 
 ```text
 Add an Export CSV button above the table that downloads the requests as requests.csv using toCsv. Keep the tests passing.
@@ -88,20 +91,20 @@ one, and run `node --test`). Before you read the whole diff, ask:
 When did the tests last pass, and what changed in app.js since then?
 ```
 
-Copilot reads the recorded test runs and your file changes (`axm_recall_activity`) and narrows the
-search to the changes since the last green run. Fix, rerun, and commit: `Add Export CSV button`.
+Copilot finds the last test run that passed and the times you saved `app.js` after it
+(`axm_recall_activity`). Run `git diff` to see what changed since your last commit. Fix, rerun, and commit: `Add Export CSV button`.
 
 ---
 
 ## Session 3, Step 6: Review the file's error history
 
 ```text
-Show the error history of app.js from Axyome XM, and what happened in the chat just before each error.
+Show the error history of app.js from Axyome XM, including errors I already fixed.
 ```
 
-Copilot runs `axm_get_error_forensics`. For each error recorded for that file, it shows when it
-appeared and what came just before it in the chat session. Look for a
-pattern: did errors follow large prompts that changed several things at once?
+Copilot runs `axm_get_error_forensics`. For each error, it shows when and where it appeared, the
+message, whether you fixed it and how long that took, and how much chat activity came just before it.
+Look for a pattern: did errors follow a burst of chat requests?
 
 ---
 
@@ -119,7 +122,7 @@ usually does.
 ## Your data and privacy
 
 What is recorded and where is described in the [first tutorial](vibe-coding-with-copilot.md#your-data-and-privacy)
-and the [privacy policy](../privacy.md). New here: `AGENTS.md` is a file in your project, so it is
+and the [privacy section of the README](../../README.md#privacy). New here: `AGENTS.md` is a file in your project, so it is
 committed and shared with everyone who clones the project. Read it before you commit it.
 
 ---
@@ -130,7 +133,7 @@ committed and shared with everyone who clones the project. Read it before you co
 | --- | --- |
 | Copilot ignores the project rules | Check that `AGENTS.md` is in the project root, then ask "What did we decide about tests in the request tracker?" |
 | "Where did I stop?" names another project | Name the folder: "in the request-tracker folder". |
-| The context snapshot shows no past errors | Errors are recorded only from the **Problems** panel (see [Debug with memory](debug-with-memory.md)). |
+| The context snapshot shows no errors | It counts the errors of the past week, recorded only from the **Problems** panel (see [Debug with memory](debug-with-memory.md)). |
 | `node --test` finds no tests | Check that the file is `tests/app.test.js` and that you run it from the project root. |
 
 ---
@@ -139,7 +142,7 @@ committed and shared with everyone who clones the project. Read it before you co
 
 | I want to | Do this |
 | --- | --- |
-| Give Copilot project rules | Command Palette > **Axyome XM: Configure Workspace for AI Memory** > **AGENTS.md** |
+| Give Copilot project rules | Command Palette > **Axyome XM: Configure Workspace for AI Memory** > only **Create AGENTS.md** ticked |
 | Resume a feature | "Where did I stop on *project*, and what is left to do for *feature*?" |
 | Check a file before changing it | "Before you change *file*, get its context from Axyome XM." |
 | Narrow a failing test | "When did the tests last pass, and what changed in *file* since then?" |
@@ -149,5 +152,4 @@ committed and shared with everyone who clones the project. Read it before you co
 
 ## Next
 
-The senior tutorial, connecting Claude Code to the same memory, is coming. Until then, the
-[MCP tools reference](../mcp-tools-reference.md) lists every `axm_` tool.
+Connect Claude Code to the same memory: [One memory for Copilot and Claude Code](one-memory-for-copilot-and-claude-code.md).

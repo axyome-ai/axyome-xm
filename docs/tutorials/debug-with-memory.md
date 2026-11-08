@@ -31,7 +31,7 @@ Use the `request-tracker` folder from the business track, or create it now: make
 Build a single page index.html called "Request tracker". A form adds a request with a title, requester, date and a status of New, In progress or Done. Show the requests in a table below the form, newest first, and keep them in the browser so they survive a page reload. Use navy #1F3A5F and orange #F28C28. Do not use anything I need to install.
 ```
 
-Then move the code into its own file, so VS Code checks it:
+Then move the code into its own file:
 
 ```text
 Move the JavaScript from index.html into app.js and load it from index.html. Change nothing else.
@@ -91,8 +91,8 @@ file. Then connect it to what you did about it:
 What did I change in app.js, and what did I commit, right after that earlier error?
 ```
 
-Copilot reads your file changes and commits (`axm_recall_activity`) and finds your
-`Fix: missing closing brace` commit. Now you know the cause and the fix before you start, and you
+Copilot searches your file saves and commits (`axm_recall_activity`) and finds your
+`Fix: missing closing brace` commit: a commit message that names the file and the fix is what it finds. Now you know the cause and the fix before you start, and you
 can ask for exactly that:
 
 ```text
@@ -107,7 +107,7 @@ Commit again, with a message that names the fix.
 
 Open the Axyome XM dashboard (`Ctrl+Shift+Alt+M`, `Cmd+Shift+Alt+M` on a Mac):
 
-- **Activity > History** shows your saves and commits on a timeline.
+- **Activity > History** shows how much you did each day.
 - **Replay > Time Machine**, today, **Errors**: the two errors, each at the moment it appeared.
 
 ---
@@ -115,7 +115,7 @@ Open the Axyome XM dashboard (`Ctrl+Shift+Alt+M`, `Cmd+Shift+Alt+M` on a Mac):
 ## Your data and privacy
 
 What is recorded and where is described in the [first tutorial](vibe-coding-with-copilot.md#your-data-and-privacy)
-and the [privacy policy](../privacy.md). New here: with **Problems** on, Axyome XM stores the error
+and the [privacy section of the README](../../README.md#privacy). New here: with **Problems** on, Axyome XM stores the error
 messages VS Code shows for files in your open folder, and with **Git** on, your commit messages.
 
 ---
@@ -127,7 +127,7 @@ messages VS Code shows for files in your open folder, and with **Git** on, your 
 | "Have I seen this error before?" finds nothing | The error must have appeared in the **Problems** panel for a file inside the open folder. Errors in `node_modules`, `dist`, `out` and `.git` are not recorded. |
 | Copilot answers without running an `axm_` tool | Add "Use Axyome XM" to the question. |
 | Copilot finds the error but not the fix | Your commit messages are the memory of your fixes. Name the fix in each one: "Fix: …". |
-| The Problems panel shows nothing for `app.js` | Save the file. VS Code checks JavaScript in `.js` files, not inside `index.html`. |
+| The Problems panel shows nothing for `app.js` | Save the file, and check that the code is in `app.js` (Step 1), not inside `index.html`. |
 
 ---
 

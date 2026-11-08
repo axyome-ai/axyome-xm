@@ -4,7 +4,7 @@
 
 ### Does Axyome XM send any data to the cloud?
 
-Only in specific cases. Axyome XM is local-first: captured activity is persisted locally on your machine. The extension contacts the network only to talk to `api.axyome.ai` while you are signed in (sign-in, licence check, device registration), and, on Team & Enterprise plans, to sync captured events and coding goals. The embedded MCP server makes no network calls, and there are no third-party analytics. See [Privacy](privacy.md#network-activity).
+Only in specific cases. Axyome XM is local-first: captured activity is persisted locally on your machine. On Free and Pro, your activity is stored only on your computer. The extension contacts the network only to talk to `api.axyome.ai` while you are signed in (sign-in, plan check, device registration). The built-in MCP server makes no network calls, and there are no third-party analytics. See [Network](../README.md#network).
 
 ---
 
@@ -21,9 +21,9 @@ Axyome XM captures development events from VS Code:
 | Claude Code prompts and tool calls | Yes | Tool arguments (up to 8 KB) and a result preview (up to 512 bytes) |
 | Terminal commands | Yes, in "Recommended" | With automatic secret redaction |
 | Editor selections | Yes, in "Recommended" | With automatic secret redaction |
-| Your own commits of the last 90 days | Once, on a new install with Git on | Hash, message, time, branch, per-file line counts; see [Privacy](privacy.md#git-history-import) |
+| Your own commits of the last 90 days | Once, on a new install with Git on | Hash, message, time, branch, per-file line counts; see [Privacy](../README.md#git-history-import) |
 
-Capture does not read file contents from disk, the clipboard or keystrokes (keystrokes are only counted). File excerpts are stored when an AI assistant's tool call or chat reply contains them. Nothing is recorded until you choose in the first-run panel, and every source has its own switch (**Axyome XM: Review Capture Settings**); see [Privacy](privacy.md).
+Capture does not read file contents from disk, the clipboard or keystrokes (keystrokes are only counted). File excerpts are stored when an AI assistant's tool call or chat reply contains them. Nothing is recorded until you choose in the first-run panel, and every source has its own switch (**Axyome XM: Review Capture Settings**); see [Privacy](../README.md#privacy).
 
 ---
 
@@ -129,7 +129,7 @@ start.
 
 ### Does it work without an internet connection?
 
-Mostly. Capture, search, recall, MCP tools and the dashboard run locally and keep working offline. You need a connection to link an account (required after the 30-day preview), to refresh a paid licence, and for Team & Enterprise cloud sync.
+Mostly. Capture, search, recall, MCP tools and the dashboard run locally and keep working offline. You need a connection to link an account (required after the 30-day preview) and to refresh a paid licence.
 
 ---
 
