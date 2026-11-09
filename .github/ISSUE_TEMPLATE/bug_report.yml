@@ -27,7 +27,7 @@ body:
     attributes:
       label: VS Code Version
       description: "Help - About - version number"
-      placeholder: "1.100.x"
+      placeholder: "1.139.x"
     validations:
       required: true
 
@@ -36,7 +36,7 @@ body:
     attributes:
       label: Extension Version
       description: "Extensions panel - Axyome XM - version number"
-      placeholder: "0.2.xxx"
+      placeholder: "1.0.xx"
     validations:
       required: true
 
@@ -46,7 +46,7 @@ body:
       label: Area
       description: Which part of the extension is affected?
       options:
-        - MCP Tools (axm_* not working in Copilot)
+        - MCP Tools (axm_* not working in Copilot or Claude Code)
         - Dashboard UI
         - Event Capture (files/errors/git not captured)
         - Search / Recall

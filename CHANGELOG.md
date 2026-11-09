@@ -1,46 +1,27 @@
 # Changelog
 
-All notable changes to the Axyome XM VS Code Extension are documented here.
-
-The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+All notable changes to Axyome XM are listed here. Maintained by the Axyome.ai Team.
 
 ---
 
-## [0.2.746] - 2026-07-27
+## [1.0.23] - Pre-release
 
-###  Initial Public Release - Axyome XM
+The first public version of Axyome XM.
 
-**Publisher**: `axyome` | **Website**: https://axyome.ai
+### What you get
 
-#### Core Features
-- **AI Memory Engine** - Persistent local memory for GitHub Copilot and MCP-compatible AI assistants. Recalls files edited, commands run, git commits, and development patterns across sessions
-- **45 MCP Tools** - Full suite of `axm_*` tools: recall, search, decisions, feedback, observations, session summaries, skill tracking, wiki, achievements, and more
-- **XM Wiki** - Persistent knowledge base that synthesises patterns, decisions, and errors from session data into searchable wiki pages (`axm_wiki_*` tools)
-- **Full-Text Search** - Fast keyword search across all memory tables
-- **Semantic Search** - Vector embeddings via `@huggingface/transformers` (bge-small-en-v1.5, 384 dimensions) for meaning-based memory search
-- **Hybrid Search** - Combined semantic + keyword search weighted scoring (vector 60%, text 25%, recency 15%)
-- **Session Analytics** - ATI (AI Tool Index) metrics, productivity heatmap, tool usage breakdown
-- **Achievement System** - 12 unlockable badges: Prompt Master, Flow State, Bug Slayer, Wiki Builder, Speed Coder, and more
-- **Developer Intelligence** - DIP score, error forensics, file hotspot analysis, anti-pattern detection
-- **Time Machine** - Replay any past coding session broken into chapters (Build, Test, Commit, Debug, Code)
-- **Onboarding Dashboard** - Interactive 4-mission tutorial for first-time setup
-- **Auto Memory Enhancement** - Automatic memory enrichment on session start, error detection, and session close
+- **A flight recorder for AI-assisted coding.** Files, errors, terminal commands and their output, commits, and your Copilot and Claude Code sessions, stored on your computer. Nothing is recorded until you choose in the first-run panel.
+- **Recall in plain words.** Ask what you worked on or what changed. Axyome XM says which assistant changed a file.
+- **GitHub Copilot.** Ask `@xm` in Copilot Chat, or let Copilot use the memory tools, skills and agent.
+- **Claude Code.** With your agreement on first run, Claude Code connects to the same memory and gets an agent and three memory skills.
+- **Time Machine and the dashboard.** Replay any past coding day and see your activity at a glance.
+- **Secrets are redacted** from terminal commands, their output and editor selections before they are stored.
 
-#### Platform Support
-- Windows (win32-x64): ~38 MB VSIX
-- Linux (linux-x64): ~38 MB VSIX  
-- macOS (darwin-x64): ~36 MB VSIX
+### Plans
 
-#### Privacy
-- 100% local - no cloud, no telemetry, no external servers
-- Terminal capture opt-in with automatic redaction of secrets
-- All data persisted locally at `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\`
+- **Free:** the last 30 days of history, 1 device.
+- **Pro, $9/month:** all your history, up to 5 devices.
 
-#### MCP Integration
-- Auto-configured for VS Code 1.100+ (no manual `mcp.json` required)
-- MCP server binary embedded in VSIX - no separate installation
-- Compatible with GitHub Copilot and any MCP-enabled AI assistant
+### Requirements
 
----
-
-*The full development changelog is kept in Axyome's private development repository.*
+VS Code 1.139.0 or later, on Windows, Linux or macOS.

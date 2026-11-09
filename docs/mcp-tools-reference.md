@@ -15,13 +15,13 @@ descriptions and stability tiers.
 ## Memory & Recall
 
 ### `axm_recall_activity`
-Search past work: files edited, errors encountered, terminal commands, chat and context events.
+Ask about past work in plain words: files edited, errors encountered, terminal commands, commits, chat and context events. Results say which assistant changed a file.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `query` | string | What to search for |
+| `query` | string | A question, words, or one exact name or ID. `*` lists recent activity |
 | `hoursAgo` | number | Look back window (default: 24) |
-| `eventType` | string | Filter: `all` (default), `context`, `chat`, `file`, `terminal`, `diagnostic` |
+| `eventType` | string | Filter: `all` (default), `context`, `chat`, `file`, `git`, `terminal`, `diagnostic` |
 | `limit` | number | Max results (default: 10, max 100) |
 | `filePattern` | string | Only events for matching files |
 | `hasErrors` | boolean | Only events with errors |

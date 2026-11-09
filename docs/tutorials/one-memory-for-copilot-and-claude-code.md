@@ -43,8 +43,8 @@ assistant reads from it only through tools whose names start with `axm_`.
 
 Open the **Command Palette** (`Ctrl+Shift+P`, `Cmd+Shift+P` on a Mac) and run
 **Axyome XM: Review Capture Settings**. Check that **Claude Code memory access** is on (it is part of
-**Recommended**), then confirm. Axyome XM adds one `axyome-xm` entry to Claude Code's settings and
-keeps it up to date when the extension updates.
+**Recommended**), then confirm. Axyome XM adds an `axyome-xm` entry to Claude Code's settings, installs
+a plugin with an agent and three memory skills, and keeps them up to date when the extension updates.
 
 To check, open a terminal and run:
 

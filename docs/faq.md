@@ -23,7 +23,7 @@ Axyome XM captures development events from VS Code:
 | Editor selections | Yes, in "Recommended" | With automatic secret redaction |
 | Your own commits of the last 90 days | Once, on a new install with Git on | Hash, message, time, branch, per-file line counts; see [Privacy](../README.md#git-history-import) |
 
-Capture does not read file contents from disk, the clipboard or keystrokes (keystrokes are only counted). File excerpts are stored when an AI assistant's tool call or chat reply contains them. Nothing is recorded until you choose in the first-run panel, and every source has its own switch (**Axyome XM: Review Capture Settings**); see [Privacy](../README.md#privacy).
+Capture does not read the clipboard or keystrokes (keystrokes are only counted), and it does not read file contents from disk, with one exception: once, on a new install, a copy of four project files is saved so your assistant has context from day one (`README.md`, `AGENTS.md`, `.github/copilot-instructions.md`, `package.json`). File excerpts are stored when an AI assistant's tool call or chat reply contains them. Nothing is recorded until you choose in the first-run panel, and every source has its own switch (**Axyome XM: Review Capture Settings**); see [Privacy](../README.md#privacy).
 
 ---
 
@@ -46,9 +46,9 @@ locally in the background, so capture does not hold the editor.
 
 ### How do I delete all my data?
 
-**Via Command Palette:** `Ctrl+Shift+P` -> **Axyome XM: Clear Captured Events**
+**Via Command Palette:** `Ctrl+Shift+P` -> **Axyome XM: Delete All My Data**
 
-**Manually:** Delete the `memory-agent-events.db` file at the path above. The extension creates a fresh database on next start.
+**Manually:** Delete the `axyome-xm.db` file at the path above. The extension creates a fresh database on next start.
 
 ---
 
@@ -79,8 +79,7 @@ are not listed still run when called by name).
 
 Any MCP-compatible assistant:
 - **GitHub Copilot** (VS Code 1.139+) - the extension registers the server with VS Code (see above)
-- **Claude Code** and other Claude clients - add the server to their MCP configuration yourself; Axyome XM does not write Claude's MCP config
-- Any other tool supporting the [Model Context Protocol](https://modelcontextprotocol.io)
+- **Claude Code** - when you agree on first run, Axyome XM connects it for you and adds an agent and three memory skills
 
 ---
 
@@ -146,7 +145,7 @@ The XM Wiki is a personal, searchable knowledge base auto-generated from your co
 - **Concepts** - Ideas that recur across sessions
 - **Syntheses** - Summaries that combine several pages
 
-Build it by running `@copilot Ingest this session into the wiki.`, the
+Build it by running `@copilot Ingest this session into the wiki.` (with the setting `axyomeXM.mcp.toolset` set to `all`), the
 **XM Wiki: Ingest Latest Session** command, or **Replay > Wiki > Ingest** in the
 dashboard.
 

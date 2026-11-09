@@ -6,15 +6,15 @@
 |-------------|---------|-------|
 | VS Code | 1.139.0+ | Minimum declared by the extension (`engines.vscode`) |
 | OS Architecture | 64-bit | Windows, Linux, or macOS |
-| Disk space | ~24-29 MB + database | VSIX size depends on platform; the database grows with use |
-| GitHub Copilot | Any version | Required to use `axm_*` MCP tools |
+| Disk space | ~25-30 MB + database | VSIX size depends on platform; the database grows with use |
+| GitHub Copilot or Claude Code | Any version | At least one, to use your memory from chat |
 
 ---
 
 ## Availability
 
 Axyome XM is **not listed on the VS Code Marketplace** or Open VSX at the time
-of writing (checked 2026-09-26), and this repository has no GitHub Releases yet.
+of writing (checked 2026-11-09), and this repository has no GitHub Releases yet.
 Install from a VSIX file provided by Axyome.
 
 ---
@@ -27,7 +27,8 @@ Use the VSIX built for your platform:
 |----------|------|
 | Windows | `axyome-xm-win32-x64-<version>.vsix` |
 | Linux | `axyome-xm-linux-x64-<version>.vsix` |
-| macOS | `axyome-xm-darwin-x64-<version>.vsix` |
+| macOS Intel | `axyome-xm-darwin-x64-<version>.vsix` |
+| macOS Apple Silicon | `axyome-xm-darwin-arm64-<version>.vsix` |
 
 Install:
 ```bash
@@ -64,7 +65,7 @@ the dashboard.
 
 ## Data Location
 
-All extension data is stored locally. Nothing is sent anywhere.
+Your activity is stored only on your computer. If you sign in, Axyome XM contacts `api.axyome.ai` for your account and plan; signed out, it makes no calls to Axyome servers.
 
 | OS | Path |
 |----|------|

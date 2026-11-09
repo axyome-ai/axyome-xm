@@ -98,7 +98,7 @@ Terminal commands and editor selections are persisted locally with **automatic s
 Run the workspace scanner to give your AI instant project context:
 
 1. Open Command Palette (`Ctrl+Shift+P`)
-2. Run: **Initialize Workspace Memory (B035)**
+2. Run: **Initialize Workspace Memory**
 
 This scans your repository and detects:
 - Languages and frameworks

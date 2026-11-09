@@ -8,6 +8,8 @@
 
 Workflows showing what Axyome XM makes possible. The scenarios below are illustrative: the responses you get depend on your own history.
 
+> Some tools used below are not in the default set of 11. To use them, set `axyomeXM.mcp.toolset` to `all`.
+
 ---
 
 ## Demo 1 - "I Fixed This Bug Before"
@@ -158,4 +160,4 @@ Copilot calls `axm_wiki_query`, `axm_find_similar_errors`, and `axm_recall_activ
 
 ## Watch the Demo
 
-The 2.5-minute product demo shows these workflows live: [https://www.youtube.com/watch?v=XEoMJM7y6J8](https://www.youtube.com/watch?v=XEoMJM7y6J8)
+See Axyome XM in use in the 2.5-minute product demo: [https://www.youtube.com/watch?v=XEoMJM7y6J8](https://www.youtube.com/watch?v=XEoMJM7y6J8)

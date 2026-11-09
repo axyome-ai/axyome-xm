@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Axyome XM</h1>
-  <p><strong>Your AI forgets. Axyome XM remembers.</strong></p>
-  <p>The black box flight recorder for AI-assisted coding.</p>
+  <p><strong>The black box flight recorder for AI-assisted coding.</strong></p>
+  <p>Axyome XM is a black box flight recorder for AI-assisted coding. Every session is captured as a full forensic trail of the files touched, prompts given, errors hit, commands run and commits made. That gives you traceability from your code back to where it came from: you can see which session changed a file, which assistant (Copilot or Claude Code) made the change, and the prompts behind it. Time Machine replays any past coding day chapter by chapter. Keyword search over your activity and chat history pulls back any moment on demand, and the auto-generated XM Wiki turns your history into a searchable knowledge base.</p>
 
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey" alt="Platform" />
   <img src="https://img.shields.io/badge/MCP%20Tools-54-brightgreen" alt="MCP Tools" />
@@ -13,9 +13,9 @@
 
 ## What is Axyome XM?
 
-- **Remembers.** The files you edited, the errors you hit, the terminal commands you ran, your commits, and your Copilot and Claude Code sessions. Search it by keyword, or replay any past coding day in Time Machine.
+- **Remembers.** The files you edited, the errors you hit, the terminal commands you ran, your commits, and your Copilot and Claude Code sessions. Ask about it in plain words, or replay any past coding day in Time Machine.
 - **Local.** Your activity is recorded and stored on your own machine. No third-party analytics. See [Privacy](#privacy).
-- **Works with Copilot and Claude Code.** Copilot recalls your history through the Axyome XM MCP server, which the extension registers in VS Code. Claude Code and other MCP clients can connect to the same server.
+- **Works with Copilot and Claude Code.** Both can recall your history and tell you which assistant changed a file. In Copilot Chat, ask `@xm` or let Copilot use the memory tools. With your agreement on first run, Claude Code connects to the same memory and gets an agent and three memory skills.
 
 ---
 
@@ -54,7 +54,7 @@ Within seconds, your AI assistant retrieves the exact file, error message, and t
 ## Install
 
 Axyome XM is **not listed on the VS Code Marketplace** or Open VSX yet at the time of writing
-(checked 2026-10-18). Install the VSIX for your platform:
+(checked 2026-11-09). Install the VSIX for your platform:
 
 ```bash
 code --install-extension axyome-xm-win32-x64-<version>.vsix --force
@@ -114,21 +114,21 @@ Step-by-step guides that end with something working.
 | Requirement | Minimum |
 |-------------|---------|
 | VS Code | 1.139.0+ |
-| GitHub Copilot | Any (for MCP tool use) |
+| GitHub Copilot or Claude Code | At least one, to use your memory from chat |
 | Node.js | Not required - binary is embedded |
 
 ---
 
 ## Platform Support
 
-| Platform | VSIX Size | Notes |
-|----------|-----------|-------|
-| Windows (win32-x64) | ~24 MB | Native better-sqlite3 |
-| Linux (linux-x64) | ~29 MB | Native better-sqlite3 |
-| macOS Intel (darwin-x64) | ~26 MB | Native better-sqlite3 |
-| macOS Apple Silicon (darwin-arm64) | ~25 MB | Native better-sqlite3; ad-hoc signed MCP server |
+| Platform | VSIX Size |
+|----------|-----------|
+| Windows (win32-x64) | ~25 MB |
+| Linux (linux-x64) | ~30 MB |
+| macOS Intel (darwin-x64) | ~27 MB |
+| macOS Apple Silicon (darwin-arm64) | ~26 MB |
 
-Sizes measured on the 0.2.867 build.
+Sizes measured on the 1.0.23 build.
 
 ---
 
@@ -150,14 +150,13 @@ settings (Configure All / Choose... / Skip / Don't Ask Again); skipping or dismi
 writes nothing. **Axyome XM: Configure Workspace for AI Memory** runs the same setup later.
 
 ```
-axm_recall_activity        - Search past work by query, file, or date
-axm_search_sessions        - Keyword search through chat history
+axm_recall_activity        - Ask what you worked on, changed or ran
 axm_get_session_summary    - Summarize what you worked on
-axm_log_decision           - Remember a decision or preference
 axm_find_similar_errors    - Check if you've seen this bug before
-axm_wiki_query             - Search your personal knowledge wiki
-axm_get_developer_intelligence - Full DIP score and recommendations
-... and 47 more
+axm_search_decisions       - Find out why you chose something
+axm_log_decision           - Remember a decision or preference
+axm_health                 - Check that your memory is working
+... 11 tools by default, all 54 with the setting axyomeXM.mcp.toolset = "all"
 ```
 
 -> [Full MCP tool reference](docs/mcp-tools-reference.md)
@@ -166,10 +165,10 @@ axm_get_developer_intelligence - Full DIP score and recommendations
 
 ## Plans
 
-| Plan | Price | History you can see |
-|---|---|---|
-| Free | $0 | The last 30 days |
-| Pro | $9/month | All of it |
+| Plan | Price | History you can see | Devices |
+|---|---|---|---|
+| Free | $0 | The last 30 days | 1 |
+| Pro | $9/month | All of it | Up to 5 |
 
 Every feature works on every plan, and a plan never deletes your data — it only changes how much
 history you can see. Axyome XM runs as a 30-day preview first; after that, a free account is
@@ -187,7 +186,7 @@ needed to keep using it. Details: [app.axyome.ai/pricing](https://app.axyome.ai/
   **Axyome XM: Review Capture Settings**.
 - **No account, no network.** Without an account, Axyome XM makes no calls to Axyome servers. There are
   no third-party analytics, and the built-in MCP server makes no network calls at all.
-- **Secrets are redacted.** Terminal commands and editor selections pass through automatic secret
+- **Secrets are redacted.** Terminal commands, their output and editor selections pass through automatic secret
   redaction before they are stored.
 
 ### What is recorded, on your computer only
@@ -198,7 +197,7 @@ needed to keep using it. Details: [app.axyome.ai/pricing](https://app.axyome.ai/
 | Error and warning messages from the Problems panel | Yes | Yes (`axyomeXM.captureDiagnostics`) |
 | Git commits and messages | Yes | Yes (`axyomeXM.captureGit`) |
 | Your own commits of the last 90 days, read once ([below](#git-history-import)) | Yes | With Git, on a new install |
-| Terminal commands (redacted) | Yes | Yes (`axyomeXM.captureTerminal`) |
+| Terminal commands and their output (redacted) | Yes | Yes (`axyomeXM.captureTerminal`) |
 | Editor selections (redacted) | Yes | Yes (`axyomeXM.captureSelectedText`) |
 | Copilot chat sessions | Yes | Yes (`axyomeXM.captureChatSessions`) |
 | Claude Code prompts and tool calls | Yes | Yes (`axyomeXM.capture.claudeCode.enabled`) |
@@ -210,7 +209,7 @@ Before you choose, nothing in this table is recorded.
 
 ### Secret redaction
 
-Before a terminal command or an editor selection is stored, values matching the redaction patterns
+Before a terminal command, its output or an editor selection is stored, values matching the redaction patterns
 are replaced with `[REDACTED]`. The default patterns cover assignments to names containing `api_key`,
 `apikey`, `secret`, `password`, `token`, `credential` or `auth` (for example `API_KEY=...`,
 `password: ...`), bearer tokens, and variables starting `aws_`, `azure_`, `gcp_`, `github_` or `npm_`.

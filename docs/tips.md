@@ -2,6 +2,8 @@
 
 Get the most out of Axyome XM with these workflows used daily by the team that built it.
 
+> Some tools used below are not in the default set of 11. To use them, set `axyomeXM.mcp.toolset` to `all`.
+
 ---
 
 ## Tip 1 - Monday Morning Briefing
