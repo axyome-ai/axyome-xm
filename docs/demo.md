@@ -1,10 +1,10 @@
 # Demo Scenarios
 
-<a href="https://www.youtube.com/watch?v=XEoMJM7y6J8">
+<a href="https://www.youtube.com/watch?v=uveGJ73GMRg">
   <img src="images/demo-video.png" alt="Watch the 2.5-minute Axyome XM product demo on YouTube" width="720" />
 </a>
 
-▶ **[Watch the 2.5-minute product demo](https://www.youtube.com/watch?v=XEoMJM7y6J8)**: live product, real data, recorded in VS Code.
+▶ **[Watch the 2.5-minute product demo](https://www.youtube.com/watch?v=uveGJ73GMRg)**: live product, real data, recorded in VS Code.
 
 Workflows showing what Axyome XM makes possible. The scenarios below are illustrative: the responses you get depend on your own history.
 
@@ -160,4 +160,4 @@ Copilot calls `axm_wiki_query`, `axm_find_similar_errors`, and `axm_recall_activ
 
 ## Watch the Demo
 
-See Axyome XM in use in the 2.5-minute product demo: [https://www.youtube.com/watch?v=XEoMJM7y6J8](https://www.youtube.com/watch?v=XEoMJM7y6J8)
+See Axyome XM in use in the 2.5-minute product demo: [https://www.youtube.com/watch?v=uveGJ73GMRg](https://www.youtube.com/watch?v=uveGJ73GMRg)
