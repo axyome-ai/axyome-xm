@@ -38,9 +38,11 @@ locally in the background, so capture does not hold the editor.
 
 | OS | Path |
 |----|------|
-| Windows | `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\` |
-| Linux | `~/.config/Code/User/globalStorage/axyome.axyome-xm/` |
-| macOS | `~/Library/Application Support/Code/User/globalStorage/axyome.axyome-xm/` |
+| Windows | `%APPDATA%\Code\User\globalStorage\axyome-ai.axyome-ai-xm\` |
+| Linux | `~/.config/Code/User/globalStorage/axyome-ai.axyome-ai-xm/` |
+| macOS | `~/Library/Application Support/Code/User/globalStorage/axyome-ai.axyome-ai-xm/` |
+
+Backups are kept in their own folder, outside VS Code's extension storage (see the next answers).
 
 ---
 
@@ -48,18 +50,27 @@ locally in the background, so capture does not hold the editor.
 
 **Via Command Palette:** `Ctrl+Shift+P` -> **Axyome XM: Delete All My Data**
 
-**Manually:** Delete the `axyome-xm.db` file at the path above. The extension creates a fresh database on next start.
+This also deletes the backups.
+
+**Manually:** Delete the `axyome-xm.db` file at the path above, and the backup folder below. The extension creates a fresh database on next start.
 
 ---
 
 ### Can I back up my data?
 
 Yes. `Ctrl+Shift+P` -> **Axyome XM: Backup Database** writes a copy to the
-`backups/` folder and keeps the 5 most recent. **Axyome XM: List/Restore Database
-Backups** lists them and restores one.
+backup folder and keeps the 5 most recent (`axyomeXM.backup.retention`). **Axyome XM: List/Restore Database
+Backups** lists them and restores one. **Axyome XM: Open Backup Folder** opens the folder.
 
-Separately, the extension makes an automatic copy next to the database when the
-database schema version changes, and keeps up to 10 of those.
+| OS | Backup folder |
+|----|---------------|
+| Windows | `%APPDATA%\Code\User\axyome-ai.axyome-xm\backups` |
+| Linux | `~/.config/Code/User/axyome-ai.axyome-xm/backups` |
+| macOS | `~/Library/Application Support/Code/User/axyome-ai.axyome-xm/backups` |
+
+The backup folder is outside VS Code's extension storage, so uninstalling or updating the extension never deletes
+it. Separately, the extension makes an automatic copy when the database schema version changes, in the
+`pre-migration` folder next to `backups`.
 
 ---
 
@@ -69,7 +80,7 @@ database schema version changes, and keeps up to 10 of those.
 
 No. Axyome XM registers its MCP server with VS Code, so Copilot lists **Axyome XM**
 in every folder without a `.vscode/mcp.json` in your repository. Nothing is written
-into your workspace without asking. By default the server lists 11 core tools of the
+into your workspace without asking. By default the server lists 12 core tools of the
 54 `axm_*` tools; set `axyomeXM.mcp.toolset` to `all` to list all of them (tools that
 are not listed still run when called by name).
 
@@ -95,7 +106,7 @@ Any MCP-compatible assistant:
 
 ### How is the MCP server started?
 
-The MCP server is an embedded binary shipped inside the VSIX
+The MCP server is an embedded binary shipped inside the extension
 (`axyome-xm-mcp-win-<version>.exe` / `axyome-xm-mcp-linux-<version>` /
 `axyome-xm-mcp-macos-<version>`). VS Code starts it as a local stdio process from
 the server definition the extension registers. It opens no network ports - communication is

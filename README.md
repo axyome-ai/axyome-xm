@@ -53,11 +53,10 @@ Within seconds, your AI assistant retrieves the exact file, error message, and t
 
 ## Install
 
-Axyome XM is **not listed on the VS Code Marketplace** or Open VSX yet at the time of writing
-(checked 2026-11-09). Install the VSIX for your platform:
+Search for **Axyome XM** in the Extensions view (`Ctrl+Shift+X`) and install it, or run:
 
 ```bash
-code --install-extension axyome-xm-win32-x64-<version>.vsix --force
+code --install-extension axyome-ai.axyome-ai-xm
 ```
 
 -> [Detailed install guide with platform notes](docs/install.md)
@@ -137,9 +136,10 @@ Sizes measured on the 1.0.23 build.
 Axyome XM ships with **54 MCP tools** (`axm_*`) served by an embedded MCP
 server, so GitHub Copilot can use them without manual setup.
 
-**Tool diet.** To keep every request small, the server lists 11 core tools by
+**Tool diet.** To keep every request small, the server lists 12 core tools by
 default (recall, session summary, context snapshot, error forensics, similar
-errors, decisions, observations, hybrid search, health and tool discovery). Set
+errors, decisions, past chat sessions, observations, hybrid search, health and
+tool discovery). Set
 `axyomeXM.mcp.toolset` to `all` to list all 54. Tools that are not listed still
 run when called by name, and `axm_list_available_tools` names what is hidden.
 
@@ -156,7 +156,7 @@ axm_find_similar_errors    - Check if you've seen this bug before
 axm_search_decisions       - Find out why you chose something
 axm_log_decision           - Remember a decision or preference
 axm_health                 - Check that your memory is working
-... 11 tools by default, all 54 with the setting axyomeXM.mcp.toolset = "all"
+... 12 tools by default, all 54 with the setting axyomeXM.mcp.toolset = "all"
 ```
 
 -> [Full MCP tool reference](docs/mcp-tools-reference.md)
@@ -200,7 +200,7 @@ needed to keep using it. Details: [app.axyome.ai/pricing](https://app.axyome.ai/
 | Terminal commands and their output (redacted) | Yes | Yes (`axyomeXM.captureTerminal`) |
 | Editor selections (redacted) | Yes | Yes (`axyomeXM.captureSelectedText`) |
 | Copilot chat sessions | Yes | Yes (`axyomeXM.captureChatSessions`) |
-| Claude Code prompts and tool calls | Yes | Yes (`axyomeXM.capture.claudeCode.enabled`) |
+| Claude Code prompts, replies and tool calls | Yes | Yes (`axyomeXM.capture.claudeCode.enabled`) |
 | File **contents** | Not read from disk, with one exception: once, on a new install, a copy of four project files is saved so your assistant has context from day one (`README.md`, `AGENTS.md`, `.github/copilot-instructions.md`, `package.json`). Excerpts are kept when an AI assistant's tool call or chat reply contains them (tool arguments up to 8 KB, tool results up to 512 bytes, chat code blocks) | The four files: once you press **Start recording**. Excerpts: with the AI sources above |
 | Clipboard | Never read | — |
 | Keystrokes | Only counted, never stored | — |
@@ -228,11 +228,32 @@ work done with AI. Set `axyomeXM.history.gitDays` to `0` to skip it, or change t
 
 | OS | Folder |
 |----|--------|
-| Windows | `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\` |
-| Linux | `~/.config/Code/User/globalStorage/axyome.axyome-xm/` |
-| macOS | `~/Library/Application Support/Code/User/globalStorage/axyome.axyome-xm/` |
+| Windows | `%APPDATA%\Code\User\globalStorage\axyome-ai.axyome-ai-xm\` |
+| Linux | `~/.config/Code/User/globalStorage/axyome-ai.axyome-ai-xm/` |
+| macOS | `~/Library/Application Support/Code/User/globalStorage/axyome-ai.axyome-ai-xm/` |
 
-It holds the database `axyome-xm.db` (with its journal files) and up to 5 rolling automatic backups.
+It holds the database `axyome-xm.db` (with its journal files). Backups are kept elsewhere, see below.
+
+### Where your backups live
+
+Axyome XM keeps its automatic backups outside VS Code's extension storage, so uninstalling or updating
+the extension never deletes them.
+
+| OS | Backup folder |
+|----|---------------|
+| Windows | `%APPDATA%\Code\User\axyome-ai.axyome-xm\backups` |
+| macOS | `~/Library/Application Support/Code/User/axyome-ai.axyome-xm/backups` |
+| Linux | `~/.config/Code/User/axyome-ai.axyome-xm/backups` |
+
+- **Open it:** run **Axyome XM: Open Backup Folder**.
+- **Choose another folder:** set `axyomeXM.backup.location` to a full path (outside VS Code's
+  `globalStorage` folder), then reload the window. Up to 5 recent backups are kept
+  (`axyomeXM.backup.retention`).
+- **Pro: a copy in your cloud folder.** You can also keep a copy of each backup in a cloud-synced folder
+  you choose, such as OneDrive, Google Drive, Dropbox or iCloud Drive (`axyomeXM.backup.cloudFolder`).
+  Your cloud app uploads it; Axyome XM never connects to the cloud provider. Nothing leaves your
+  computer unless you choose a folder.
+- **Remove them:** **Axyome XM: Delete All My Data** also deletes the backups.
 
 ### Network
 
@@ -249,9 +270,9 @@ updates; that is VS Code, not Axyome XM.
 - **Take a copy:** **Axyome XM: Export All My Data** writes every table to JSON and Markdown in a folder
   you choose.
 - **Delete everything:** **Axyome XM: Delete All My Data** (type `DELETE` to confirm) deletes the
-  database contents, backups and queued events on this computer. Uninstalling the extension alone does
-  not remove them; the [uninstall and data removal guide](docs/uninstall.md) lists what is stored and
-  where.
+  database contents, backups and queued events on this computer. Uninstalling the extension removes its
+  database folder, but not the backups, which are kept elsewhere so you can restore; the
+  [uninstall and data removal guide](docs/uninstall.md) lists what is stored and where.
 - **Clear captured events only:** **Axyome XM: Clear Captured Events**.
 
 ### Reporting a security issue

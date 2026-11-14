@@ -3,8 +3,9 @@
 Axyome XM keeps everything it records on your computer. This guide shows what is stored, how to take a
 copy, how to delete it from inside VS Code, and how to remove the extension and its folder completely.
 
-Uninstalling the extension does not delete your data. VS Code removes the extension itself and leaves its
-storage folder behind. Delete your data first (section 2), then uninstall (section 3).
+Uninstalling the extension removes the extension and its database folder, but not the backups, which are kept
+in their own folder so you can restore them. To remove everything, delete your data first (section 2), then
+uninstall (section 3).
 
 ## 1. Take a copy first (optional)
 
@@ -43,8 +44,8 @@ What it does, in order:
 What it does not touch:
 
 - Your code, your workspaces and your VS Code settings.
-- Anything outside the Axyome XM storage folder (section 4). Every delete is checked against that folder
-  first; a path that resolves anywhere else is refused.
+- Anything outside the Axyome XM storage and backup folders (section 4). Every delete is checked against
+  those folders first; a path that resolves anywhere else is refused.
 - Your account. It is managed at [app.axyome.ai](https://app.axyome.ai).
 - Files that Axyome XM wrote into a workspace when you chose to configure it (see section 3).
 
@@ -68,7 +69,7 @@ secure erase of the disk itself. For that, use your operating system's disk-wipe
    - the `axyome-xm` server entry in `.vscode/mcp.json`
    - the Axyome XM section in `AGENTS.md`, and `.github/agents/memory.md`
    - the three Axyome XM settings in `.vscode/settings.json`
-4. Remove the storage folder (section 4) if you want nothing left.
+4. Remove the backup folder (section 4) if you want nothing left and did not run step 1.
 
 ## 4. Where the data lives
 
@@ -76,9 +77,9 @@ Axyome XM stores its data in the extension's global storage folder:
 
 | System | Folder |
 |---|---|
-| Windows | `%APPDATA%\Code\User\globalStorage\axyome.axyome-xm\` |
-| macOS | `~/Library/Application Support/Code/User/globalStorage/axyome.axyome-xm/` |
-| Linux | `~/.config/Code/User/globalStorage/axyome.axyome-xm/` |
+| Windows | `%APPDATA%\Code\User\globalStorage\axyome-ai.axyome-ai-xm\` |
+| macOS | `~/Library/Application Support/Code/User/globalStorage/axyome-ai.axyome-ai-xm/` |
+| Linux | `~/.config/Code/User/globalStorage/axyome-ai.axyome-ai-xm/` |
 
 For VS Code Insiders, VSCodium and other builds, replace `Code` with that build's folder name
 (for example `Code - Insiders`).
@@ -86,15 +87,30 @@ For VS Code Insiders, VSCodium and other builds, replace `Code` with that build'
 | Item | What it is |
 |---|---|
 | `axyome-xm.db`, `axyome-xm.db-wal`, `axyome-xm.db-shm` | the database and its write-ahead log |
-| `axyome-xm.db.backup-*` | copies made before the database was upgraded |
-| `backups/` | database backups |
 | `queues/` | events waiting to be saved, and the ones just saved |
 | `wiki/`, `archive/` | wiki pages and archived data, if you used them |
 | `db-transactions.log` | the database log, only if you turned it on |
 | `.extension-version`, `axyome-xm.db.version` | version markers |
 
-To remove everything by hand, close VS Code (all windows), then delete that folder. The extension folder
-itself (`~/.vscode/extensions/axyome.axyome-xm-<version>`) is removed by the uninstall.
+VS Code deletes this folder when you uninstall the extension.
+
+The backups are kept in their own folder, outside VS Code's extension storage, so that uninstalling or updating
+the extension never deletes them:
+
+| System | Backup folder |
+|---|---|
+| Windows | `%APPDATA%\Code\User\axyome-ai.axyome-xm\` |
+| macOS | `~/Library/Application Support/Code/User/axyome-ai.axyome-xm/` |
+| Linux | `~/.config/Code/User/axyome-ai.axyome-xm/` |
+
+| Item | What it is |
+|---|---|
+| `backups/` | database backups (run **Axyome XM: Open Backup Folder** to open it) |
+| `pre-migration/` | copies made before the database was upgraded |
+| `pre-upgrade/` | a copy made when the extension moved to its current name |
+
+To remove everything by hand, close VS Code (all windows), then delete both folders. The extension folder
+itself (`~/.vscode/extensions/axyome-ai.axyome-ai-xm-<version>`) is removed by the uninstall.
 
 Older versions also kept a daily chat copy under `~/.memory-agent/` in your home folder. If that folder
 exists on your computer, delete it the same way.

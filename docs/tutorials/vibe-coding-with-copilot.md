@@ -42,33 +42,26 @@ in the dashboard.
 
 ## Before you start
 
-You need three things, and no coding experience:
+You need two things, and no coding experience:
 
 - [ ] **VS Code 1.139 or newer.** Free download from [code.visualstudio.com](https://code.visualstudio.com).
       Check your version under **Help > About** (on a Mac: **Code > About Visual Studio Code**).
 - [ ] **A GitHub account with Copilot turned on.** Sign in with the **Accounts** icon at the bottom
       left of VS Code. If your company manages Copilot, ask your IT contact which account to use.
-- [ ] **The Axyome XM install file (a `.vsix` file) for your computer**, provided by Axyome
-      ([install guide](../install.md)). Pick the one whose name matches your machine:
 
-| Your computer | File name contains |
-| --- | --- |
-| Windows | `win32-x64` |
-| Mac with Apple chip (M1 to M4) | `darwin-arm64` |
-| Mac with Intel chip | `darwin-x64` |
-| Linux | `linux-x64` |
+Axyome XM itself installs from the VS Code Marketplace in Step 1 ([install guide](../install.md)).
 
 ---
 
 ## Step 1: Install Axyome XM and choose what it records
 
-Axyome XM installs from the file you received. It records nothing until you press **Start recording**.
+Axyome XM installs from the VS Code Marketplace. It records nothing until you press **Start recording**.
 
 1. In VS Code, open the **Extensions** view: the four-squares icon in the **Activity Bar** (the icon
    bar on the far left), or
    `Ctrl+Shift+X` (`Cmd+Shift+X` on a Mac).
-2. Click the **...** menu at the top of that view and choose **Install from VSIX...**.
-3. Select your `.vsix` file. Wait for the message that the install finished.
+2. Type **Axyome XM** in the search box at the top of that view.
+3. Click **Install** on Axyome XM. Wait for the install to finish.
 4. A panel opens that lists every source Axyome XM can record, with what each one stores: Copilot
    chats, file saves, git commits, terminal commands, errors and more. **Recommended** turns them
    all on. Turn off any source you prefer to keep out, then press **Start recording**.
