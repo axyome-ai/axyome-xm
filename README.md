@@ -1,6 +1,11 @@
 <div align="center">
   <h1>Axyome XM</h1>
   <p><strong>The black box flight recorder for AI-assisted coding.</strong></p>
+
+  <p>
+    <a href="https://marketplace.visualstudio.com/items?itemName=axyome-ai.axyome-ai-xm"><img src="https://img.shields.io/badge/Install-VS%20Code%20Marketplace-007ACC?style=for-the-badge" alt="Install from the VS Code Marketplace" height="40" /></a>
+  </p>
+  <p><a href="https://marketplace.visualstudio.com/items?itemName=axyome-ai.axyome-ai-xm"><strong>Install from the VS Code Marketplace</strong></a> or run <code>code --install-extension axyome-ai.axyome-ai-xm</code></p>
   <p>Axyome XM is a black box flight recorder for AI-assisted coding. Every session is captured as a full forensic trail of the files touched, prompts given, errors hit, commands run and commits made. That gives you traceability from your code back to where it came from: you can see which session changed a file, which assistant (Copilot or Claude Code) made the change, and the prompts behind it. Time Machine replays any past coding day chapter by chapter. Keyword search over your activity and chat history pulls back any moment on demand, and the auto-generated XM Wiki turns your history into a searchable knowledge base.</p>
 
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey" alt="Platform" />
