@@ -56,7 +56,8 @@ Axyome XM records each of your own commits from now on. If you work in a project
 Break the code on purpose. In `app.js`, delete the last closing brace `}` of any function and save.
 
 Open the **Problems** panel (`Ctrl+Shift+M`, `Cmd+Shift+M` on a Mac). VS Code reports an error such as
-`'}' expected.` Axyome XM has just recorded it: the message, the file, the time.
+`'}' expected.` (the exact message depends on which brace you deleted). Axyome XM has just recorded it:
+the message, the file, the time.
 
 Now fix it with Copilot:
 
@@ -99,7 +100,7 @@ can ask for exactly that:
 Same problem as my "Fix: missing closing brace" commit. Fix it the same way.
 ```
 
-Commit again, with a message that names the fix.
+If git shows a change, commit again with a message that names the fix.
 
 ---
 

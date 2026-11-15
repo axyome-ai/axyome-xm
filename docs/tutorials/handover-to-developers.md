@@ -25,9 +25,10 @@ remember: Axyome XM kept the decisions and the day-by-day history, and Copilot c
 List every decision we saved that applies to the request tracker, with the date of each.
 ```
 
-Copilot reads them with `axm_search_decisions`. Expect at least the brand rule and what a request
-contains. If one is missing, save it now with a "Remember:" prompt: a decision that is not written
-down is one the developers will guess.
+Copilot reads them with `axm_search_decisions`. Expect the decisions you saved for the request tracker,
+such as what a request contains. Rules saved in another project, like the brand rule, may be left out:
+ask for them by topic ("What did we decide about chart colours?"). If one is missing, save it now with a
+"Remember:" prompt: a decision that is not written down is one the developers will guess.
 
 ---
 

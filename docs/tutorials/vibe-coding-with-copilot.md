@@ -83,8 +83,9 @@ A new **Axyome XM** icon now sits in the Activity Bar; it opens the dashboard yo
 Copilot works on the files in one folder, so give each project its own folder.
 
 1. Create an empty folder, for example `Documents/sales-dashboard`.
-2. In VS Code choose **File > Open Folder...** and select it. If VS Code asks whether you trust the
-   authors of the files, choose **Yes**: it is your own folder.
+2. In VS Code choose **File > Open Folder...** and select it. When VS Code asks whether you trust the
+   authors of the files in this folder (it may ask only when you send your first prompt), choose
+   **Trust Folder & Continue**: it is your own folder.
 3. Press `Ctrl+Shift+I` (`Cmd+Shift+I` on a Mac, `Ctrl+Shift+Alt+I` on Linux). The **Chat view** opens on
    the side, in **Agent** mode. You can also click the chat icon at the top of the window.
 4. Check that the mode under the message box says **Agent**; change it there if not. In Agent mode, Copilot can create and change
@@ -126,7 +127,8 @@ Use our brand colours for the chart: navy #1F3A5F and orange #F28C28. Make the t
 ```
 
 Refresh the browser page after each change. If you do not like a change, click **Undo** in the chat
-and say what you want instead.
+and say what you want instead. If Copilot asks you a question, for example which colour to use for
+the third region, answer it in the chat.
 
 **When something breaks, say what you see**
 
