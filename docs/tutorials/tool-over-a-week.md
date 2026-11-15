@@ -70,7 +70,7 @@ Open the `request-tracker` folder again and start a **new** chat. Do not explain
 Where did I stop on the request tracker, and what is left to do?
 ```
 
-Copilot reads your last session from Axyome XM: the files you changed, when, and how long you worked.
+Copilot reads your recent work from Axyome XM: which files changed and when, and how long you worked.
 Check its answer against the page in your browser.
 
 Now add two features:
@@ -94,7 +94,7 @@ Sooner or later a change breaks something that worked, and you notice only after
 Let me edit a request by clicking its row.
 ```
 
-If the table or the filter stops working, do not guess. First find out what changed:
+If the table or the filter stops working, do not guess. First find out when it changed, and whether you or Copilot changed it:
 
 ```text
 What changed in index.html today, and when?

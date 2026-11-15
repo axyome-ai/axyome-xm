@@ -16,7 +16,7 @@ Tuesday. In this tutorial Axyome XM fills the gaps, and you check what it says a
 
 - [ ] The `request-tracker` project under git, from [Debug with memory](debug-with-memory.md).
 - [ ] [Node.js](https://nodejs.org) 18 or newer, for its built-in test runner (`node --test`).
-- [ ] **Terminal** is on in **Axyome XM: Review Capture Settings** (**Recommended** turns it on), so test runs are recorded.
+- [ ] **Terminal** is on in **Axyome XM: Review Capture Settings** (**Recommended (all on)** turns it on), so test runs are recorded.
 - [ ] The **Chat view** in **Agent** mode: `Ctrl+Shift+I` (`Cmd+Shift+I` on a Mac, `Ctrl+Shift+Alt+I` on Linux).
 
 ---
@@ -73,8 +73,8 @@ Copilot reads a summary of your recent work (`axm_get_session_summary`) and sear
 Before you change app.js, get its context from Axyome XM: its recent errors and the decisions that apply.
 ```
 
-Copilot runs `axm_get_context_snapshot` on the file. It brings back how many errors the file had this
-past week and your recent saved decisions, in a short answer sized to fit the chat. Now add the button:
+Copilot runs `axm_get_context_snapshot` on the file. It brings back the file's recent errors
+from the **Problems** panel, its last error and the decisions you saved this past week, in a short answer sized to fit the chat. Now add the button:
 
 ```text
 Add an Export CSV button above the table that downloads the requests as requests.csv using toCsv. Keep the tests passing.
@@ -91,8 +91,8 @@ one, and run `node --test`). Before you read the whole diff, ask:
 When did the tests last pass, and what changed in app.js since then?
 ```
 
-Copilot finds the last test run that passed and the times you saved `app.js` after it
-(`axm_recall_activity`). Run `git diff` to see what changed since your last commit. Fix, rerun, and commit: `Add Export CSV button`.
+Copilot lists your recent test runs, with whether each passed, and the times you saved `app.js`
+(`axm_recall_activity`), so you can see what came after the last passing run. Run `git diff` to see what changed since your last commit. Fix, rerun, and commit: `Add Export CSV button`.
 
 ---
 
@@ -102,7 +102,7 @@ Copilot finds the last test run that passed and the times you saved `app.js` aft
 Show the error history of app.js from Axyome XM, including errors I already fixed.
 ```
 
-Copilot runs `axm_get_error_forensics`. For each error, it shows when and where it appeared, the
+Copilot runs `axm_get_error_forensics`. For each error of the past week, it shows when and where it appeared, the
 message, whether you fixed it and how long that took, and how much chat activity came just before it.
 Look for a pattern: did errors follow a burst of chat requests?
 
@@ -131,7 +131,7 @@ committed and shared with everyone who clones the project. Read it before you co
 
 | What you see | What to do |
 | --- | --- |
-| Copilot ignores the project rules | Check that `AGENTS.md` is in the project root, then ask "What did we decide about tests in the request tracker?" |
+| Copilot ignores the project rules | Add "Follow our saved decisions for the request tracker" to the prompt, or ask "What did we decide about tests in the request tracker?" |
 | "Where did I stop?" names another project | Name the folder: "in the request-tracker folder". |
 | The context snapshot shows no errors | It counts the errors of the past week, recorded only from the **Problems** panel (see [Debug with memory](debug-with-memory.md)). |
 | `node --test` finds no tests | Check that the file is `tests/app.test.js` and that you run it from the project root. |

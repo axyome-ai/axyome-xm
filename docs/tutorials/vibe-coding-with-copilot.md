@@ -63,13 +63,13 @@ Axyome XM installs from the VS Code Marketplace. It records nothing until you pr
 2. Type **Axyome XM** in the search box at the top of that view.
 3. Click **Install** on Axyome XM. Wait for the install to finish.
 4. A panel opens that lists every source Axyome XM can record, with what each one stores: Copilot
-   chats, file saves, git commits, terminal commands, errors and more. **Recommended** turns them
-   all on. Turn off any source you prefer to keep out, then press **Start recording**.
+   chats, file saves, git commits, terminal commands, errors and more. **Recommended (all on)** turns
+   them all on. Turn off any source you prefer to keep out, then press **Start recording**.
 5. Follow the **Get started with Axyome XM** walkthrough on the Welcome page. It has four short steps:
     1. Choose what Axyome XM records (the panel above).
     2. Check that Copilot can reach your memory. Axyome XM connects itself to Copilot, so there is
        nothing to configure.
-    3. Import your git history, if your project has one: your own commits of the last 90 days, read once.
+    3. Import your git history, if your project has one: your own commits of the last 90 days, read once per project.
     4. Ask Copilot "What did I work on this week?"
 
 You can change your recording choices at any time. Press `Ctrl+Shift+P` (`Cmd+Shift+P` on a Mac)
@@ -201,10 +201,10 @@ vibe coding:
 | **Home** | Today at a glance: recent sessions, files and AI activity | Pick up where you stopped |
 | **Activity** | Your work over time: coding time, your history and a live feed | See when and how long you worked on a project |
 | **AI** | Your AI assistants: chat sessions, when they ran and the models used | See which chats you had and when |
-| **Replay > Time Machine** | Any past day, replayed chapter by chapter: summary, chapters, errors, sessions | Answer "what happened on Tuesday?" |
+| **Replay > Time Machine** | Any past day in your history (the last 30 days on Free), replayed chapter by chapter: summary, chapters, errors, sessions | Answer "what happened on Tuesday?" |
 | **Replay > Wiki** | The XM Wiki: pages written automatically from your sessions (off on a new install; see below) | Browse and search what you learned |
 
-A new install shows the most useful tabs first; the others can be turned on in **System > Settings**.
+A new install hides a few tabs and subtabs, such as **Replay > Wiki**; turn them on in **System > Settings**.
 Everything you recorded, as shown on the dashboard, comes from your own computer.
 
 Try this: open **Replay > Time Machine**, pick today, and read the chapters of your sales dashboard
@@ -218,10 +218,11 @@ Axyome XM keeps your history on your own computer. Without an Axyome account it 
 requests.
 
 - **You choose what is recorded.** Every source has its own switch: **Axyome XM: Review Capture Settings**.
-- **Secrets are hidden.** Terminal commands and selected text are stored with passwords, keys and
-  tokens removed.
-- **If you sign in,** Axyome XM contacts `api.axyome.ai` about every 4 hours to confirm your plan,
-  and registers this device (its name, platform and version numbers). There are no third-party
+- **Secrets are hidden.** Terminal commands, their output and selected text are stored with
+  passwords, keys and tokens removed.
+- **If you sign in,** Axyome XM contacts `api.axyome.ai` to confirm your plan when VS Code starts,
+  when its window regains focus and about every 4 hours, and registers this device (a device ID,
+  its name, platform and version numbers). There are no third-party
   analytics. On Free and Pro, your activity is stored only on your computer.
 - **Take it with you:** **Axyome XM: Export All My Data** writes everything to JSON and Markdown
   files in a folder you choose.
@@ -260,7 +261,7 @@ last 30 days of history, Pro shows all of it. Every feature works on every plan.
 | Copilot asks to run a command you do not understand | Ask it first: "What does this command do, and is it safe?" Then choose. |
 | Copilot answers "I don't have access to your history" | Add "Use Axyome XM" to the question. Check the chat is in **Agent** mode. |
 | No `axm_` tools appear in the chat | Command Palette > **Axyome XM: Validate Installation**. Then restart VS Code. |
-| You want to pause recording | Command Palette > **Axyome XM: Stop Capture**. **Axyome XM: Start Capture** resumes it. |
+| You want to pause recording | Command Palette > **Axyome XM: Stop Capture**. Recording resumes when you run **Axyome XM: Start Capture** or restart VS Code. |
 | Anything else | [Ask a question](https://github.com/axyome-ai/axyome-xm/issues/new?template=question.yml): say what you did and what you saw. A screenshot helps. |
 
 ---

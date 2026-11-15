@@ -37,7 +37,7 @@ down is one the developers will guess.
 Using Axyome XM, summarise what was built on the request tracker on each day I worked on it: the files changed and the features added.
 ```
 
-Copilot reads each day with `axm_get_session_summary` (how much you changed and how long you worked)
+Copilot reads each day with `axm_get_session_summary` (how many files you changed, how many commits you made and how long you worked)
 and looks up the files and commits with `axm_recall_activity`. Compare its answer with **Replay > Time Machine**
 in the Axyome XM dashboard (`Ctrl+Shift+Alt+M`, `Cmd+Shift+Alt+M` on a Mac): pick each day and read
 its **Chapters**. Correct anything Copilot got wrong in the next step.
@@ -82,11 +82,11 @@ which starts from this project.
 ## Step 5: Keep your own archive, privately
 
 To keep a copy of everything Axyome XM recorded, open the **Command Palette** (`Ctrl+Shift+P`,
-`Cmd+Shift+P` on a Mac) and run **Axyome XM: Export All My Data**. Choose a folder: it receives one
-JSON and one Markdown file per kind of record.
+`Cmd+Shift+P` on a Mac) and run **Axyome XM: Export All My Data**. Choose a folder: Axyome XM creates a new
+folder in it, with one JSON and one Markdown file per kind of record.
 
 **Do not send this export to anyone.** It holds your whole history, from every project: terminal
-commands, chat text, file names. The handover pack from Step 4 is what you share.
+commands and their output, chat text, file names. The handover pack from Step 4 is what you share.
 
 ---
 

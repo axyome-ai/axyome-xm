@@ -264,7 +264,7 @@ the extension never deletes them.
 
 | When | Destination | What |
 |------|-------------|------|
-| You are signed in | `api.axyome.ai` | Sign-in, plan check (about every 4 hours), device registration (its name, platform and version numbers) |
+| You are signed in | `api.axyome.ai` | Sign-in, plan check (when VS Code starts, when its window regains focus and about every 4 hours), device registration (a device ID, its name, platform and version numbers) |
 | You click a link | `app.axyome.ai`, in your browser | Sign-in, pricing and billing pages |
 
 Signed out, Axyome XM makes no calls to Axyome servers. VS Code itself may check the Marketplace for

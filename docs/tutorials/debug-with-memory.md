@@ -6,8 +6,8 @@
 "have I seen this before?" before you start debugging.
 
 Most bugs you hit are bugs you have hit before. Axyome XM records the errors VS Code shows in the
-**Problems** panel, your commits and your file changes. Together they tell you when you saw an error
-and what you changed to fix it.
+**Problems** panel, your commits and your file changes. Together they tell you when you saw an error,
+which files you saved after it, and what your commit says you fixed.
 
 **How it fits together:** the same as in the [first tutorial](vibe-coding-with-copilot.md#how-it-fits-together).
 
@@ -17,7 +17,7 @@ and what you changed to fix it.
 
 - [ ] [Git](https://git-scm.com/downloads) installed. VS Code uses it for the **Source Control** view.
 - [ ] In the Axyome XM capture settings, **Problems** and **Git** are on (Command Palette >
-      **Axyome XM: Review Capture Settings**). **Recommended** turns both on.
+      **Axyome XM: Review Capture Settings**). **Recommended (all on)** turns both on.
 
 ---
 
@@ -46,7 +46,7 @@ Click **Keep** and open `index.html` in the browser to check it still works.
 1. Open the **Source Control** view (`Ctrl+Shift+G`, `Ctrl+Shift+G` on a Mac too) and click **Initialize Repository**.
 2. Type the message `Request tracker: first version` and click **Commit** (choose **Yes** to stage all files).
 
-Axyome XM records every commit from now on. If you work in a project that already had commits, run
+Axyome XM records each of your own commits from now on. If you work in a project that already had commits, run
 **Axyome XM: Import Git History** once: it reads your own commits of the last 90 days.
 
 ---
@@ -107,8 +107,8 @@ Commit again, with a message that names the fix.
 
 Open the Axyome XM dashboard (`Ctrl+Shift+Alt+M`, `Cmd+Shift+Alt+M` on a Mac):
 
-- **Activity > History** shows how much you did each day.
-- **Replay > Time Machine**, today, **Errors**: the two errors, each at the moment it appeared.
+- **Activity > History** shows your AI sessions, prompts and tool calls per day, and your commits on the timeline.
+- **Replay > Time Machine**, today, **Errors**: the errors, each at the moment it appeared.
 
 ---
 

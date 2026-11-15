@@ -43,8 +43,9 @@ assistant reads from it only through tools whose names start with `axm_`.
 
 Open the **Command Palette** (`Ctrl+Shift+P`, `Cmd+Shift+P` on a Mac) and run
 **Axyome XM: Review Capture Settings**. Check that **Claude Code memory access** is on (it is part of
-**Recommended**), then confirm. Axyome XM adds an `axyome-xm` entry to Claude Code's settings, installs
-a plugin with an agent and three memory skills, and keeps them up to date when the extension updates.
+**Recommended (all on)**), then press **Save**. If you just turned it on, run **Axyome XM: Connect Claude Code**
+so it connects now. Axyome XM adds an `axyome-xm` entry to Claude Code's settings, installs
+a plugin with an agent and four memory skills, and keeps them up to date when the extension updates.
 
 To check, open a terminal and run:
 
@@ -143,7 +144,7 @@ them only on your computer. Turn **Claude Code** or **Claude Code memory access*
 | What you see | What to do |
 | --- | --- |
 | `claude mcp list` has no `axyome-xm` line | Run **Axyome XM: Connect Claude Code** from the Command Palette, then run `claude mcp list` again. |
-| Axyome XM cannot find Claude Code | Set `axyomeXM.claudeCode.cliPath` to the full path of the `claude` program. |
+| Axyome XM cannot find Claude Code | Set `axyomeXM.claudeCode.cliPath` to the full path of the `claude` program (on Windows, `claude.exe`). |
 | Claude Code answers without using memory | Start the prompt with "Use the axyome-xm tools:". |
 | Claude Code's work is missing from Copilot's answer | Open the `request-tracker` folder in VS Code: Claude Code's sessions are recorded for folders open there. |
 
