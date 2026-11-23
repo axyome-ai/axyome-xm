@@ -1,0 +1,16 @@
+{
+  "name": "axyome-ai",
+  "owner": {
+    "name": "Axyome.ai"
+  },
+  "metadata": {
+    "description": "Axyome XM: one memory for Copilot and Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "axyome-xm",
+      "source": "./plugins/axyome-xm",
+      "description": "Axyome XM agent and skills for your local coding memory"
+    }
+  ]
+}

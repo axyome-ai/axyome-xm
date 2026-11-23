@@ -1,17 +1,23 @@
 <div align="center">
   <h1>Axyome XM</h1>
-  <p><strong>The black box flight recorder for AI-assisted coding.</strong></p>
+  <p><strong>One memory for Copilot and Claude Code, on your machine.</strong></p>
 
   <p>
     <a href="https://marketplace.visualstudio.com/items?itemName=axyome-ai.axyome-ai-xm"><img src="https://img.shields.io/badge/Install-VS%20Code%20Marketplace-007ACC?style=for-the-badge" alt="Install from the VS Code Marketplace" height="40" /></a>
   </p>
   <p><a href="https://marketplace.visualstudio.com/items?itemName=axyome-ai.axyome-ai-xm"><strong>Install from the VS Code Marketplace</strong></a> or run <code>code --install-extension axyome-ai.axyome-ai-xm</code></p>
-  <p>Axyome XM is a black box flight recorder for AI-assisted coding. Every session is captured as a full forensic trail of the files touched, prompts given, errors hit, commands run and commits made. That gives you traceability from your code back to where it came from: you can see which session changed a file, which assistant (Copilot or Claude Code) made the change, and the prompts behind it. Time Machine replays any past coding day chapter by chapter. Keyword search over your activity and chat history pulls back any moment on demand, and the auto-generated XM Wiki turns your history into a searchable knowledge base.</p>
+  <p>Your AI forgets between chats. Axyome XM remembers what actually happened: the files you edited, the errors you hit, the terminal commands you ran, your commits, and your Copilot and Claude Code sessions. Both assistants read the same memory, so you can ask <code>@xm</code> in Copilot Chat, or ask Claude Code, "how did I fix that error last week?"</p>
+  <p><strong>Free</strong> keeps the last 30 days. <a href="#plans">Pro</a> keeps all of it.</p>
 
-  <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey" alt="Platform" />
-  <img src="https://img.shields.io/badge/MCP%20Tools-54-brightgreen" alt="MCP Tools" />
-  <img src="https://img.shields.io/badge/privacy-local--first-success" alt="Privacy" />
-  <img src="https://img.shields.io/badge/license-Proprietary-red" alt="License" />
+  <a href="https://www.youtube.com/watch?v=uveGJ73GMRg">
+    <img src="docs/images/demo-video.png" alt="Watch the 2.5-minute Axyome XM product demo on YouTube" width="720" />
+  </a>
+
+  <p>
+    <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey" alt="Platform" />
+    <img src="https://img.shields.io/badge/MCP%20Tools-54-brightgreen" alt="MCP Tools" />
+    <img src="https://img.shields.io/badge/privacy-local--first-success" alt="Privacy" />
+  </p>
 </div>
 
 ---
@@ -20,15 +26,12 @@
 
 - **Remembers.** The files you edited, the errors you hit, the terminal commands you ran, your commits, and your Copilot and Claude Code sessions. Ask about it in plain words, or replay any past coding day in Time Machine.
 - **Local.** Your activity is recorded and stored on your own machine. No third-party analytics. See [Privacy](#privacy).
-- **Works with Copilot and Claude Code.** Both can recall your history and tell you which assistant changed a file. In Copilot Chat, ask `@xm` or let Copilot use the memory tools. With your agreement on first run, Claude Code connects to the same memory and gets an agent and three memory skills.
+- **Works with Copilot and Claude Code.** Both can recall your history and tell you which assistant changed a file. In Copilot Chat, ask `@xm` or let Copilot use the memory tools. With your agreement on first run, Claude Code connects to the same memory and gets an agent and four memory skills.
+- **Not just notes.** An assistant's own memory keeps the notes it chooses to write down. Axyome XM records the work itself, so the answer comes from what you did.
 
 ---
 
 ## Demo
-
-<a href="https://www.youtube.com/watch?v=uveGJ73GMRg">
-  <img src="docs/images/demo-video.png" alt="Watch the 2.5-minute Axyome XM product demo on YouTube" width="720" />
-</a>
 
 ▶ **[Watch the 2.5-minute product demo](https://www.youtube.com/watch?v=uveGJ73GMRg)**: live product, real data, recorded in VS Code.
 
@@ -65,6 +68,17 @@ code --install-extension axyome-ai.axyome-ai-xm
 ```
 
 -> [Detailed install guide with platform notes](docs/install.md)
+
+### Claude Code plugin
+
+The extension installs the Axyome XM plugin for Claude Code for you: an agent and four memory skills. You can also add it from GitHub in Claude Code:
+
+```text
+/plugin marketplace add axyome-ai/axyome-xm
+/plugin install axyome-xm@axyome-ai
+```
+
+The plugin helps Claude Code use your memory; the extension is what records it. Install the extension first.
 
 ---
 

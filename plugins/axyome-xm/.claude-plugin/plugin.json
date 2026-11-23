@@ -1,0 +1,10 @@
+{
+  "name": "axyome-xm",
+  "version": "1.2.7",
+  "description": "Axyome XM agent and skills for your local coding memory",
+  "author": {
+    "name": "Axyome.ai"
+  },
+  "homepage": "https://axyome.ai",
+  "repository": "https://github.com/axyome-ai/axyome-xm"
+}
