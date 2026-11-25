@@ -4,9 +4,10 @@
 
   <p>
     <a href="https://marketplace.visualstudio.com/items?itemName=axyome-ai.axyome-ai-xm"><img src="https://img.shields.io/badge/Install-VS%20Code%20Marketplace-007ACC?style=for-the-badge" alt="Install from the VS Code Marketplace" height="40" /></a>
+    <a href="https://open-vsx.org/extension/axyome-ai/axyome-ai-xm"><img src="https://img.shields.io/badge/Install-Open%20VSX-A60EE5?style=for-the-badge" alt="Install from Open VSX" height="40" /></a>
   </p>
-  <p><a href="https://marketplace.visualstudio.com/items?itemName=axyome-ai.axyome-ai-xm"><strong>Install from the VS Code Marketplace</strong></a> or run <code>code --install-extension axyome-ai.axyome-ai-xm</code></p>
-  <p>Your AI forgets between chats. Axyome XM remembers what actually happened: the files you edited, the errors you hit, the terminal commands you ran, your commits, and your Copilot and Claude Code sessions. Both assistants read the same memory, so you can ask <code>@xm</code> in Copilot Chat, or ask Claude Code, "how did I fix that error last week?"</p>
+  <p><a href="https://marketplace.visualstudio.com/items?itemName=axyome-ai.axyome-ai-xm"><strong>Install from the VS Code Marketplace</strong></a> or run <code>code --install-extension axyome-ai.axyome-ai-xm</code>. Also on <a href="https://open-vsx.org/extension/axyome-ai/axyome-ai-xm">Open VSX</a>.</p>
+  <p>Your AI forgets between chats. Axyome XM remembers what actually happened: the files you edited, the errors you hit, the terminal commands you ran, your commits, and your Copilot, Claude Code and Codex sessions. Copilot and Claude Code read the same memory, so you can ask <code>@xm</code> in Copilot Chat, or ask Claude Code, "how did I fix that error last week?"</p>
   <p><strong>Free</strong> keeps the last 30 days. <a href="#plans">Pro</a> keeps all of it.</p>
 
   <a href="https://www.youtube.com/watch?v=uveGJ73GMRg">
@@ -24,9 +25,9 @@
 
 ## What is Axyome XM?
 
-- **Remembers.** The files you edited, the errors you hit, the terminal commands you ran, your commits, and your Copilot and Claude Code sessions. Ask about it in plain words, or replay any past coding day in Time Machine.
+- **Remembers.** The files you edited, the errors you hit, the terminal commands you ran, your commits, and your Copilot, Claude Code and Codex sessions. Ask about it in plain words, or replay any past coding day in Time Machine.
 - **Local.** Your activity is recorded and stored on your own machine. No third-party analytics. See [Privacy](#privacy).
-- **Works with Copilot and Claude Code.** Both can recall your history and tell you which assistant changed a file. In Copilot Chat, ask `@xm` or let Copilot use the memory tools. With your agreement on first run, Claude Code connects to the same memory and gets an agent and four memory skills.
+- **Works with Copilot and Claude Code.** Both can recall your history and tell you which assistant changed a file. In Copilot Chat, ask `@xm` or let Copilot use the memory tools. With your agreement on first run, Claude Code connects to the same memory and gets an agent and four memory skills. Codex sessions are recorded too and appear in the dashboard beside the other two.
 - **Not just notes.** An assistant's own memory keeps the notes it chooses to write down. Axyome XM records the work itself, so the answer comes from what you did.
 
 ---
@@ -54,7 +55,7 @@ Within seconds, your AI assistant retrieves the exact file, error message, and t
 | **Achievement System** | 12 badges: Prompt Master, Flow State, Week Streak, and more |
 | **54 MCP Tools** | Full `axm_*` tool suite - ask AI to search, recall, and log for you |
 | **Time Machine** | Replay any past coding day chapter by chapter |
-| **Copilot + Claude Code** | Dashboard compares both assistants side by side |
+| **Copilot, Claude Code, Codex** | Dashboard compares the three assistants side by side |
 | **Local-first** | Your data stays on your machine. Nothing is sent anywhere unless you sign in — see [Privacy](#privacy). |
 
 ---
@@ -66,6 +67,8 @@ Search for **Axyome XM** in the Extensions view (`Ctrl+Shift+X`) and install it,
 ```bash
 code --install-extension axyome-ai.axyome-ai-xm
 ```
+
+In editors that install extensions from [Open VSX](https://open-vsx.org/extension/axyome-ai/axyome-ai-xm), search for Axyome XM there.
 
 -> [Detailed install guide with platform notes](docs/install.md)
 
@@ -131,8 +134,9 @@ Step-by-step guides that end with something working.
 
 | Requirement | Minimum |
 |-------------|---------|
-| VS Code | 1.139.0+ |
+| VS Code | 1.123.0+ |
 | GitHub Copilot or Claude Code | At least one, to use your memory from chat |
+| Codex | Optional: its sessions are recorded and shown in the dashboard |
 | Node.js | Not required - binary is embedded |
 
 ---
@@ -199,7 +203,7 @@ needed to keep using it. Details: [app.axyome.ai/pricing](https://app.axyome.ai/
 
 - **100% local storage.** On Free and Pro, your activity is stored only on your computer.
 - **Nothing is recorded until you choose.** On first run a panel lists every capture source (Claude Code,
-  Copilot chat and agent edits, files, git, terminal, editor, selections, problems, debug, tasks, coding
+  Codex, Copilot chat and agent edits, files, git, terminal, editor, selections, problems, debug, tasks, coding
   time) with one line saying what it stores. **Recommended** turns them all on, every source has its own
   switch, and nothing is recorded until you press **Start recording**. Change it any time with
   **Axyome XM: Review Capture Settings**.
@@ -220,6 +224,7 @@ needed to keep using it. Details: [app.axyome.ai/pricing](https://app.axyome.ai/
 | Editor selections (redacted) | Yes | Yes (`axyomeXM.captureSelectedText`) |
 | Copilot chat sessions | Yes | Yes (`axyomeXM.captureChatSessions`) |
 | Claude Code prompts, replies and tool calls | Yes | Yes (`axyomeXM.capture.claudeCode.enabled`) |
+| Codex prompts, replies, tool calls, shell commands, file edits and token use, read from Codex's own session files | Yes | Yes (`axyomeXM.capture.codex.enabled`) |
 | File **contents** | Not read from disk, with one exception: once, on a new install, a copy of four project files is saved so your assistant has context from day one (`README.md`, `AGENTS.md`, `.github/copilot-instructions.md`, `package.json`). Excerpts are kept when an AI assistant's tool call or chat reply contains them (tool arguments up to 8 KB, tool results up to 512 bytes, chat code blocks) | The four files: once you press **Start recording**. Excerpts: with the AI sources above |
 | Clipboard | Never read | — |
 | Keystrokes | Only counted, never stored | — |

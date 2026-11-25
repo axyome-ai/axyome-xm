@@ -4,16 +4,17 @@
 
 | Requirement | Minimum | Notes |
 |-------------|---------|-------|
-| VS Code | 1.139.0+ | Minimum declared by the extension (`engines.vscode`) |
+| VS Code | 1.123.0+ | Minimum declared by the extension (`engines.vscode`) |
 | OS Architecture | 64-bit | Windows, Linux, or macOS (Intel or Apple Silicon) |
 | Disk space | ~25-30 MB + database | The download depends on your platform; the database grows with use |
 | GitHub Copilot or Claude Code | Any version | At least one, to use your memory from chat |
+| Codex | Any version | Optional: its sessions are recorded and shown in the dashboard |
 
 ---
 
 ## Install from the VS Code Marketplace
 
-Axyome XM is on the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=axyome-ai.axyome-ai-xm).
+Axyome XM is on the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=axyome-ai.axyome-ai-xm) and on [Open VSX](https://open-vsx.org/extension/axyome-ai/axyome-ai-xm).
 
 1. In VS Code, open the **Extensions** view (`Ctrl+Shift+X`, or `Cmd+Shift+X` on macOS).
 2. Search for **Axyome XM** and choose **Install**.
@@ -24,6 +25,12 @@ code --install-extension axyome-ai.axyome-ai-xm
 ```
 
 VS Code picks the build for your platform. Nothing is recorded until you choose what to record on the first-run panel.
+
+### From Open VSX
+
+In an editor that installs extensions from [Open VSX](https://open-vsx.org/extension/axyome-ai/axyome-ai-xm), search
+for **Axyome XM** in its Extensions view and install it. The editor must be based on VS Code 1.123 or later. You can
+also download the file for your platform from the Open VSX page and install it with **Extensions: Install from VSIX…**.
 
 ---
 
@@ -81,7 +88,7 @@ Run **Axyome XM: Open Backup Folder** to open it.
 
 | Symptom | Likely Cause | Fix |
 |---------|-------------|-----|
-| Extension not activating | VS Code < 1.139 | Update VS Code to 1.139+ |
+| Extension not activating | VS Code < 1.123 | Update VS Code to 1.123+ |
 | `axm_*` tools missing in Copilot | Extension not fully loaded | Full restart VS Code (not just reload window) |
 | "cannot open database" error | AppData folder permissions | Check folder exists and is writable |
 | `native addon` load error | Damaged or incomplete install | Uninstall, then install Axyome XM again from the Extensions view |

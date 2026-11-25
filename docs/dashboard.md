@@ -5,7 +5,8 @@ Command Palette (**Axyome XM: Show Dashboard**), or with `Ctrl+Shift+Alt+M`
 (`Cmd+Shift+Alt+M` on macOS).
 
 It has 8 tabs. The header filters (time scope, repository, assistant) apply to
-every tab. Most tabs cover both GitHub Copilot and Claude Code.
+every tab. Most tabs cover both GitHub Copilot and Claude Code. Codex sessions appear too: in Activity ›
+Unified, in the AI session list (filter by assistant) and in AI › Top tools.
 
 | Tab | Sub-tabs |
 |-----|----------|
