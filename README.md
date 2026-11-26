@@ -10,7 +10,7 @@
   <p>Your AI forgets between chats. Axyome XM remembers what actually happened: the files you edited, the errors you hit, the terminal commands you ran, your commits, and your Copilot, Claude Code and Codex sessions. Copilot and Claude Code read the same memory, so you can ask <code>@xm</code> in Copilot Chat, or ask Claude Code, "how did I fix that error last week?"</p>
   <p><strong>Free</strong> keeps the last 30 days. <a href="#plans">Pro</a> keeps all of it.</p>
 
-  <a href="https://www.youtube.com/watch?v=uveGJ73GMRg">
+  <a href="https://www.youtube.com/watch?v=M3rhIDkSv9M">
     <img src="docs/images/demo-video.png" alt="Watch the 2.5-minute Axyome XM product demo on YouTube" width="720" />
   </a>
 
@@ -34,7 +34,7 @@
 
 ## Demo
 
-▶ **[Watch the 2.5-minute product demo](https://www.youtube.com/watch?v=uveGJ73GMRg)**: live product, real data, recorded in VS Code.
+▶ **[Watch the 2.5-minute product demo](https://www.youtube.com/watch?v=M3rhIDkSv9M)**: live product, real data, recorded in VS Code.
 
 > *"What was that async error I fixed last week?"*
 
